@@ -1,0 +1,1031 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.48f1 (b805b124c6b7) revision 12060081'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'en' Physical Memory: 48870 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 2020.3.48f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/nicho/OneDrive - Furman University/Documents/GitHub/game-design/Power Struggle
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50854
+Successfully changed project path to: C:/Users/nicho/OneDrive - Furman University/Documents/GitHub/game-design/Power Struggle
+C:/Users/nicho/OneDrive - Furman University/Documents/GitHub/game-design/Power Struggle
+Using Asset Import Pipeline V2.
+Player connection [2712] Host "[IP] 11.34.15.130 [Port] 1073959264 [Flags] 2 [Guid] 2755413750 [EditorId] 2755413750 [Version] 1048832 [Id] WindowsEditor(7,NICKS-LAPTOP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [2712] Host "[IP] 11.34.15.130 [Port] 1073959264 [Flags] 2 [Guid] 2755413750 [EditorId] 2755413750 [Version] 1048832 [Id] WindowsEditor(7,NICKS-LAPTOP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 5.63 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.48f1 (b805b124c6b7)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2020.3.48f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/nicho/OneDrive - Furman University/Documents/GitHub/game-design/Power Struggle/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA Quadro P520 (ID=0x1d34)
+    Vendor:   
+    VRAM:     1982 MB
+    Driver:   31.0.15.3779
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 2020.3.48f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 2020.3.48f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity 2020.3.48f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56144
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 2020.3.48f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.046349 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 6.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.154 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3154ms)
+		BeginReloadAssembly (1937ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (892ms)
+			LoadAssemblies (1940ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (479ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (204ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (7ms)
+				BeforeProcessingInitializeOnLoad (13ms)
+				ProcessInitializeOnLoadAttributes (131ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000080 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.07 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.213 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1214ms)
+		BeginReloadAssembly (404ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (702ms)
+			LoadAssemblies (254ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (234ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (39ms)
+			SetupLoadedEditorAssemblies (242ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (35ms)
+				ProcessInitializeOnLoadAttributes (179ms)
+				ProcessInitializeOnLoadMethodAttributes (12ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (3ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
+Refreshing native plugins compatible for Editor in 0.08 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 24.3 MB.
+System memory in use after: 24.3 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 446.
+Total: 2.600600 ms (FindLiveObjects: 0.037600 ms CreateObjectMapping: 0.004700 ms MarkObjects: 2.497000 ms  DeleteObjects: 0.059800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Low Poly Buildings Full Pack
+  artifactKey: Guid(9be2f892938fa634d8188a3a889f3ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack using Guid(9be2f892938fa634d8188a3a889f3ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfc453fad00712eb55fcd667cc98c2bb') in 0.017306 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.360956 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings
+  artifactKey: Guid(abd6ec74017c230408b4268691f78410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings using Guid(abd6ec74017c230408b4268691f78410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f04b777366f614d07bb443f502ed5c10') in 0.025226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.394708 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Scenes
+  artifactKey: Guid(0ff9373834b121e43b57073744b79e66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Scenes using Guid(0ff9373834b121e43b57073744b79e66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a846293e1915be1d081e999817b78328') in 0.020391 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.442226 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models
+  artifactKey: Guid(ccf29aa040df84a448e96512a7cc43b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models using Guid(ccf29aa040df84a448e96512a7cc43b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8087996c50e98fcae6fbbe3af875c935') in 0.023685 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.086522 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Bank.fbx
+  artifactKey: Guid(cca85163a58aac547ab141e5d40d3e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Bank.fbx using Guid(cca85163a58aac547ab141e5d40d3e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2879b205932a161aad41ea73a76d8304') in 1.260544 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000381 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Stack Big.fbx
+  artifactKey: Guid(c4c25fdd3ce365947aefa4f8a43915f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Stack Big.fbx using Guid(c4c25fdd3ce365947aefa4f8a43915f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f77fb1e73259f13d45e8a464a27eb3dd') in 0.052784 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Store.fbx
+  artifactKey: Guid(14b1d7f0d77571f48bc638a4ab7be9c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Store.fbx using Guid(14b1d7f0d77571f48bc638a4ab7be9c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45b48192e52b2898ab5df38ad0d1c9b2') in 0.084115 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Church.fbx
+  artifactKey: Guid(1bd89d2cf50a7fb48a55230bc58beaef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Church.fbx using Guid(1bd89d2cf50a7fb48a55230bc58beaef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcc6ebf755b2e9e25e157edf302ded22') in 0.045448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Car Paint.fbx
+  artifactKey: Guid(f4f2eea9f0ef0d04ab8646519eca2c82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Car Paint.fbx using Guid(f4f2eea9f0ef0d04ab8646519eca2c82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a755ae884aa18a43050bf80f9a4a060f') in 0.070739 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Villa.fbx
+  artifactKey: Guid(ef9075f13a7e9554ab71e2e7522e09b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Villa.fbx using Guid(ef9075f13a7e9554ab71e2e7522e09b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12b80fd6592cd037e7927d7c6338ec98') in 0.052933 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Blue Apartment.fbx
+  artifactKey: Guid(cdbbacaa923d51343975b05905e49dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Blue Apartment.fbx using Guid(cdbbacaa923d51343975b05905e49dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '193b85c663bce92566025f74088a2041') in 0.044160 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Stack Small.fbx
+  artifactKey: Guid(ddc57df4faeeca14099de8bc4eca6030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Stack Small.fbx using Guid(ddc57df4faeeca14099de8bc4eca6030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97e9d165e0a5bde13b8651e8a21f4dd5') in 0.079897 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000391 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Green Apartment.fbx
+  artifactKey: Guid(0a7a55f796b744b4896f79fb2ed81c22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Green Apartment.fbx using Guid(0a7a55f796b744b4896f79fb2ed81c22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c665a2bcd0008d24bcc06efb26e114ee') in 0.087046 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Hotel.fbx
+  artifactKey: Guid(0dcfa915267d7824a9d3c26dac8ffd0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Hotel.fbx using Guid(0dcfa915267d7824a9d3c26dac8ffd0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '665a34005029a334320ba649c5486545') in 0.075317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Restaurant.fbx
+  artifactKey: Guid(9fa151ec173db05459e2e10545d80e2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Restaurant.fbx using Guid(9fa151ec173db05459e2e10545d80e2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b2ae08c84e8193f2322321f0dd771d9') in 0.047386 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Hospital.fbx
+  artifactKey: Guid(9f9ebc9b9d77f2d44a4583a5050c51b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Hospital.fbx using Guid(9f9ebc9b9d77f2d44a4583a5050c51b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9b4e4e021632d2b6488f6d89c0bf61a') in 0.070825 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000568 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Police Station.fbx
+  artifactKey: Guid(b08cd5a22399dd14ca4aa57d75b75bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Police Station.fbx using Guid(b08cd5a22399dd14ca4aa57d75b75bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4cd8f6652fe2aab4b1332f7b350f461') in 0.074864 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000759 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Hotel Small.fbx
+  artifactKey: Guid(3979cae348cead241939d6a67a677245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings/Models/Hotel Small.fbx using Guid(3979cae348cead241939d6a67a677245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f2c7dbed0265cab116b9df8829da53c') in 0.098247 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.679195 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx
+  artifactKey: Guid(3c39719e98fd0044093e571b222fd58a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx using Guid(3c39719e98fd0044093e571b222fd58a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '684deb8bf0e2858dcdb59b19ce945751') in 0.023616 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.430444 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Abandoned House.fbx
+  artifactKey: Guid(bb7136316fb57e64f95a06b2fdc374c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Abandoned House.fbx using Guid(bb7136316fb57e64f95a06b2fdc374c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7707a047c4f3c9da829725719fade251') in 0.036176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Little White.fbx
+  artifactKey: Guid(9dd3d4d8d42457d4fbc15c39abedebe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Little White.fbx using Guid(9dd3d4d8d42457d4fbc15c39abedebe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0226a48525f05b4d2d36eca28465258') in 0.035203 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000436 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Really Basic Mini.fbx
+  artifactKey: Guid(47d1969742fdfd64095d4c1a78b3ba57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Really Basic Mini.fbx using Guid(47d1969742fdfd64095d4c1a78b3ba57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1139bd36dd213475fc4827de9219dbc6') in 0.073409 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Colorful House.fbx
+  artifactKey: Guid(a7bfbb81943e26b47bd073b7cfe13a99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Colorful House.fbx using Guid(a7bfbb81943e26b47bd073b7cfe13a99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c039f9747c3e0208aa41111ba6b28be') in 0.055317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Ghettoish House.fbx
+  artifactKey: Guid(b0ba0694e06673542956be38eab26419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Ghettoish House.fbx using Guid(b0ba0694e06673542956be38eab26419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '864850ff359ec345e6d0995d4d0336db') in 0.172286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000138 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Materials
+  artifactKey: Guid(602f0ac3c3fd70b408be318da333d59b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Additional Models/Fbx/Materials using Guid(602f0ac3c3fd70b408be318da333d59b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3984ab06ebd153442acd54d8b1f3401') in 0.012366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.145090 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx
+  artifactKey: Guid(a099eeed5b65eb4429498f802850bbf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx using Guid(a099eeed5b65eb4429498f802850bbf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6586e29ca52252cba907862c97311814') in 0.022356 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.135124 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic High.fbx
+  artifactKey: Guid(ccaec668bf1e9514dbc0ed388b0f15be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic High.fbx using Guid(ccaec668bf1e9514dbc0ed388b0f15be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd50a872e2b025ba377fdb33766aae9bb') in 0.042251 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Pair House High.fbx
+  artifactKey: Guid(d72367a188d8c5240befb624e80d1563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Pair House High.fbx using Guid(d72367a188d8c5240befb624e80d1563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f5198fa81505c2edd1ee12caa21c33f') in 0.037976 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001686 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/High Tower Even Higher.fbx
+  artifactKey: Guid(de51befe5593cfc4d833dc3dbdf5ba6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/High Tower Even Higher.fbx using Guid(de51befe5593cfc4d833dc3dbdf5ba6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44a2cdf38a81e27d05317c8072a9f16e') in 0.033305 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic Five Floor.fbx
+  artifactKey: Guid(3316eebbba2e7ca478d4e1dd55f76fdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic Five Floor.fbx using Guid(3316eebbba2e7ca478d4e1dd55f76fdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34511b648ae755708278988f0972ea56') in 0.041350 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/White Stack High.fbx
+  artifactKey: Guid(a8641f9cfbb1a424fb91e76ac53a4078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/White Stack High.fbx using Guid(a8641f9cfbb1a424fb91e76ac53a4078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c1e202894fa0ea3ccd3a40605be825a') in 0.072983 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Pilars Low.fbx
+  artifactKey: Guid(58e0c57326cc5954cb7681d4d15c3a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Pilars Low.fbx using Guid(58e0c57326cc5954cb7681d4d15c3a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31a668ccbc3abafbcb6ee24a504cd421') in 0.041298 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/High Tower higher.fbx
+  artifactKey: Guid(be056009d9cf426489b6e344d3a77c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/High Tower higher.fbx using Guid(be056009d9cf426489b6e344d3a77c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e363bd0fcfc746b67a8f9ddd6c5818e') in 0.035468 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/White Stack Highest.fbx
+  artifactKey: Guid(760c24049a9917446b841ba57565c4e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/White Stack Highest.fbx using Guid(760c24049a9917446b841ba57565c4e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6a66e56360714fb01f1c7683fc56f2d') in 0.060966 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000709 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic Six Floor.fbx
+  artifactKey: Guid(8db132306a017334c87a108db9e8dffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic Six Floor.fbx using Guid(8db132306a017334c87a108db9e8dffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ca682fdc8ce61d8bf98066c8ff27769') in 0.046105 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/White Stack Low.fbx
+  artifactKey: Guid(0694b8d3be087594dbbdb8a12438242a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/White Stack Low.fbx using Guid(0694b8d3be087594dbbdb8a12438242a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4a81858294cd46414bfe5bd9a9ce677') in 0.050452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Pilars High.fbx
+  artifactKey: Guid(9aef5bebfa1ed1741889b98b7e0f4f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Pilars High.fbx using Guid(9aef5bebfa1ed1741889b98b7e0f4f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e8c66ea8645c040729435bfd2fa93a0') in 0.081395 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000524 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/High Tower Low.fbx
+  artifactKey: Guid(a5bc381b9f5e0d44ab7d90006ad65440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/High Tower Low.fbx using Guid(a5bc381b9f5e0d44ab7d90006ad65440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ce956e1512e6f7b81b4b4fc682a67e6') in 0.086895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000312 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Low.fbx
+  artifactKey: Guid(cc02b7ff6fb3e0c41805a245df31cc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Low.fbx using Guid(cc02b7ff6fb3e0c41805a245df31cc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afe6116521322f3389cbb3d8bd40da3b') in 0.077234 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Triangular Highest Doubled.fbx
+  artifactKey: Guid(5441b8fc6e94a6340920f115b049631e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Triangular Highest Doubled.fbx using Guid(5441b8fc6e94a6340920f115b049631e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a85dd612a6e971c0bb15e0930210447e') in 0.068041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Highest.fbx
+  artifactKey: Guid(71b74bc9db72f644f9dc395e33358b2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Highest.fbx using Guid(71b74bc9db72f644f9dc395e33358b2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99bdb6a3278affabbcb54ee3ebac449d') in 0.072317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/High Tower high.fbx
+  artifactKey: Guid(62609feb7fa006c4b826408bc4190566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/High Tower high.fbx using Guid(62609feb7fa006c4b826408bc4190566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23f510ff26966d58adff948b5434c1e1') in 0.064992 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Pair House Highest.fbx
+  artifactKey: Guid(807c5556155c94c45a06937954f6d002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Pair House Highest.fbx using Guid(807c5556155c94c45a06937954f6d002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b7668bb7973901a4acbe7489717969a') in 0.075059 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic Three Floor.fbx
+  artifactKey: Guid(647d04fdc53f237429d1b2021ff0326a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic Three Floor.fbx using Guid(647d04fdc53f237429d1b2021ff0326a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09862a3b8250a2c0b48221c476720f64') in 0.049915 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/White Stack Medium.fbx
+  artifactKey: Guid(6459d5846d20e2a4cb6278de8683f23e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/White Stack Medium.fbx using Guid(6459d5846d20e2a4cb6278de8683f23e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06f2c57793ec834f3b25cb78f8691e5c') in 0.046424 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic Seven Floor.fbx
+  artifactKey: Guid(046f9806acde26248b95bac6d9440d34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic Seven Floor.fbx using Guid(046f9806acde26248b95bac6d9440d34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dccdee00f5e2f8c752de9dbb787dc4a4') in 0.082692 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Pair House Medium.fbx
+  artifactKey: Guid(4991731d832ff0a4f8a5a7e777b8aa94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Pair House Medium.fbx using Guid(4991731d832ff0a4f8a5a7e777b8aa94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'addb0c08052ac6d27f29d6e662f5b444') in 0.050709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Green Hat.fbx
+  artifactKey: Guid(abac9904e4f4e9c43b4a1a8d43e0aadf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Green Hat.fbx using Guid(abac9904e4f4e9c43b4a1a8d43e0aadf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dd88d72410dbcc37028415287bdb1f9') in 0.045614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Needle Medium.fbx
+  artifactKey: Guid(3ca61b843ac66a04b9a85a3e67a83968) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Needle Medium.fbx using Guid(3ca61b843ac66a04b9a85a3e67a83968) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'def3f8cbd7fe3460e69a61bafb08e6f2') in 0.083149 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000343 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic Four Floor.fbx
+  artifactKey: Guid(38285f51cea92b145ab0818136282e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic Four Floor.fbx using Guid(38285f51cea92b145ab0818136282e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09036e8ebd80e374b045ebc053c1dca0') in 0.080356 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Needle Mini.fbx
+  artifactKey: Guid(41605a74dc5275545998e4335723e3d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Needle Mini.fbx using Guid(41605a74dc5275545998e4335723e3d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09602891804a2919121f2474a4b03ad8') in 0.049781 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic.fbx
+  artifactKey: Guid(3730284818f4a0c408d0b698a7b8e772) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Corner Pilars Basic.fbx using Guid(3730284818f4a0c408d0b698a7b8e772) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5d505130f3c562a82e1fcac0c13d6fc') in 0.060254 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000412 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Green Three.fbx
+  artifactKey: Guid(0d09f1c6fc37cab4fa319c804b483c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Green Three.fbx using Guid(0d09f1c6fc37cab4fa319c804b483c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57ddf7785180105cdad45d7ec83637ed') in 0.076477 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000423 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Pilars Highest.fbx
+  artifactKey: Guid(9a4ded6f272ad034b86dfc36caabeb47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Pilars Highest.fbx using Guid(9a4ded6f272ad034b86dfc36caabeb47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78bad4136ba6ba8dcb6bff4b5318f78e') in 0.045733 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Triangular Highest.fbx
+  artifactKey: Guid(cc84d688d3acb0d43b576e5c85075345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Triangular Highest.fbx using Guid(cc84d688d3acb0d43b576e5c85075345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42230c0efd6ec3cb22ead3916cf5e2c7') in 0.044151 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000426 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Triangular High.fbx
+  artifactKey: Guid(01115cdf9ccd84f4d92f0302f38f3ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Triangular High.fbx using Guid(01115cdf9ccd84f4d92f0302f38f3ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7e660939bde449d85443361fd2ea114') in 0.074853 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000422 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/High Tower Medium.fbx
+  artifactKey: Guid(ea5dca42c620adb4dbdf8b039696aae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/High Tower Medium.fbx using Guid(ea5dca42c620adb4dbdf8b039696aae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c757c2502f53f94b1250e60b3900415') in 0.064791 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000877 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Pilars.fbx
+  artifactKey: Guid(858ccdd72ad8a5c488f560224f48d1b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Pilars.fbx using Guid(858ccdd72ad8a5c488f560224f48d1b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbbb10db79d0ad21238db3db1bbeabe6') in 0.100743 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Green Two.fbx
+  artifactKey: Guid(7c5275f218384d149ab0d4b5af46104a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Green Two.fbx using Guid(7c5275f218384d149ab0d4b5af46104a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac3960ad02dc1be5a0c35a4379647dec') in 0.084142 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000361 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Green One.fbx
+  artifactKey: Guid(5bd999d13631d34459f520d72e65587b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Green One.fbx using Guid(5bd999d13631d34459f520d72e65587b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f18618ac2b66f5b1bc4f0faa94c597b8') in 0.083983 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000626 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Pair House Low.fbx
+  artifactKey: Guid(a7d808d225315ff4ebd29675b12897ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Pair House Low.fbx using Guid(a7d808d225315ff4ebd29675b12897ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c67f146fb3f5731b53e78b180eb47c8b') in 0.082606 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000389 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Highest Doubled.fbx
+  artifactKey: Guid(3806e21abad133f4cb8756a6f184aa0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Highest Doubled.fbx using Guid(3806e21abad133f4cb8756a6f184aa0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abe2d64bc04e14d5235414378cd7d6d3') in 0.077430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000626 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Needle.fbx
+  artifactKey: Guid(e3489e2a98cac564a878502cceeecec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Needle.fbx using Guid(e3489e2a98cac564a878502cceeecec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6455dae107fccc6d98b3309c2c2924d5') in 0.074276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Green Four.fbx
+  artifactKey: Guid(a177f65b3d1050c40a5aee8602984a42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Green Four.fbx using Guid(a177f65b3d1050c40a5aee8602984a42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91f95aef2875a36e6acec98a4ca4cc9f') in 0.077143 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000891 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Needle Master.fbx
+  artifactKey: Guid(01aef7bdc63848c42a2268bb5b476c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Sky Scraper Needle Master.fbx using Guid(01aef7bdc63848c42a2268bb5b476c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd31c3665d5fe93e99f17ef4ebda0af24') in 0.082280 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Triangular Low.fbx
+  artifactKey: Guid(711dae4137a64cd4da8798d0ceb05101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings City/Fbx/Basic Triangular Low.fbx using Guid(711dae4137a64cd4da8798d0ceb05101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83107612a02e618bf68b9afc1de7c92d') in 0.077730 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.407832 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX
+  artifactKey: Guid(f5326dfe32b95744c90c5af342fa3646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX using Guid(f5326dfe32b95744c90c5af342fa3646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99cf4ba116c1dbd83e91c887385f88b9') in 0.030503 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.559230 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Arrow Sign.fbx
+  artifactKey: Guid(4a9edb60b7bad454da0f9b9d2f2b0e81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Arrow Sign.fbx using Guid(4a9edb60b7bad454da0f9b9d2f2b0e81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5955452e44e024db34b0430943eda44') in 0.042226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Garage.fbx
+  artifactKey: Guid(3e5bcc97035509e4896be170333fb8f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Garage.fbx using Guid(3e5bcc97035509e4896be170333fb8f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f774bdcd9323ea3cdae7c9b117e2ebd') in 0.048870 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000588 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Stop Sign.fbx
+  artifactKey: Guid(d40125c5acc32f34da6087ba65b8984a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Stop Sign.fbx using Guid(d40125c5acc32f34da6087ba65b8984a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f4391708a3df9d8a915993e7dde339a') in 0.074077 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000302 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Road.fbx
+  artifactKey: Guid(2d89571c3eb65cd4ca5e7c7544eb11fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Road.fbx using Guid(2d89571c3eb65cd4ca5e7c7544eb11fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2ee87dbf65ce2d67ea5b53b415ac347') in 0.043307 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000322 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Canals.fbx
+  artifactKey: Guid(b539dad8bba3f9e4983afb75364847a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Canals.fbx using Guid(b539dad8bba3f9e4983afb75364847a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf56a31d0317031a0e09ec5bd1a01a6c') in 0.075416 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000950 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Grass Quad.fbx
+  artifactKey: Guid(311ab1c8d4a1e5f48bf0602c31a32be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Grass Quad.fbx using Guid(311ab1c8d4a1e5f48bf0602c31a32be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '605ff8ed718f79dbb78df3f3efb09a35') in 0.075005 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Exit Sign.fbx
+  artifactKey: Guid(fa0bd971eaf12a3449db42916c08fb64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Exit Sign.fbx using Guid(fa0bd971eaf12a3449db42916c08fb64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00bba76c23fb1fb79ee0e824b9dd5be3') in 0.051256 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000415 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Asphalt Quad.fbx
+  artifactKey: Guid(fa7708541e6917044aa71d1d0461d68c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Asphalt Quad.fbx using Guid(fa7708541e6917044aa71d1d0461d68c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc3c707c516a4c7ec79ca417573980f7') in 0.076951 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Low Poly Buildings Full Pack.fbx
+  artifactKey: Guid(a8c189584f2da3c409a814773d14edac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Low Poly Buildings Full Pack.fbx using Guid(a8c189584f2da3c409a814773d14edac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04cc76c8ad796d5dbfd673f9dbd22a9a') in 0.075738 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Road Corner.fbx
+  artifactKey: Guid(0466fa2a091bf1646b866d8de29748f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Road Corner.fbx using Guid(0466fa2a091bf1646b866d8de29748f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47b3fa97fb3e998e9878a982f49bb673') in 0.080214 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Road Crossing T.fbx
+  artifactKey: Guid(b21a1006eca84df45a8e9cb33efe3940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Road Crossing T.fbx using Guid(b21a1006eca84df45a8e9cb33efe3940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f205ac8052c8c072b4d5a5c6146570b0') in 0.076159 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Trees and Bushes.fbx
+  artifactKey: Guid(bdd4236b0c5580f41a4d7589179b3752) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Trees and Bushes.fbx using Guid(bdd4236b0c5580f41a4d7589179b3752) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5e3a97da270b4f4d71ad412442ad493') in 0.150868 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Fences.fbx
+  artifactKey: Guid(094ae8f5278404641bd9e41fddce640d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Fences.fbx using Guid(094ae8f5278404641bd9e41fddce640d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f078a1c0bbd6354b7aa20b6bf9f97da5') in 0.110053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Downtown Sign.fbx
+  artifactKey: Guid(e2b154d24c87d5346a68a7f7736b27f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Downtown Sign.fbx using Guid(e2b154d24c87d5346a68a7f7736b27f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afd4a36cd53e5822486521646de2e917') in 0.042941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000302 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Road Crossing.fbx
+  artifactKey: Guid(89a496ce104a31744be930f8b5b1e029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Road Crossing.fbx using Guid(89a496ce104a31744be930f8b5b1e029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52ea6a219c80684e63ef678b386fa1cc') in 0.056502 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000432 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Downtown Exit Sign.fbx
+  artifactKey: Guid(65d9c8bb7a76d6544a135fce00bb351d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Downtown Exit Sign.fbx using Guid(65d9c8bb7a76d6544a135fce00bb351d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44a8a00926add52ad2c0d231447e6e3e') in 0.051307 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Road Work.fbx
+  artifactKey: Guid(bc8e5b52475c073429a56932c2a09c3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Road Work.fbx using Guid(bc8e5b52475c073429a56932c2a09c3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c1fce5de3a48abc584e407c935d8aa8') in 0.079531 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000366 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Suburb Exit Sign.fbx
+  artifactKey: Guid(ffebfc4325146664d811281ca8da9374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Suburb Exit Sign.fbx using Guid(ffebfc4325146664d811281ca8da9374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2e89e4953384aca083a7faaa6cfbeee') in 0.048886 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Traffic Lights and Street Light.fbx
+  artifactKey: Guid(0a3359aff68fd7f4c9cbb270eb832ed4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Traffic Lights and Street Light.fbx using Guid(0a3359aff68fd7f4c9cbb270eb832ed4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e9b7c0b5fd975ed58ca2158693bc100') in 0.087093 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000595 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Pavement Road.fbx
+  artifactKey: Guid(42fe74501cf2b7147a7a0528840918ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Pavement Road.fbx using Guid(42fe74501cf2b7147a7a0528840918ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4911b11fd8dab8f160f26e63cec59220') in 0.052544 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Suburb Sign.fbx
+  artifactKey: Guid(5fb62256f5961894ca7390a287aacca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Enviroment/FBX/Suburb Sign.fbx using Guid(5fb62256f5961894ca7390a287aacca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '418a3fce4b6682c34cd87a55d6c8e374') in 0.054350 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.761477 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX
+  artifactKey: Guid(74b07607d1a20174db7dbf54432af6c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX using Guid(74b07607d1a20174db7dbf54432af6c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c224e2610cdebd51fa1a8e90429844eb') in 0.020755 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.098390 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Bar.fbx
+  artifactKey: Guid(2a5e9cf6533f1b24fb8cd67304284f67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Bar.fbx using Guid(2a5e9cf6533f1b24fb8cd67304284f67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48ecbd6591e073727604a2c727c5da08') in 0.039700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000297 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Corner House 2.fbx
+  artifactKey: Guid(e9439f0530da3ef46bfc907e994d6245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Corner House 2.fbx using Guid(e9439f0530da3ef46bfc907e994d6245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50d796367b6807117c64eaa3b595a3e9') in 0.050122 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000590 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Ladies Gym.fbx
+  artifactKey: Guid(cd38a44b3296931408aacb2e91c29ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Ladies Gym.fbx using Guid(cd38a44b3296931408aacb2e91c29ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e41747a497b51b67fa6730cb2a5867c') in 0.046753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Gym.fbx
+  artifactKey: Guid(e525d6a213181d946b3a5f9f790a813e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Gym.fbx using Guid(e525d6a213181d946b3a5f9f790a813e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '313c1a479bc1e35cf07273f1ed137085') in 0.057885 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000818 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Corner House.fbx
+  artifactKey: Guid(9f776768bb9b87e42848419a590dacde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Corner House.fbx using Guid(9f776768bb9b87e42848419a590dacde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6799b3766dab3ca39eeef6a7becc843') in 0.080554 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Modern House.fbx
+  artifactKey: Guid(a0f6254ca94ec714cbd427fbcb7ab896) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Modern House.fbx using Guid(a0f6254ca94ec714cbd427fbcb7ab896) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c89a71ca464b9de4be194cc726a828b7') in 0.044381 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000817 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Pilar House 2.fbx
+  artifactKey: Guid(45d6d82b8ccb056488d12cbb91e72efa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Pilar House 2.fbx using Guid(45d6d82b8ccb056488d12cbb91e72efa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c9bb000f889d72e3051358eac36b087') in 0.084345 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Pilar House.fbx
+  artifactKey: Guid(25dafcb20ab80d34ea5136dbac47cf51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Pilar House.fbx using Guid(25dafcb20ab80d34ea5136dbac47cf51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0458601c2cd2c1b1079964489d03847') in 0.072927 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000391 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Rich House.fbx
+  artifactKey: Guid(41cbb13dd6d620d4d9231f6c88e833f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Rich House.fbx using Guid(41cbb13dd6d620d4d9231f6c88e833f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2765238538877a397257c8021b9e2f94') in 0.078177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000323 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Basic Store.fbx
+  artifactKey: Guid(feba06e7620a7f44ca4add5066436caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Pack 2/FBX/Basic Store.fbx using Guid(feba06e7620a7f44ca4add5066436caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35ddaf9736bb866bbbc2ae2600fb0e64') in 0.044770 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.444004 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models
+  artifactKey: Guid(d74a163d11cf89b46a5f0bd776f1b521) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models using Guid(d74a163d11cf89b46a5f0bd776f1b521) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e94ba5fa7d01adeb8197e29d34d3ff3a') in 0.023570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.713121 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Clothes House French.fbx
+  artifactKey: Guid(bb481e9aed5c8544abfdb67ae630e2e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Clothes House French.fbx using Guid(bb481e9aed5c8544abfdb67ae630e2e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a220031a61e5906ea9856322bf54dbe') in 0.039146 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Stack House 2.fbx
+  artifactKey: Guid(e4741b4ad310760448bd6929cf813797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Stack House 2.fbx using Guid(e4741b4ad310760448bd6929cf813797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6413680b4d8f78e54540e4089cd731e') in 0.034510 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Museum.fbx
+  artifactKey: Guid(40725ec9d526cb24da63c0cf8d62b582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Museum.fbx using Guid(40725ec9d526cb24da63c0cf8d62b582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d01d85c1a34e1612cdcc80a1becb5d4') in 0.043231 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Stack House 1.fbx
+  artifactKey: Guid(7cb472e31812bf1439d7a8ae6a2fc6a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Stack House 1.fbx using Guid(7cb472e31812bf1439d7a8ae6a2fc6a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebdb399f95aeb9f7ae4a9efea7952150') in 0.072464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Balcony House 3.fbx
+  artifactKey: Guid(3e354341e6b4f8148b1364e0e63bd904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Balcony House 3.fbx using Guid(3e354341e6b4f8148b1364e0e63bd904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02c0b510ab8d6ba02970203edc6ea7d4') in 0.038949 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Stack House 4.fbx
+  artifactKey: Guid(a73ba9e881d0d0e4e88494a60a3c4083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Stack House 4.fbx using Guid(a73ba9e881d0d0e4e88494a60a3c4083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b73c3d4c5ebd60f98c313bddd305aa68') in 0.036579 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French House 3.fbx
+  artifactKey: Guid(f89247a14d2817d4a968c09d58dadac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French House 3.fbx using Guid(f89247a14d2817d4a968c09d58dadac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7b8b16326e74ee231df6a56c066066c') in 0.073845 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French House 2.fbx
+  artifactKey: Guid(f6619ecff79edcd4c98dc11e773ce9c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French House 2.fbx using Guid(f6619ecff79edcd4c98dc11e773ce9c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e40f684af4e6ff9a1d052b5c31652ec4') in 0.050436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Balcony House 1.fbx
+  artifactKey: Guid(a141eab36abef5746ba2713de573cd10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Balcony House 1.fbx using Guid(a141eab36abef5746ba2713de573cd10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5107c8cca0e73b7ee4831af4540557ed') in 0.040888 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000360 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Triumph Arch.fbx
+  artifactKey: Guid(8741e2a4f8a42534c8853e93969f560a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Triumph Arch.fbx using Guid(8741e2a4f8a42534c8853e93969f560a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c63f07c266b25327ce1227b20d440f8b') in 0.089486 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Balcony House 2.fbx
+  artifactKey: Guid(ae98fad891046b44ba18d8387ad2aeba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Balcony House 2.fbx using Guid(ae98fad891046b44ba18d8387ad2aeba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bb391c2e1556065ad928e2dc6180778') in 0.068446 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Wine House French.fbx
+  artifactKey: Guid(459c3999e897c9f48903cdccf117620c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Wine House French.fbx using Guid(459c3999e897c9f48903cdccf117620c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1576b2bbb8949ffe77f1d061e781822') in 0.082730 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000369 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Food House French.fbx
+  artifactKey: Guid(43a5cca070b5fd84a82f61ef2ce291c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Food House French.fbx using Guid(43a5cca070b5fd84a82f61ef2ce291c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e7f579dfc7829523cddfacb54faa135') in 0.087571 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000403 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Balcony House 4.fbx
+  artifactKey: Guid(846d72d47bb32cd4485a3c4c32b69b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Balcony House 4.fbx using Guid(846d72d47bb32cd4485a3c4c32b69b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b833662934d1d734aee95750ea16e4b9') in 0.086553 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000473 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French House 1.fbx
+  artifactKey: Guid(df852d7d574db894caee18c5728d534d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French House 1.fbx using Guid(df852d7d574db894caee18c5728d534d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45eea608c69dbebd34f88375b8f749eb') in 0.075965 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000383 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French House 4.fbx
+  artifactKey: Guid(6993453d9bca8eb4a82071079ada770b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French House 4.fbx using Guid(6993453d9bca8eb4a82071079ada770b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2152d466cd7c15a88df66e0b90d52048') in 0.065371 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Eiffel Tower.fbx
+  artifactKey: Guid(87acf2bb77a780041b116f86480ab8ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/Eiffel Tower.fbx using Guid(87acf2bb77a780041b116f86480ab8ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c4de21d203b58994b60db7910e581b2') in 0.065097 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Stack House 3.fbx
+  artifactKey: Guid(5c3ef74a04153cf4a91c4be4cce175d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Paris/Models/French Stack House 3.fbx using Guid(5c3ef74a04153cf4a91c4be4cce175d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73e5c909540eb4b4da7d2e4a1269a26b') in 0.062619 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.687010 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX
+  artifactKey: Guid(4fccbb91cbb6f8144917c6162f138bf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX using Guid(4fccbb91cbb6f8144917c6162f138bf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9aa87f782bccc3822c83cc322a2e308') in 0.021727 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.593845 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof High.fbx
+  artifactKey: Guid(3db01267f8afc144e99f0102b86667ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof High.fbx using Guid(3db01267f8afc144e99f0102b86667ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d7ba98bd50eee46aa0de8510c17fe8e') in 0.036620 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof Red 1.fbx
+  artifactKey: Guid(35c799ece81d02a40be79a404f5a2947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof Red 1.fbx using Guid(35c799ece81d02a40be79a404f5a2947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0134ba6cc4c8d3fe52ef7f3fcb6f7734') in 0.031718 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Rich Suburb House.fbx
+  artifactKey: Guid(0d3b4d95a6acca54b903876e70312023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Rich Suburb House.fbx using Guid(0d3b4d95a6acca54b903876e70312023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '996774b666d65ed509b73e14731ddf2a') in 0.049459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000404 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof U High.fbx
+  artifactKey: Guid(8ea19c27b85a94a449eef207553d9d71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof U High.fbx using Guid(8ea19c27b85a94a449eef207553d9d71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20c85f6ab72bcc8b3fe3c07e0d24d64a') in 0.054099 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof L High.fbx
+  artifactKey: Guid(40ddf0a3303879c4d86b785b4c294798) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof L High.fbx using Guid(40ddf0a3303879c4d86b785b4c294798) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84e4fe4253d96480577747b73a2f3afc') in 0.036791 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof U.fbx
+  artifactKey: Guid(c3bf131b2b2e0194a9babe4244fb199c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof U.fbx using Guid(c3bf131b2b2e0194a9babe4244fb199c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe640e3c401098bcd04b44ad70ab1b90') in 0.071841 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 2.fbx
+  artifactKey: Guid(8a21e170508519a45883413b05dc9536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 2.fbx using Guid(8a21e170508519a45883413b05dc9536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '681b0d5e4703120d4d9d4a21b91724f6') in 0.043471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Poor House.fbx
+  artifactKey: Guid(9dbb2a77e9900fd49938cce751b54efc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Poor House.fbx using Guid(9dbb2a77e9900fd49938cce751b54efc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1495dac6d70de09d105573cbb21c4b18') in 0.036893 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof L.fbx
+  artifactKey: Guid(83b9f730b65d82640a8483bc0b996f19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Flatty Roof L.fbx using Guid(83b9f730b65d82640a8483bc0b996f19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee7cb0aa3dc450d76742c23980f8666a') in 0.068834 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000453 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 4.fbx
+  artifactKey: Guid(08d6243cfa73627418540883f6909aad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 4.fbx using Guid(08d6243cfa73627418540883f6909aad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecc1fac0aa0ad486304dd385b70b7d51') in 0.069235 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 5.fbx
+  artifactKey: Guid(2917bc3b7bd51444090f28f74dc31453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 5.fbx using Guid(2917bc3b7bd51444090f28f74dc31453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc012c506c9cfa481fe8872267df1e7b') in 0.067989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001008 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 3.fbx
+  artifactKey: Guid(90b2470ddcc94db42b106af11eeff695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 3.fbx using Guid(90b2470ddcc94db42b106af11eeff695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '892278678c46012b346ebc5872dce948') in 0.077793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 6.fbx
+  artifactKey: Guid(25bbbecbb64520a48949f671d6f41a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 6.fbx using Guid(25bbbecbb64520a48949f671d6f41a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2a7cc4463c6c60cad609e67b56199c4') in 0.069651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Gas Station.fbx
+  artifactKey: Guid(58b03f5d120fba4408acbbb73fbd85af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Gas Station.fbx using Guid(58b03f5d120fba4408acbbb73fbd85af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1f41457fc0839a699447cf76f5facb2') in 0.068224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 1.fbx
+  artifactKey: Guid(408b34735d94be641a4961718f2ef7d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Buildings Suburb/FBX/Suburb House 1.fbx using Guid(408b34735d94be641a4961718f2ef7d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c7c6cd265e9fd99cb5819c52f770374') in 0.077568 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.324057 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Characters/FBX
+  artifactKey: Guid(4c33ea62b91c27a45951fadaf14320ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Characters/FBX using Guid(4c33ea62b91c27a45951fadaf14320ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb14d2d1f062a9c7a9779d2924aa286f') in 0.019931 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.298291 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Characters/FBX/Citizen Man
+  artifactKey: Guid(d1b64878cef6f2349ab70537ac7bbb9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Characters/FBX/Citizen Man using Guid(d1b64878cef6f2349ab70537ac7bbb9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dd48d3ac0f78fd19f0237555c08561d') in 0.018846 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.170723 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Characters/FBX/Citizen Man/Citizen Man.fbx
+  artifactKey: Guid(b792ec489b155444fa5c62d32b33a507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Characters/FBX/Citizen Man/Citizen Man.fbx using Guid(b792ec489b155444fa5c62d32b33a507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2c120189eaa8314db1ed7a7f9827d2c') in 0.068401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.231885 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX
+  artifactKey: Guid(9ca597e86da5e2c42aa33060112ff7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX using Guid(9ca597e86da5e2c42aa33060112ff7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1512f63bb11575183749a5a15e9b3ea') in 0.018934 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.042739 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Ambulance.fbx
+  artifactKey: Guid(ebf80138c78d07d409d4ee1333ee73e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Ambulance.fbx using Guid(ebf80138c78d07d409d4ee1333ee73e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efc1d2950fe2e753e12c6ad6df85fe9f') in 0.043947 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Cement Truck.fbx
+  artifactKey: Guid(bc87d5aa45064f1479d7952dfef092f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Cement Truck.fbx using Guid(bc87d5aa45064f1479d7952dfef092f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ceb56cf5805d4c0985da9d1cde7ca3de') in 0.035511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Car 1.fbx
+  artifactKey: Guid(0bef0b025c638b1419bc74a6379b8c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Car 1.fbx using Guid(0bef0b025c638b1419bc74a6379b8c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3280e901416c9e62020cabe7bd88b7f') in 0.038897 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Limousine.fbx
+  artifactKey: Guid(e07b4469b92a5bb4c8725efed28eef13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Limousine.fbx using Guid(e07b4469b92a5bb4c8725efed28eef13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82508d6498658bfe0336435ec02d3ea8') in 0.048206 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Jeep.fbx
+  artifactKey: Guid(b5bba4a57c7042d4bb49314660ae223e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Jeep.fbx using Guid(b5bba4a57c7042d4bb49314660ae223e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '985ed189f6bf4c7570b0e2ee5287fc17') in 0.030753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Police Car.fbx
+  artifactKey: Guid(2a6d43d73e3004d4d87bec5c9b2d378e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Police Car.fbx using Guid(2a6d43d73e3004d4d87bec5c9b2d378e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7622cc1b4c28ba090e5051e8e9a5e376') in 0.040644 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/School Buss.fbx
+  artifactKey: Guid(dbb319b33282b034397ed914455e3abd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/School Buss.fbx using Guid(dbb319b33282b034397ed914455e3abd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cef9edc1ce6964349487e55aa1ad478f') in 0.057645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Lorry.fbx
+  artifactKey: Guid(c13f79a206dce3743953567516e3bca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Low Poly Vehicles/FBX/Lorry.fbx using Guid(c13f79a206dce3743953567516e3bca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34149c77a0e66741a7e7717cc961d955') in 0.037417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.494900 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Scenes/Main Example Scene
+  artifactKey: Guid(34d3e150d45a84543b93d8124969c1bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Scenes/Main Example Scene using Guid(34d3e150d45a84543b93d8124969c1bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a43aa4ed42b952fa1314f91c3f8d07d4') in 0.029808 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.087985 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Scenes/Main Example Scene/LightingData.asset
+  artifactKey: Guid(5fefda3a4c9ae994cb1e6668d3fe5b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Scenes/Main Example Scene/LightingData.asset using Guid(5fefda3a4c9ae994cb1e6668d3fe5b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Lighting data asset ‘LightingData’ is incompatible with the current Unity version. Please use Generate Lighting to rebuild the lighting data. Realtime Global Illumination cannot be used until the lighting data is rebuilt.
+Lighting data asset ‘LightingData’ is incompatible with the current Unity version because the scene it was baked for was not serialized. Please use Generate Lighting to rebuild the lighting data, or assign the target scene to the Lighting Data Asset in the inspector.
+ -> (artifact id: 'be2acaec1db1d332efe113ef0ffa2f2a') in 0.080310 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Low Poly Buildings Full Pack/Scenes/Main Example Scene/ReflectionProbe-0.exr
+  artifactKey: Guid(520dc570e82025c41b21205c6249f848) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Buildings Full Pack/Scenes/Main Example Scene/ReflectionProbe-0.exr using Guid(520dc570e82025c41b21205c6249f848) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '177422157fd89effe6e724519e2371de') in 0.076164 seconds 
