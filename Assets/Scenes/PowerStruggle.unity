@@ -624,7 +624,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
@@ -633,14 +632,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -711,10 +702,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2146745436}
-  distance: 30
+  initialDistance: 10
   angle: 60
-  smoothTime: 0
-  currentVelocity: {x: 0, y: 0, z: 0}
+  minDistance: 7
+  maxDistance: 30
+  zoomSpeed: 30
+  zoomSensitivity: 1
+  distance: 16
+  zoomLevel: 16
 --- !u!1001 &1161016340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1039,7 +1034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e32cbb9f5b4e04ea2ecb34c6722738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableMouseControl: 1
+  mouseControl: 0
   speed: 50
   xMin: -10
   xMax: 10

@@ -49,9 +49,9 @@ public class CameraGuide : MonoBehaviour
 
     void Update()
     {
+        // TODO: possibly implement inertial drag
         if (mouseControl == MouseControlType.Drag)
         {
-
             if (Input.GetMouseButtonDown(0))
             {
                 dragOrigin = GetPointAtScreenPosition();

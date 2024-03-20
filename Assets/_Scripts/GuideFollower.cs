@@ -4,15 +4,31 @@ public class GuideFollower : MonoBehaviour
 {
     [Header("Inscribed")]
     public GameObject target;
-    public float distance = 10.0f;
+    public float initialDistance = 10.0f;
     public float angle = 45.0f;
-    // public float minDistance = 5.0f;
-
+    public float minDistance = 5.0f;
+    public float maxDistance = 20.0f;
+    public float zoomSpeed = 10.0f;
+    public float zoomSensitivity = 10.0f;
 
     // public float smoothTime = 0.05f;
 
-    // [Header("Dynamic")]
-    // public Vector3 currentVelocity;
+    [Header("Dynamic")]
+    public float distance;
+    public float zoomLevel;
+
+    void Start()
+    {
+        zoomLevel = initialDistance;
+    }
+
+    void Update()
+    {
+        zoomLevel -= Input.mouseScrollDelta.y * zoomSensitivity;
+        zoomLevel = Mathf.Clamp(zoomLevel, minDistance, maxDistance);
+
+        distance = Mathf.MoveTowards(distance, zoomLevel, zoomSpeed * Time.deltaTime);
+    }
 
     void LateUpdate()
     {
