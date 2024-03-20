@@ -20,6 +20,7 @@ public class GuideFollower : MonoBehaviour
     void Start()
     {
         zoomLevel = initialDistance;
+        distance = initialDistance;
     }
 
     void Update()
