@@ -29,12 +29,12 @@ public class CameraGuide : MonoBehaviour
         return pos;
     }
 
-    private Vector3 GetPointAtScreenPosition()
+    public Vector3 GetPointAtScreenPosition()
     {
         return GetPointAtScreenPosition(Input.mousePosition);
     }
 
-    private Vector3 GetPointAtScreenPosition(Vector3 screenPosition)
+    public Vector3 GetPointAtScreenPosition(Vector3 screenPosition)
     {
         Ray ray = Camera.main.ScreenPointToRay(screenPosition);
 
