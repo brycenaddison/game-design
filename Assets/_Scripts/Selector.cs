@@ -8,12 +8,15 @@ public class Selector : MonoBehaviour
 {
     public Color highlightColor;
     public Color selectionColor;
+    public Color baseColor;
 
     public GameObject Highlighted
     {
         get { return _highlighted; }
         private set
         {
+            SetColor(_highlighted, baseColor);
+            SetColor(value, highlightColor);
             _highlighted = value;
         }
     }
@@ -23,7 +26,14 @@ public class Selector : MonoBehaviour
         get { return _selected; }
         private set
         {
+            if (value == Highlighted && value != null)
+            {
+                Highlighted = null;
+            }
+            SetColor(_selected, baseColor);
+            SetColor(value, selectionColor);
             _selected = value;
+
         }
     }
 
@@ -32,6 +42,15 @@ public class Selector : MonoBehaviour
 
     [SerializeField]
     private GameObject _selected;
+
+    private void SetColor(GameObject go, Color color)
+    {
+        if (go == null) return;
+
+        Material mat = go.GetComponent<MeshRenderer>().material;
+
+        mat.SetColor("_Color", color);
+    }
 
     void Update()
     {
@@ -58,7 +77,6 @@ public class Selector : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Selected = Highlighted;
-            Highlighted = null;
         }
     }
 }
