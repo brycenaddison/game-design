@@ -47,9 +47,13 @@ public class Selector : MonoBehaviour
     {
         if (go == null) return;
 
-        Material mat = go.GetComponent<MeshRenderer>().material;
+        MeshRenderer[] renderers = go.GetComponentsInChildren<MeshRenderer>();
 
-        mat.SetColor("_Color", color);
+        foreach (MeshRenderer renderer in renderers)
+        {
+            renderer.material.SetColor("_Color", color);
+        }
+
     }
 
     void Update()
