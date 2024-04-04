@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
-public class Balance : MonoBehaviour
+public class FreePower : MonoBehaviour
 {
     private AssetOwner player;
     private Text text;
@@ -20,6 +20,6 @@ public class Balance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Free Power: " + player.FreePower + " / Profit: " + player.Profit;
+        text.text = "Free Power: " + player.FreePower;
     }
 }
