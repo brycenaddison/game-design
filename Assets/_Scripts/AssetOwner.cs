@@ -6,6 +6,7 @@ using UnityEngine;
 public class AssetOwner : MonoBehaviour
 {
     public List<Asset> assets;
+    public string ownerName;
 
     public float PowerTotal
     {
