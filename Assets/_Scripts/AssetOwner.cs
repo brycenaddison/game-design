@@ -8,6 +8,13 @@ public class AssetOwner : MonoBehaviour
     public List<Asset> assets;
     public string ownerName;
 
+    void Start()
+    {
+        foreach (Asset asset in assets)
+        {
+            Claim(asset);
+        }
+    }
     public float PowerTotal
     {
         get
@@ -97,7 +104,10 @@ public class AssetOwner : MonoBehaviour
             oldOwner.Unclaim(asset);
         }
 
-        assets.Add(asset);
+        if (!assets.Contains(asset))
+        {
+            assets.Add(asset);
+        }
         asset.Owner = this;
     }
 

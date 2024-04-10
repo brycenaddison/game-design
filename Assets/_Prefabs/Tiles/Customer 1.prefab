@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa8f23d89049214d9bb6b3610cf102a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  assetName: Customer
   Draw: 10
   Payment: 10
 --- !u!65 &4890763854397221361
