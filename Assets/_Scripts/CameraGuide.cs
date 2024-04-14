@@ -46,9 +46,24 @@ public class CameraGuide : MonoBehaviour
         return new Vector3();
     }
 
+    void MoveToAsset(GameObject asset)
+    {
+        transform.position = new Vector3(asset.transform.position.x, 0, asset.transform.position.z);
+    }
+
 
     void Update()
     {
+        if (Input.GetButtonDown("Jump"))
+        {
+            GameObject selected = Camera.main.GetComponent<Selector>().Selected;
+            if (selected)
+            {
+                MoveToAsset(selected);
+                return;
+            }
+        }
+
         // TODO: possibly implement inertial drag
         if (mouseControl == MouseControlType.Drag)
         {

@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f924138d80f91140b2f68bf36f54182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  assetName: Solar Field
   Upkeep: 5
   PowerGenerated: 10
 --- !u!1001 &2611674170335553258
