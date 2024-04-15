@@ -7,6 +7,10 @@ public class AssetOwner : MonoBehaviour
 {
     public List<Asset> assets;
     public string ownerName;
+    public float initialBalanace = 10000;
+
+    [Header("Read Only")]
+    public float balance;
 
     void Start()
     {
@@ -14,7 +18,10 @@ public class AssetOwner : MonoBehaviour
         {
             Claim(asset);
         }
+        balance = initialBalanace;
+        Camera.main.GetComponent<GameTime>().RegisterOnHour(0, () => balance += Profit, 0);
     }
+
     public float PowerTotal
     {
         get

@@ -9,17 +9,14 @@ public class Profit : MonoBehaviour
     private AssetOwner player;
     private Text text;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<Text>();                                      // d
         player = Camera.main.GetComponent<AssetOwner>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        text.text = "Profit: " + player.Profit;
+        text.text = $"Balance: ${player.balance} ({player.Profit}/day)";
     }
 }
