@@ -11,12 +11,15 @@ public class GameTime : MonoBehaviour
     {
         SLOW,
         MED,
-        FAST
+        FAST,
+        SKIP,
     }
-    
-    public float slowHoursPerSecond = 2f;
+
+    public float slowHoursPerSecond = 0.1f;
     public float medHoursPerSecond = 0.5f;
-    public float fastHoursPerSecond = 0.1f;
+    public float fastHoursPerSecond = 2f;
+    public float skipHoursPerSecond = 8f;
+
     public Speed speed = Speed.MED;
     public static DateTime startDate = new DateTime(2000, 1, 1, 0, 0, 0);
     public static int minuteInterval = 15;
@@ -37,7 +40,7 @@ public class GameTime : MonoBehaviour
 
         public void AddEvent(Action callback, int priority)
         {
-            events.Add(priority, callback);
+            events.Add(-1 * priority, callback);
         }
 
         public void ExecuteEvents()
@@ -58,6 +61,17 @@ public class GameTime : MonoBehaviour
         {
             events[i] = new DailyEvents();
         }
+        RegisterOnHour(
+            0,
+            () =>
+            {
+                if (speed == Speed.SKIP)
+                {
+                    speed = Speed.MED;
+                }
+            },
+            1000
+        );
     }
 
     void Update()
@@ -73,7 +87,7 @@ public class GameTime : MonoBehaviour
         }
 
         float lastHour = Mathf.Floor(hour);
-        
+
         switch (speed)
         {
             case Speed.SLOW:
@@ -85,13 +99,16 @@ public class GameTime : MonoBehaviour
             case Speed.FAST:
                 hour += fastHoursPerSecond * Time.deltaTime;
                 break;
+            case Speed.SKIP:
+                hour += skipHoursPerSecond * Time.deltaTime;
+                break;
         }
 
         float thisHour = Mathf.Floor(hour);
 
         if (thisHour != lastHour)
         {
-            events[(int) thisHour % 24].ExecuteEvents();
+            events[(int)thisHour % 24].ExecuteEvents();
         }
     }
 
@@ -118,7 +135,7 @@ public class GameTime : MonoBehaviour
 
     public int GetMinute()
     {
-        return (int) Mathf.Floor(CurrentDate.Minute / minuteInterval) * minuteInterval;
+        return (int)Mathf.Floor(CurrentDate.Minute / minuteInterval) * minuteInterval;
     }
 
     public String GetDateString()
@@ -139,5 +156,10 @@ public class GameTime : MonoBehaviour
     public void SetMed()
     {
         speed = Speed.MED;
+    }
+
+    public void Skip()
+    {
+        speed = Speed.SKIP;
     }
 }
