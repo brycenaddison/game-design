@@ -2427,9 +2427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aca78e8163c4464fb62b2bad9957e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowHoursPerSecond: 2
+  slowHoursPerSecond: 0.1
   medHoursPerSecond: 0.5
-  fastHoursPerSecond: 0.1
+  fastHoursPerSecond: 2
   speed: 1
   hour: 0
 --- !u!1001 &985930075
@@ -3063,6 +3063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817bfd4e3355c6849a354702dba67ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  date: {fileID: 513625978}
+  time: {fileID: 1895171141}
 --- !u!1 &1432464367
 GameObject:
   m_ObjectHideFlags: 0
@@ -3963,6 +3965,11 @@ MonoBehaviour:
   OffScreenX: 150
   powerAssetColor: {r: 0, g: 0.6509434, b: 0, a: 1}
   customerAssetColor: {r: 0, g: 0, b: 0.6509804, a: 1}
+  assetName: {fileID: 1476247517}
+  type: {fileID: 1820372177}
+  owner: {fileID: 1670182124}
+  power: {fileID: 1875457917}
+  money: {fileID: 533560600}
 --- !u!114 &1673876346
 MonoBehaviour:
   m_ObjectHideFlags: 0

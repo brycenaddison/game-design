@@ -10,13 +10,20 @@ public class ButtonManager : MonoBehaviour
     public GameObject med;
     public GameObject fast;
 
+    private Button slowButton;
+    private Button medButton;
+    private Button fastButton;
+
+    private void Start()
+    {
+        slowButton = slow.GetComponent<Button>();
+        medButton = med.GetComponent<Button>();
+        fastButton = fast.GetComponent<Button>();
+    }
+
     // doesn't seem very efficient
     void Update()
     {
-        Button slowButton = slow.GetComponent<Button>();
-        Button medButton = med.GetComponent<Button>();
-        Button fastButton = fast.GetComponent<Button>();
-
         switch (Camera.main.GetComponent<GameTime>().speed)
         {
             case GameTime.Speed.SLOW:

@@ -12,6 +12,12 @@ public class SelectedObjectUIManager : MonoBehaviour
     public Color powerAssetColor;
     public Color customerAssetColor;
 
+    public GameObject assetName;
+    public GameObject type;
+    public GameObject owner;
+    public GameObject power;
+    public GameObject money;
+
     private Text nameText;
     private Text typeText;
     private Text ownerText;
@@ -23,11 +29,11 @@ public class SelectedObjectUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nameText = GameObject.Find("AssetInfoName").GetComponent<Text>();
-        typeText = GameObject.Find("AssetInfoType").GetComponent<Text>();
-        ownerText = GameObject.Find("AssetInfoOwner").GetComponent<Text>();
-        powerText = GameObject.Find("AssetInfoPower").GetComponent<Text>();
-        moneyText = GameObject.Find("AssetInfoMoney").GetComponent<Text>();
+        nameText = assetName.GetComponent<Text>();
+        typeText = type.GetComponent<Text>();
+        ownerText = owner.GetComponent<Text>();
+        powerText = power.GetComponent<Text>();
+        moneyText = money.GetComponent<Text>();
         UpdateVisibility();
     }
 

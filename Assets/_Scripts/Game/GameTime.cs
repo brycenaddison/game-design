@@ -108,7 +108,7 @@ public class GameTime : MonoBehaviour
     private DateTime CurrentDate => startDate.AddHours(hour);
     public int GetHour()
     {
-        return CurrentDate.Hour % 12;
+        return CurrentDate.Hour % 12 == 0 ? 12 : CurrentDate.Hour % 12;
     }
 
     public string GetAmPm()
