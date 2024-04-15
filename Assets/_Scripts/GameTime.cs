@@ -61,6 +61,11 @@ public class GameTime : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown("Cancel"))
+        {
+            paused = !paused;
+        }
+
         if (paused)
         {
             return;
@@ -87,11 +92,6 @@ public class GameTime : MonoBehaviour
         {
             events[(int) thisHour % 24].ExecuteEvents();
         }
-    }
-
-    public void TogglePause()
-    {
-        paused = !paused;
     }
 
     public bool GetPaused()
