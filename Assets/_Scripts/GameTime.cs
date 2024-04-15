@@ -21,7 +21,8 @@ public class GameTime : MonoBehaviour
     public static DateTime startDate = new DateTime(2000, 1, 1, 0, 0, 0);
     public static int minuteInterval = 15;
 
-    private float hour;
+    [Header("Read Only")]
+    public float hour;
     private Boolean paused;
     private DailyEvents[] events;
 
@@ -61,7 +62,7 @@ public class GameTime : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("Cancel"))
+        if (Input.GetButtonDown("Cancel"))
         {
             paused = !paused;
         }
