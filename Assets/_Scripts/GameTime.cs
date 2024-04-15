@@ -125,4 +125,19 @@ public class GameTime : MonoBehaviour
     {
         return CurrentDate.ToShortDateString();
     }
+
+    public void SetFast()
+    {
+        speed = Speed.FAST;
+    }
+
+    public void SetSlow()
+    {
+        speed = Speed.SLOW;
+    }
+
+    public void SetMed()
+    {
+        speed = Speed.MED;
+    }
 }
