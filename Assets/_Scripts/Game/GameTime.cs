@@ -79,6 +79,7 @@ public class GameTime : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         {
             paused = !paused;
+            Time.timeScale = paused ? 0f : 1f;
         }
 
         if (paused)
