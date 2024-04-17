@@ -20,6 +20,12 @@ public class AssetOwner : MonoBehaviour
         {
             Claim(asset);
         }
+
+        if (isPlayable)
+        {
+            ownerName = StaticProperties.Name;
+        }
+
         balance = initialBalanace;
         GameTime gameTime = Camera.main.GetComponent<GameTime>();
         gameTime.RegisterOnHour(0, () =>
