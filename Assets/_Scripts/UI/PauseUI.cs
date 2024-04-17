@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class PauseUI : MonoBehaviour
 {
+    public bool isGameOver;
     private bool previousState;
     private GameTime gameTime;
 
     void Start()
     {
         gameTime = Camera.main.GetComponent<GameTime>();
-        previousState = gameTime.GetPaused();
+        previousState = Visible();
         SetVisible(previousState);
     }
 
+    private bool Visible()
+    {
+        return isGameOver ? gameTime.IsGameOver() : gameTime.GetPaused();
+
+    }
 
     private void SetVisible(bool paused)
     {
@@ -25,7 +31,7 @@ public class PauseUI : MonoBehaviour
 
     void Update()
     {
-        bool newState = gameTime.GetPaused();
+        bool newState = Visible();
         if (newState != previousState)
         {
 
