@@ -139,4 +139,14 @@ public class AssetOwner : MonoBehaviour
         asset.Owner = null;
         assets.Remove(asset);
     }
+
+    public void Purchase(IPurchasable p)
+    {
+        balance -= p.Cost;
+    }
+
+    public bool CanAfford(IPurchasable p)
+    {
+        return balance >= p.Cost;
+    }
 }
