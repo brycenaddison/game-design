@@ -54,6 +54,8 @@ public class CameraGuide : MonoBehaviour
 
     void Update()
     {
+        if (Camera.main.GetComponent<GameTime>().GetPaused()) return;
+
         if (Input.GetButtonDown("Jump"))
         {
             GameObject selected = Camera.main.GetComponent<Selector>().Selected;

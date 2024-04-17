@@ -27,6 +27,7 @@ public class GameTime : MonoBehaviour
     [Header("Read Only")]
     public float hour;
     private Boolean paused;
+    private Boolean gameOver;
     private DailyEvents[] events;
 
     private class DailyEvents
@@ -56,6 +57,7 @@ public class GameTime : MonoBehaviour
     {
         hour = 0;
         paused = false;
+        gameOver = false;
         events = new DailyEvents[24];
         for (int i = 0; i < 24; i++)
         {
@@ -76,9 +78,12 @@ public class GameTime : MonoBehaviour
 
     void Update()
     {
+        if (gameOver) return;
+
         if (Input.GetButtonDown("Cancel"))
         {
             paused = !paused;
+            Time.timeScale = paused ? 0f : 1f;
         }
 
         if (paused)
@@ -117,6 +122,17 @@ public class GameTime : MonoBehaviour
         return paused;
     }
 
+    public void TriggerGameOver()
+    {
+        gameOver = true;
+        paused = true;
+    }
+
+    public bool IsGameOver()
+    {
+        return gameOver;
+    }
+
     public void RegisterOnHour(int hour, Action callback, int priority)
     {
         events[hour % 24].AddEvent(callback, priority);
@@ -138,7 +154,7 @@ public class GameTime : MonoBehaviour
         return (int)Mathf.Floor(CurrentDate.Minute / minuteInterval) * minuteInterval;
     }
 
-    public String GetDateString()
+    public string GetDateString()
     {
         return CurrentDate.ToShortDateString();
     }

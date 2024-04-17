@@ -43,6 +43,13 @@ public class Selector : MonoBehaviour
     [SerializeField]
     private GameObject _selected;
 
+    private GameTime gameTime;
+
+    void Start()
+    {
+        gameTime = Camera.main.GetComponent<GameTime>();
+    }
+
     private void SetColor(GameObject go, Color color)
     {
         if (go == null) return;
@@ -58,6 +65,8 @@ public class Selector : MonoBehaviour
 
     void Update()
     {
+        if (gameTime.GetPaused()) return;
+
         if (Highlighted != null)
         {
             Highlighted = null;
