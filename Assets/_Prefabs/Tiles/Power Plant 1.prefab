@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8798829054895709662}
   - component: {fileID: 8798829054892809726}
   - component: {fileID: 8798829054893809470}
-  - component: {fileID: 391594091497234295}
   - component: {fileID: 3188550872476016591}
+  - component: {fileID: 1755081077}
   m_Layer: 0
   m_Name: Power Plant 1
   m_TagString: Selectable
@@ -83,21 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &391594091497234295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8798829054895997438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f924138d80f91140b2f68bf36f54182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assetName: Power Plant
-  Upkeep: 20
-  PowerGenerated: 50
 --- !u!65 &3188550872476016591
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,3 +96,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.292937, y: 8.812182, z: 6.6185436}
   m_Center: {x: -0.00000023841858, y: 4.4062266, z: 0.6627703}
+--- !u!114 &1755081077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798829054895997438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccc3006060d27d4b90230fce4785cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assetName: Power Station
+  Upkeep: 400
+  PowerGenerated: 20
+  _PowerUpgrades:
+  - Name: Medium Station
+    PowerAdded: 40
+    UpkeepAdded: 400
+    _cost: 5000
+  - Name: Large Station
+    PowerAdded: 100
+    UpkeepAdded: 1000
+    _cost: 10000
+  - Name: Mega Station
+    PowerAdded: 200
+    UpkeepAdded: 2000
+    _cost: 20000
+  _UpkeepUpgrades:
+  - Name: Synthetic Coal
+    PowerAdded: -10
+    UpkeepAdded: -250
+    _cost: 5000
+  - Name: Geothermal
+    PowerAdded: 0
+    UpkeepAdded: -400
+    _cost: 7500
+  - Name: Hydro Cells
+    PowerAdded: 10
+    UpkeepAdded: -500
+    _cost: 10000

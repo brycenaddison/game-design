@@ -33,7 +33,6 @@ public class Selector : MonoBehaviour
             SetColor(_selected, baseColor);
             SetColor(value, selectionColor);
             _selected = value;
-
         }
     }
 
@@ -71,6 +70,9 @@ public class Selector : MonoBehaviour
         {
             Highlighted = null;
         }
+
+        // hovering ui
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
         RaycastHit hit;
         GameObject hovered;
