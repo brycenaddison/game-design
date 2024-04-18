@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23000010918129686}
   - component: {fileID: 5273983277440683924}
   - component: {fileID: -2039864590495479432}
+  - component: {fileID: 2703366637311569075}
   m_Layer: 0
   m_Name: Basic Store
   m_TagString: Selectable
@@ -111,3 +112,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4526868, y: 1.5109259, z: 2.506319}
   m_Center: {x: -0.00000011920929, y: 0.7554583, z: -0.02681619}
+--- !u!114 &2703366637311569075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012304243196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1726c8b0a6838cb43ada10a234a557ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assetName: Store

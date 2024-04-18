@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23000011018081456}
   - component: {fileID: 1042920942908529510}
   - component: {fileID: -8182581354828758042}
+  - component: {fileID: 3220314636739146527}
   m_Layer: 0
   m_Name: Sky Scraper Medium Grey
   m_TagString: Selectable
@@ -111,3 +112,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.7051864, y: 14.746995, z: 5.9708223}
   m_Center: {x: 0, y: 7.371987, z: 0.1327616}
+--- !u!114 &3220314636739146527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013462587690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1726c8b0a6838cb43ada10a234a557ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assetName: Building

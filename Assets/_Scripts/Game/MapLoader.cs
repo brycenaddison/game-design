@@ -15,6 +15,8 @@ public class MapLoader : MonoBehaviour
     public GameObject prefab8;
     public GameObject prefab9;
     
+    public AssetOwner[] owners;
+
     private Dictionary<char, GameObject> mapDict;
 
     void Awake() {
@@ -47,6 +49,8 @@ public class MapLoader : MonoBehaviour
     {
         int width = lines[0].Length;
         int height = lines.Length;
+        int halfWidth = width / 2;
+        int halfHeight = height / 2;
 
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
@@ -56,7 +60,22 @@ public class MapLoader : MonoBehaviour
                 Vector3 position = (c == '9') ? new Vector3(-40 + 7 * x, 0.01f, 60 + -7 * y) : new Vector3(-40 + 7 * x, 0, 60 + -7 * y);
                 GameObject newObj = Instantiate(prefab, position, rotation);
                 newObj.transform.SetParent(map.transform, false);
+
+                Asset asset = newObj.GetComponent<Asset>();
+
+                if (asset != null) {
+                    int ownerIndex = getOwnerIndex(x < halfWidth, y < halfHeight);
+                    owners[ownerIndex].Claim(asset);
+                }
             }
         }
+    }
+
+    int getOwnerIndex(bool isLeft, bool isTop) {
+        if (isLeft && isTop) return 0;
+        if (!isLeft && isTop) return 1;
+        if (!isLeft && !isTop) return 2;
+        if (isLeft && !isTop) return 3;     // player (camera)
+        return -1;
     }
 }
