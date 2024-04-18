@@ -131,14 +131,6 @@ public class SelectedObjectUIManager : MonoBehaviour
         nameText.text = asset.assetName;
         typeText.text = "Power Generator";
         typeText.color = powerAssetColor;
-        if (asset.Owner == null)
-        {
-            ownerText.text = "No owner";
-            moneyText.text = "";
-            powerText.text = "";
-            Debug.LogWarning("Power station needs an owner");
-            return;
-        }
         ownerText.text = "Owner: " + asset.Owner.ownerName;
         moneyText.text = "Expense per day: $" + asset.Upkeep;
         powerText.text = "Power generated: " + asset.PowerGenerated + " units";

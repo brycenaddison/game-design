@@ -6,16 +6,21 @@ using UnityEngine;
 
 public class AssetOwner : MonoBehaviour
 {
-    public string ownerName = "Default Name";
-    public Boolean isPlayable = false;
-    public float initialBalanace = 10000;
+    public List<Asset> assets;
+    public string ownerName;
+    public Boolean isPlayable;
+    public float initialBalanace = 1000;
 
     [Header("Read Only")]
-    public List<Asset> assets;
     public float balance;
 
     void Start()
     {
+        foreach (Asset asset in assets)
+        {
+            Claim(asset);
+        }
+
         if (isPlayable)
         {
             ownerName = StaticProperties.Name;
@@ -115,11 +120,6 @@ public class AssetOwner : MonoBehaviour
 
     public void Claim(Asset asset)
     {
-        if (asset == null)
-        {
-            Debug.LogWarning("Null asset tried to be claimed");
-            return;
-        }
         AssetOwner oldOwner = asset.Owner;
         if (oldOwner == this) return;
         if (oldOwner != null)

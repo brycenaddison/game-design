@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MapLoader : MonoBehaviour
 {
-    public List<string> aiNames = new List<string> { "Jim Co.", "Stacy Co.", "Phil Co." };
     public GameObject prefab0;
     public GameObject prefab1;
     public GameObject prefab2;
@@ -17,7 +16,6 @@ public class MapLoader : MonoBehaviour
     public GameObject prefab9;
     
     private Dictionary<char, GameObject> mapDict;
-    private List<UpgradablePowerStation> powerStations;
 
     void Awake() {
         mapDict = new Dictionary<char, GameObject>(){
@@ -36,7 +34,6 @@ public class MapLoader : MonoBehaviour
 
     void Start()
     {
-        powerStations = new List<UpgradablePowerStation>();
         GameObject map = new GameObject("Map");
         LoadMap(System.IO.File.ReadAllLines("Assets/Maps/map1.txt"), map);
     }
@@ -59,23 +56,6 @@ public class MapLoader : MonoBehaviour
                 Vector3 position = (c == '9') ? new Vector3(-40 + 7 * x, 0.01f, 60 + -7 * y) : new Vector3(-40 + 7 * x, 0, 60 + -7 * y);
                 GameObject newObj = Instantiate(prefab, position, rotation);
                 newObj.transform.SetParent(map.transform, false);
-
-                // check if prefab is power station
-                UpgradablePowerStation powerStation = newObj.GetComponent<UpgradablePowerStation>();
-                if (powerStation != null)
-                {
-                    // assign first powerstation to player
-                    if (powerStations.Count == 0)
-                    {
-                        Camera.main.GetComponent<AssetOwner>().Claim(powerStation);
-                    } else
-                    {
-                        AssetOwner ai = powerStation.gameObject.AddComponent<AssetOwner>();
-                        ai.ownerName = aiNames[powerStations.Count - 1];
-                    }
-
-                    powerStations.Add(powerStation);
-                }
             }
         }
     }
