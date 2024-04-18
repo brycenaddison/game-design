@@ -22,6 +22,9 @@ public class SelectedObjectUIManager : MonoBehaviour
     public GameObject powerButton;
     public GameObject bidding;
     public GameObject drop;
+    public GameObject bidInput;
+    public GameObject bidPlaceholder;
+    public GameObject bidText;
 
 
     private Text nameText;
@@ -45,9 +48,17 @@ public class SelectedObjectUIManager : MonoBehaviour
         moneyText = money.GetComponent<Text>();
         upkeepButton.SetActive(false);
         powerButton.SetActive(false);
-        bidding.SetActive(false);
+        SetBidding(false);
         drop.SetActive(false);
         UpdateVisibility();
+    }
+
+    void SetBidding(bool visible)
+    {
+        bidding.SetActive(visible);
+        bidInput.GetComponent<Image>().enabled = visible;
+        bidPlaceholder.SetActive(visible);
+        bidText.SetActive(visible);
     }
 
     void UpdateVisibility()
@@ -69,8 +80,7 @@ public class SelectedObjectUIManager : MonoBehaviour
             Asset asset = selected.GetComponent<Asset>();
 
             SetUpgradeButtons(asset);
-            bidding.SetActive(false);
-            drop.SetActive(false);
+            SetBidding(false);
 
             if (asset is PowerAsset powerAsset)
             {
@@ -79,7 +89,7 @@ public class SelectedObjectUIManager : MonoBehaviour
             else if (asset is CustomerAsset customerAsset)
             {
                 SetCustomerText(customerAsset);
-                bidding.SetActive(true);
+                SetBidding(true);
                 bidding.GetComponent<CustomerBidding>().SetAsset(customerAsset);
 
                 if (customerAsset.IsBiddedOnBy(Camera.main.GetComponent<AssetOwner>()))
