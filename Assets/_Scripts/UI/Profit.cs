@@ -17,6 +17,6 @@ public class Profit : MonoBehaviour
 
     void Update()
     {
-        text.text = $"Balance: ${player.balance} ({player.Profit}/day)";
+        text.text = $"Balance: ${player.balance} ({player.Profit}/year)";
     }
 }

@@ -8,8 +8,9 @@ public class AssetOwner : MonoBehaviour
 {
     public List<Asset> assets;
     public string ownerName;
+    public int id;
     public Boolean isPlayable;
-    public float initialBalanace = 10000;
+    public float initialBalanace = 1000;
 
     [Header("Read Only")]
     public float balance;
@@ -21,21 +22,23 @@ public class AssetOwner : MonoBehaviour
             Claim(asset);
         }
 
+        GameTime gameTime = Camera.main.GetComponent<GameTime>();
+
         if (isPlayable)
         {
             ownerName = StaticProperties.Name;
         }
 
         balance = initialBalanace;
-        GameTime gameTime = Camera.main.GetComponent<GameTime>();
+
         gameTime.RegisterOnMonth(1, () =>
         {
             balance += Profit;
             if (balance < 0)
             {
-                if (isPlayable) gameTime.TriggerGameOver();
+                if (isPlayable) gameTime.TriggerGameOver(); // need to have AI drop assets
             }
-        }, 0);
+        }, id);
     }
 
     public float PowerTotal
