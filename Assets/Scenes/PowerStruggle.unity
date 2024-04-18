@@ -3498,18 +3498,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 238562859, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
-      propertyPath: m_ContentType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 238562859, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
-      propertyPath: m_KeyboardType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 238562859, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
-      propertyPath: m_CharacterValidation
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 793920457291670861, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
