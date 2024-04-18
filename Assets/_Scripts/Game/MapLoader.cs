@@ -15,10 +15,10 @@ public class MapLoader : MonoBehaviour
     public GameObject prefab8;
     public GameObject prefab9;
     
-    private Dictionary<char, GameObject> map;
+    private Dictionary<char, GameObject> mapDict;
 
     void Awake() {
-        map = new Dictionary<char, GameObject>(){
+        mapDict = new Dictionary<char, GameObject>(){
             {'0', prefab0},
             {'1', prefab1},
             {'2', prefab2},
@@ -34,7 +34,8 @@ public class MapLoader : MonoBehaviour
 
     void Start()
     {
-        LoadMap(System.IO.File.ReadAllLines("Assets/Maps/map1.txt"));
+        GameObject map = new GameObject("Map");
+        LoadMap(System.IO.File.ReadAllLines("Assets/Maps/map1.txt"), map);
     }
 
     void InstantiateRoad(GameObject prefab, Vector3 position, float yRotation) {
@@ -42,7 +43,7 @@ public class MapLoader : MonoBehaviour
         Instantiate(prefab, position, rotation);
     }
 
-    void LoadMap(string[] lines)
+    void LoadMap(string[] lines, GameObject map)
     {
         int width = lines[0].Length;
         int height = lines.Length;
@@ -50,10 +51,11 @@ public class MapLoader : MonoBehaviour
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 char c = lines[y][x];
-                GameObject prefab = map[c];
+                GameObject prefab = mapDict[c];
                 Quaternion rotation = (c == '7') ? Quaternion.Euler(0, 90, 0) : Quaternion.identity;
-                Vector3 position = (c == '9') ? new Vector3(6 * x, 0.01f, -6 * y) : new Vector3(6 * x, 0, -6 * y);
-                Instantiate(prefab, position, rotation);
+                Vector3 position = (c == '9') ? new Vector3(-40 + 7 * x, 0.01f, 60 + -7 * y) : new Vector3(-40 + 7 * x, 0, 60 + -7 * y);
+                GameObject newObj = Instantiate(prefab, position, rotation);
+                newObj.transform.SetParent(map.transform, false);
             }
         }
     }

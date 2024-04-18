@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assetName: Customer
-  Draw: 10
+  Draw: 1
   Payment: 10
 --- !u!65 &4890763854397221361
 BoxCollider:

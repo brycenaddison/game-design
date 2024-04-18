@@ -9,7 +9,7 @@ public class AssetOwner : MonoBehaviour
     public List<Asset> assets;
     public string ownerName;
     public Boolean isPlayable;
-    public float initialBalanace = 10000;
+    public float initialBalanace = 1000;
 
     [Header("Read Only")]
     public float balance;
