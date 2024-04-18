@@ -15,4 +15,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Title Screen");
     }
+
+    public static void LoadStory()
+    {
+        SceneManager.LoadScene("Story");
+    }
 }

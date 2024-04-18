@@ -12,6 +12,6 @@ public class NamePrompt : MonoBehaviour
     public void OnEnter()
     {
         StaticProperties.Name = text.GetComponent<Text>().text;
-        SceneLoader.LoadGame();
+        SceneLoader.LoadStory();
     }
 }
