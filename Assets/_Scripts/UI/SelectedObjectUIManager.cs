@@ -101,7 +101,7 @@ public class SelectedObjectUIManager : MonoBehaviour
 
     void SetUpgradeButtons(Asset asset)
     {
-        if (asset is UpgradablePowerStation upgradablePowerStation)
+        if (asset is UpgradablePowerStation upgradablePowerStation && asset.CurrentOwner == Camera.main.GetComponent<AssetOwner>())
         {
             UpgradablePowerStation.PowerStationUpgrade? powerUpgrade = upgradablePowerStation.GetUpgrade(UpgradablePowerStation.UpgradeType.Power);
             UpgradablePowerStation.PowerStationUpgrade? upkeepUpgrade = upgradablePowerStation.GetUpgrade(UpgradablePowerStation.UpgradeType.Upkeep);
