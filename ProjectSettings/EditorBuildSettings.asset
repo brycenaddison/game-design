@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Title Screen.unity
     guid: 822a8b62cf7f58748aacdb3b24c08d92
   - enabled: 1
-    path: Assets/Scenes/PowerStruggle.unity
+    path: Assets/Scenes/PowerStruggleOld.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Story.unity
