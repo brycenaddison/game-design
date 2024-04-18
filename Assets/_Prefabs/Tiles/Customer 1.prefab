@@ -97,7 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assetName: Customer
   Draw: 10
-  Payment: 10
+  InitialPayment: 20
+  MaxPayment: 5000
 --- !u!65 &4890763854397221361
 BoxCollider:
   m_ObjectHideFlags: 0
