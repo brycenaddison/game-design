@@ -1843,12 +1843,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aca78e8163c4464fb62b2bad9957e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowHoursPerSecond: 0.1
-  medHoursPerSecond: 0.5
-  fastHoursPerSecond: 2
-  skipHoursPerSecond: 24
+  slowMonthsPerSecond: 0.1
+  medMonthsPerSecond: 0.5
+  fastMonthsPerSecond: 2
+  skipMonthsPerSecond: 8
   speed: 1
-  hour: 0
+  month: 0
 --- !u!81 &963194232
 AudioListener:
   m_ObjectHideFlags: 0

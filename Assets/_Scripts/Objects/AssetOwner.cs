@@ -28,7 +28,7 @@ public class AssetOwner : MonoBehaviour
 
         balance = initialBalanace;
         GameTime gameTime = Camera.main.GetComponent<GameTime>();
-        gameTime.RegisterOnHour(0, () =>
+        gameTime.RegisterOnMonth(1, () =>
         {
             balance += Profit;
             if (balance < 0)
