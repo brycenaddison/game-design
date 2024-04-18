@@ -14,6 +14,7 @@ public class ButtonManager : MonoBehaviour
     private Button medButton;
     private Button fastButton;
     private Button skipButton;
+    private GameTime gameTime;
 
     private void Start()
     {
@@ -21,12 +22,23 @@ public class ButtonManager : MonoBehaviour
         medButton = med.GetComponent<Button>();
         fastButton = fast.GetComponent<Button>();
         skipButton = skip.GetComponent<Button>();
+        gameTime = Camera.main.GetComponent<GameTime>();
     }
 
     // doesn't seem very efficient
     void Update()
     {
-        switch (Camera.main.GetComponent<GameTime>().speed)
+        if (gameTime.GetPaused())
+        {
+            slowButton.interactable = false;
+            medButton.interactable = false;
+            fastButton.interactable = false;
+            skipButton.interactable = false;
+
+            return;
+        }
+
+        switch (gameTime.speed)
         {
             case GameTime.Speed.SLOW:
                 slowButton.interactable = false;

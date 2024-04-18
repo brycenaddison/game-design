@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -7,6 +8,7 @@ public class AssetOwner : MonoBehaviour
 {
     public List<Asset> assets;
     public string ownerName;
+    public Boolean isPlayable;
     public float initialBalanace = 10000;
 
     [Header("Read Only")]
@@ -18,8 +20,22 @@ public class AssetOwner : MonoBehaviour
         {
             Claim(asset);
         }
+
+        if (isPlayable)
+        {
+            ownerName = StaticProperties.Name;
+        }
+
         balance = initialBalanace;
-        Camera.main.GetComponent<GameTime>().RegisterOnHour(0, () => balance += Profit, 0);
+        GameTime gameTime = Camera.main.GetComponent<GameTime>();
+        gameTime.RegisterOnMonth(1, () =>
+        {
+            balance += Profit;
+            if (balance < 0)
+            {
+                if (isPlayable) gameTime.TriggerGameOver();
+            }
+        }, 0);
     }
 
     public float PowerTotal
@@ -31,7 +47,7 @@ public class AssetOwner : MonoBehaviour
             {
                 if (asset is PowerAsset powerAsset)
                 {
-                    totalPower += powerAsset.Upkeep;
+                    totalPower += powerAsset.PowerGenerated;
                 }
             }
             return totalPower;
@@ -122,5 +138,15 @@ public class AssetOwner : MonoBehaviour
     {
         asset.Owner = null;
         assets.Remove(asset);
+    }
+
+    public void Purchase(IPurchasable p)
+    {
+        balance -= p.Cost;
+    }
+
+    public bool CanAfford(IPurchasable p)
+    {
+        return balance >= p.Cost;
     }
 }

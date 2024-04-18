@@ -33,7 +33,6 @@ public class Selector : MonoBehaviour
             SetColor(_selected, baseColor);
             SetColor(value, selectionColor);
             _selected = value;
-
         }
     }
 
@@ -42,6 +41,13 @@ public class Selector : MonoBehaviour
 
     [SerializeField]
     private GameObject _selected;
+
+    private GameTime gameTime;
+
+    void Start()
+    {
+        gameTime = Camera.main.GetComponent<GameTime>();
+    }
 
     private void SetColor(GameObject go, Color color)
     {
@@ -58,10 +64,15 @@ public class Selector : MonoBehaviour
 
     void Update()
     {
+        if (gameTime.GetPaused()) return;
+
         if (Highlighted != null)
         {
             Highlighted = null;
         }
+
+        // hovering ui
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
         RaycastHit hit;
         GameObject hovered;

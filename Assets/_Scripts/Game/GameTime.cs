@@ -15,18 +15,18 @@ public class GameTime : MonoBehaviour
         SKIP,
     }
 
-    public float slowHoursPerSecond = 0.1f;
-    public float medHoursPerSecond = 0.5f;
-    public float fastHoursPerSecond = 2f;
-    public float skipHoursPerSecond = 8f;
+    public float slowMonthsPerSecond = 0.1f;
+    public float medMonthsPerSecond = 0.5f;
+    public float fastMonthsPerSecond = 2f;
+    public float skipMonthsPerSecond = 8f;
 
     public Speed speed = Speed.MED;
     public static DateTime startDate = new DateTime(2000, 1, 1, 0, 0, 0);
-    public static int minuteInterval = 15;
 
     [Header("Read Only")]
-    public float hour;
+    public float month;
     private Boolean paused;
+    private Boolean gameOver;
     private DailyEvents[] events;
 
     private class DailyEvents
@@ -54,15 +54,16 @@ public class GameTime : MonoBehaviour
 
     void Start()
     {
-        hour = 0;
+        month = 0;
         paused = false;
-        events = new DailyEvents[24];
-        for (int i = 0; i < 24; i++)
+        gameOver = false;
+        events = new DailyEvents[12];
+        for (int i = 0; i < 12; i++)
         {
             events[i] = new DailyEvents();
         }
-        RegisterOnHour(
-            0,
+        RegisterOnMonth(
+            1,
             () =>
             {
                 if (speed == Speed.SKIP)
@@ -76,9 +77,12 @@ public class GameTime : MonoBehaviour
 
     void Update()
     {
+        if (gameOver) return;
+
         if (Input.GetButtonDown("Cancel"))
         {
             paused = !paused;
+            Time.timeScale = paused ? 0f : 1f;
         }
 
         if (paused)
@@ -86,29 +90,29 @@ public class GameTime : MonoBehaviour
             return;
         }
 
-        float lastHour = Mathf.Floor(hour);
+        int lastMonth = Mathf.FloorToInt(month);
 
         switch (speed)
         {
             case Speed.SLOW:
-                hour += slowHoursPerSecond * Time.deltaTime;
+                month += slowMonthsPerSecond * Time.deltaTime;
                 break;
             case Speed.MED:
-                hour += medHoursPerSecond * Time.deltaTime;
+                month += medMonthsPerSecond * Time.deltaTime;
                 break;
             case Speed.FAST:
-                hour += fastHoursPerSecond * Time.deltaTime;
+                month += fastMonthsPerSecond * Time.deltaTime;
                 break;
             case Speed.SKIP:
-                hour += skipHoursPerSecond * Time.deltaTime;
+                month += skipMonthsPerSecond * Time.deltaTime;
                 break;
         }
 
-        float thisHour = Mathf.Floor(hour);
+        int thisMonth = Mathf.FloorToInt(month);
 
-        if (thisHour != lastHour)
+        if (thisMonth != lastMonth)
         {
-            events[(int)thisHour % 24].ExecuteEvents();
+            events[thisMonth % 12].ExecuteEvents();
         }
     }
 
@@ -117,30 +121,27 @@ public class GameTime : MonoBehaviour
         return paused;
     }
 
-    public void RegisterOnHour(int hour, Action callback, int priority)
+    public void TriggerGameOver()
     {
-        events[hour % 24].AddEvent(callback, priority);
+        gameOver = true;
+        paused = true;
     }
 
-    private DateTime CurrentDate => startDate.AddHours(hour);
-    public int GetHour()
+    public bool IsGameOver()
     {
-        return CurrentDate.Hour % 12 == 0 ? 12 : CurrentDate.Hour % 12;
+        return gameOver;
     }
 
-    public string GetAmPm()
+    public void RegisterOnMonth(int month, Action callback, int priority)
     {
-        return CurrentDate.Hour < 12 ? "AM" : "PM";
+        events[(month - 1) % 12].AddEvent(callback, priority);
     }
 
-    public int GetMinute()
-    {
-        return (int)Mathf.Floor(CurrentDate.Minute / minuteInterval) * minuteInterval;
-    }
+    private DateTime CurrentDate => startDate.AddMonths(Mathf.FloorToInt(month));
 
-    public String GetDateString()
+    public string GetDateString()
     {
-        return CurrentDate.ToShortDateString();
+        return CurrentDate.ToString("MMMM yyyy");
     }
 
     public void SetFast()
