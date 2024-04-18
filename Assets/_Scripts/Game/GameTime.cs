@@ -31,22 +31,24 @@ public class GameTime : MonoBehaviour
 
     private class DailyEvents
     {
-        private SortedList<int, Action> events;
+        private List<(int, Action)> events;
 
         public DailyEvents()
         {
-            events = new SortedList<int, Action>();
+            events = new List<(int, Action)>();
         }
 
         public void AddEvent(Action callback, int priority)
         {
-            events.Add(-1 * priority, callback);
+            events.Add((-1 * priority, callback));
         }
 
         public void ExecuteEvents()
         {
-            foreach (Action callback in events.Values)
+            events.Sort((a, b) => a.Item1.CompareTo(b.Item1));
+            foreach ((int, Action) tuple in events)
             {
+                Action callback = tuple.Item2;
                 callback();
             }
         }
