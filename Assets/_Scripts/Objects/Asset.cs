@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Asset : MonoBehaviour
 {
-    public AssetOwner Owner { get; set; }
+    public AssetOwner CurrentOwner { get; set; }
     public string assetName;
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,11 @@ public class SelectedObjectUIManager : MonoBehaviour
     public GameObject money;
     public GameObject upkeepButton;
     public GameObject powerButton;
+    public GameObject bidding;
+    public GameObject drop;
+    public GameObject bidInput;
+    public GameObject bidPlaceholder;
+    public GameObject bidText;
 
 
     private Text nameText;
@@ -42,7 +48,17 @@ public class SelectedObjectUIManager : MonoBehaviour
         moneyText = money.GetComponent<Text>();
         upkeepButton.SetActive(false);
         powerButton.SetActive(false);
+        SetBidding(false);
+        drop.SetActive(false);
         UpdateVisibility();
+    }
+
+    void SetBidding(bool visible)
+    {
+        bidding.SetActive(visible);
+        bidInput.GetComponent<Image>().enabled = visible;
+        bidPlaceholder.SetActive(visible);
+        bidText.SetActive(visible);
     }
 
     void UpdateVisibility()
@@ -64,20 +80,22 @@ public class SelectedObjectUIManager : MonoBehaviour
             Asset asset = selected.GetComponent<Asset>();
 
             SetUpgradeButtons(asset);
+            SetBidding(false);
 
             if (asset is PowerAsset powerAsset)
             {
                 SetPowerText(powerAsset);
-
-
-
-                if (asset is UpgradablePowerStation upgradablePowerStation)
-                {
-                }
             }
             else if (asset is CustomerAsset customerAsset)
             {
                 SetCustomerText(customerAsset);
+                SetBidding(true);
+                bidding.GetComponent<CustomerBidding>().SetAsset(customerAsset);
+
+                if (customerAsset.IsBiddedOnBy(Camera.main.GetComponent<AssetOwner>()))
+                {
+                    drop.SetActive(true);
+                }
             }
         }
         else
@@ -93,7 +111,7 @@ public class SelectedObjectUIManager : MonoBehaviour
 
     void SetUpgradeButtons(Asset asset)
     {
-        if (asset is UpgradablePowerStation upgradablePowerStation)
+        if (asset is UpgradablePowerStation upgradablePowerStation && asset.CurrentOwner == Camera.main.GetComponent<AssetOwner>())
         {
             UpgradablePowerStation.PowerStationUpgrade? powerUpgrade = upgradablePowerStation.GetUpgrade(UpgradablePowerStation.UpgradeType.Power);
             UpgradablePowerStation.PowerStationUpgrade? upkeepUpgrade = upgradablePowerStation.GetUpgrade(UpgradablePowerStation.UpgradeType.Upkeep);
@@ -131,7 +149,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         nameText.text = asset.assetName;
         typeText.text = "Power Generator";
         typeText.color = powerAssetColor;
-        ownerText.text = "Owner: " + asset.Owner.ownerName;
+        ownerText.text = "Owner: " + asset.CurrentOwner.ownerName;
         moneyText.text = "Expense per day: $" + asset.Upkeep;
         powerText.text = "Power generated: " + asset.PowerGenerated + " units";
     }
@@ -141,7 +159,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         nameText.text = asset.assetName;
         typeText.text = "Customer";
         typeText.color = customerAssetColor;
-        if (asset.Owner == null)
+        if (asset.CurrentOwner == null)
         {
             ownerText.text = "No power supplied";
             moneyText.text = "";
@@ -149,7 +167,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         }
         else
         {
-            ownerText.text = "Supplied by: " + asset.Owner.ownerName;
+            ownerText.text = "Supplied by: " + asset.CurrentOwner.ownerName;
             moneyText.text = "Currently paying: $" + asset.Payment;
             powerText.text = "Power draw: " + asset.Draw + " units";
         }
@@ -163,5 +181,15 @@ public class SelectedObjectUIManager : MonoBehaviour
     public void BuyUpkeepUpgrade()
     {
         selected.GetComponent<UpgradablePowerStation>().BuyUpgrade(UpgradablePowerStation.UpgradeType.Upkeep);
+    }
+
+    public void DropCustomer()
+    {
+        selected.GetComponent<CustomerAsset>().RemoveOffer(Camera.main.GetComponent<AssetOwner>());
+    }
+
+    public void Bid()
+    {
+        bidding.GetComponent<CustomerBidding>().Bid(selected.GetComponent<CustomerAsset>());
     }
 }

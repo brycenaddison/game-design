@@ -23,6 +23,10 @@ public class UpgradeButton : MonoBehaviour
 
     public void SetUpgrade(UpgradablePowerStation.PowerStationUpgrade upgrade)
     {
+        if (nameText == null)
+        {
+            return;
+        }
         nameText.text = upgrade.Name;
         GetComponent<Button>().interactable = Camera.main.GetComponent<AssetOwner>().CanAfford(upgrade);
         costText.text = upgrade.Cost.ToString("C", CultureInfo.CurrentCulture);
