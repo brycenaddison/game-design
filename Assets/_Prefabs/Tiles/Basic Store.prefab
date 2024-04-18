@@ -98,7 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assetName: Store
   Draw: 2
-  Payment: 30
+  InitialPayment: 30
+  MaxPayment: 60
 --- !u!65 &-2039864590495479432
 BoxCollider:
   m_ObjectHideFlags: 0

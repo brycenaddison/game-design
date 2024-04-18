@@ -98,7 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assetName: Building
   Draw: 4
-  Payment: 90
+  InitialPayment: 90
+  MaxPayment: 180
 --- !u!65 &-8182581354828758042
 BoxCollider:
   m_ObjectHideFlags: 0
