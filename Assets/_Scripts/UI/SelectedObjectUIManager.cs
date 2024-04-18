@@ -17,12 +17,18 @@ public class SelectedObjectUIManager : MonoBehaviour
     public GameObject owner;
     public GameObject power;
     public GameObject money;
+    public GameObject upkeepButton;
+    public GameObject powerButton;
+
 
     private Text nameText;
     private Text typeText;
     private Text ownerText;
     private Text powerText;
     private Text moneyText;
+
+    private GameObject selected;
+
 
     private bool visible = false;
 
@@ -34,6 +40,8 @@ public class SelectedObjectUIManager : MonoBehaviour
         ownerText = owner.GetComponent<Text>();
         powerText = power.GetComponent<Text>();
         moneyText = money.GetComponent<Text>();
+        upkeepButton.SetActive(false);
+        powerButton.SetActive(false);
         UpdateVisibility();
     }
 
@@ -48,16 +56,24 @@ public class SelectedObjectUIManager : MonoBehaviour
     {
         bool oldVisible = visible;
 
-        GameObject selected = Camera.main.GetComponent<Selector>().Selected;
+        selected = Camera.main.GetComponent<Selector>().Selected;
+
         if (selected)
         {
             visible = true;
             Asset asset = selected.GetComponent<Asset>();
 
+            SetUpgradeButtons(asset);
+
             if (asset is PowerAsset powerAsset)
             {
                 SetPowerText(powerAsset);
 
+
+
+                if (asset is UpgradablePowerStation upgradablePowerStation)
+                {
+                }
             }
             else if (asset is CustomerAsset customerAsset)
             {
@@ -72,6 +88,41 @@ public class SelectedObjectUIManager : MonoBehaviour
         if (visible != oldVisible)
         {
             UpdateVisibility();
+        }
+    }
+
+    void SetUpgradeButtons(Asset asset)
+    {
+        if (asset is UpgradablePowerStation upgradablePowerStation)
+        {
+            UpgradablePowerStation.PowerStationUpgrade? powerUpgrade = upgradablePowerStation.GetUpgrade(UpgradablePowerStation.UpgradeType.Power);
+            UpgradablePowerStation.PowerStationUpgrade? upkeepUpgrade = upgradablePowerStation.GetUpgrade(UpgradablePowerStation.UpgradeType.Upkeep);
+
+            if (powerUpgrade is UpgradablePowerStation.PowerStationUpgrade power)
+            {
+                powerButton.SetActive(true);
+                powerButton.GetComponent<UpgradeButton>().SetUpgrade(power);
+            }
+            else
+            {
+                powerButton.SetActive(false);
+            }
+
+            if (upkeepUpgrade is UpgradablePowerStation.PowerStationUpgrade upkeep)
+            {
+                upkeepButton.SetActive(true);
+                upkeepButton.GetComponent<UpgradeButton>().SetUpgrade(upkeep);
+            }
+            else
+            {
+                upkeepButton.SetActive(false);
+            }
+
+        }
+        else
+        {
+            upkeepButton.SetActive(false);
+            powerButton.SetActive(false);
         }
     }
 
@@ -102,5 +153,15 @@ public class SelectedObjectUIManager : MonoBehaviour
             moneyText.text = "Currently paying: $" + asset.Payment;
             powerText.text = "Power draw: " + asset.Draw + " units";
         }
+    }
+
+    public void BuyPowerUpgrade()
+    {
+        selected.GetComponent<UpgradablePowerStation>().BuyUpgrade(UpgradablePowerStation.UpgradeType.Power);
+    }
+
+    public void BuyUpkeepUpgrade()
+    {
+        selected.GetComponent<UpgradablePowerStation>().BuyUpgrade(UpgradablePowerStation.UpgradeType.Upkeep);
     }
 }

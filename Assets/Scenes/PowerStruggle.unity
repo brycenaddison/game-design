@@ -1338,7 +1338,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &804641253
 PrefabInstance:
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets:
-  - {fileID: 0}
+  - {fileID: 1755081077}
   - {fileID: 1095413790}
   - {fileID: 692771653}
   ownerName: The Goat
@@ -2477,7 +2477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1688825563506807765, guid: 31f343649fbc2d246af176971c9bfd82, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1688825563506807765, guid: 31f343649fbc2d246af176971c9bfd82, type: 3}
       propertyPath: m_LocalScale.x
@@ -2654,7 +2654,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1539571198
 PrefabInstance:
@@ -2804,28 +2804,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000010388807826, guid: ab8de88a92cf80648ba79cccb243c32c, type: 3}
   m_PrefabInstance: {fileID: 1656167571}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1755081076 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8798829054895997438, guid: b433118fa52a521498dd124a2f0b5fa8, type: 3}
+--- !u!114 &1755081077 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1755081077, guid: b433118fa52a521498dd124a2f0b5fa8, type: 3}
   m_PrefabInstance: {fileID: 5643155220116054569}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1755081077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755081076}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ccc3006060d27d4b90230fce4785cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assetName: Power Station
-  Upkeep: 0
-  PowerGenerated: 0
-  _PowerUpgrades: []
-  _UpkeepUpgrades: []
 --- !u!1001 &1759680863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2900,36 +2889,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000010914125936, guid: 77dea8cf281dff4428dc3fd7cdf91824, type: 3}
   m_PrefabInstance: {fileID: 1759680863}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1799577222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1799577223}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1799577223
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799577222}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1846963798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3475,7 +3434,7 @@ Transform:
   - {fileID: 3768171133398515703}
   - {fileID: 692771650}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2146745436
 GameObject:
@@ -3539,10 +3498,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 793920457004583401, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -85
-      objectReference: {fileID: 0}
     - target: {fileID: 793920457291670861, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3573,7 +3528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 793920458693581790, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 793920458693581790, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3646,10 +3601,6 @@ PrefabInstance:
     - target: {fileID: 793920458693581790, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 793920458883384206, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -105
       objectReference: {fileID: 0}
     - target: {fileID: 793920458914237790, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3831,6 +3782,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Power Plant 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 391594091497234295, guid: b433118fa52a521498dd124a2f0b5fa8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b433118fa52a521498dd124a2f0b5fa8, type: 3}

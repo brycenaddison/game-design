@@ -12,54 +12,57 @@ public class UpgradablePowerStation : PowerAsset
     }
 
     [Serializable]
-    public struct Upgrade : IPurchasable
+    public struct PowerStationUpgrade : IPurchasable
     {
         public string Name;
-        public float Value;
+        public float PowerAdded;
+        public float UpkeepAdded;
         [SerializeField]
         private float _cost;
         public float Cost { get => _cost; set => _cost = value; }
     }
 
-    public List<Upgrade> _PowerUpgrades;
-    public List<Upgrade> _UpkeepUpgrades;
-
+    public List<PowerStationUpgrade> _PowerUpgrades;
+    public List<PowerStationUpgrade> _UpkeepUpgrades;
+ 
     // conversion since inspector doesn't support queues
-    private Queue<Upgrade> UpkeepUpgrades;
-    private Queue<Upgrade> PowerUpgrades;
+    private Queue<PowerStationUpgrade> UpkeepUpgrades;
+    private Queue<PowerStationUpgrade> PowerUpgrades;
 
     private void Start()
     {
-        UpkeepUpgrades = new Queue<Upgrade>(_UpkeepUpgrades);
-        PowerUpgrades = new Queue<Upgrade>(_PowerUpgrades);
+        UpkeepUpgrades = new Queue<PowerStationUpgrade>(_UpkeepUpgrades);
+        PowerUpgrades = new Queue<PowerStationUpgrade>(_PowerUpgrades);
     }
 
-    void BuyUpgrade(UpgradeType upgradeType)
+    public void BuyUpgrade(UpgradeType upgradeType)
     {
-        switch (upgradeType)
+        PowerStationUpgrade upgrade;
+
+        if (UpgradeType.Upkeep == upgradeType)
         {
-            case (UpgradeType.Power):
-                if (PowerUpgrades.Count == 0)
-                {
-                    return;
-                }
-                Upgrade powerUpgrade = PowerUpgrades.Dequeue();
-                PowerGenerated += powerUpgrade.Value;
-                Owner.Purchase(powerUpgrade);
-                break;
-            case (UpgradeType.Upkeep):
-                if (UpkeepUpgrades.Count == 0)
-                {
-                    return;
-                }
-                Upgrade upkeepUpgrade = UpkeepUpgrades.Dequeue();
-                PowerGenerated += upkeepUpgrade.Value;
-                Owner.Purchase(upkeepUpgrade);
-                break;
+            if (UpkeepUpgrades.Count == 0)
+            {
+                return;
+            }
+            upgrade = UpkeepUpgrades.Dequeue();
         }
+        else
+        {
+            if (PowerUpgrades.Count == 0)
+            {
+                return;
+            }
+            upgrade = PowerUpgrades.Dequeue();
+        }
+
+        PowerGenerated += upgrade.PowerAdded;
+        Upkeep += upgrade.UpkeepAdded;
+
+        Owner.Purchase(upgrade);
     }
-    
-    Upgrade? GetUpgrade(UpgradeType upgradeType)
+
+    public PowerStationUpgrade? GetUpgrade(UpgradeType upgradeType)
     {
         switch (upgradeType)
         {
@@ -78,5 +81,5 @@ public class UpgradablePowerStation : PowerAsset
             default:
                 return null;
         }
-    }   
+    }
 }
