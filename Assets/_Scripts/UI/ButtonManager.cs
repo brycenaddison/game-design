@@ -70,4 +70,16 @@ public class ButtonManager : MonoBehaviour
                 break;
         }
     }
+
+    new GameObject Instructions;
+
+    public void CloseInstrutions()
+    {
+        gameObject.SetActive(false);
+    }
+   
+    public void OpenInstrutions()
+    {
+        gameObject.SetActive(true);
+    }
 }

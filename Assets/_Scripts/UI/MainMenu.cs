@@ -19,4 +19,16 @@ public class MainMenu : MonoBehaviour
         namePrompt.SetActive(true);
         startGameButton.GetComponent<Button>().interactable = false;
     }
+
+    new GameObject Instructions;
+
+    public void CloseInstrutions()
+    {
+        gameObject.SetActive(false);
+    }
+   
+    public void OpenInstrutions()
+    {
+        gameObject.SetActive(true);
+    }
 }
