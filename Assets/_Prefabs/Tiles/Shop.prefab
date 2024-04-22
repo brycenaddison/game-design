@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2039864590495479432}
   - component: {fileID: 2703366637311569075}
   m_Layer: 0
-  m_Name: Basic Store
+  m_Name: Shop
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -40,11 +40,6 @@ public class MapLoader : MonoBehaviour
         LoadMap(System.IO.File.ReadAllLines("Assets/Maps/map1.txt"), map);
     }
 
-    void InstantiateRoad(GameObject prefab, Vector3 position, float yRotation) {
-        Quaternion rotation = Quaternion.Euler(0, yRotation, 0);
-        Instantiate(prefab, position, rotation);
-    }
-
     void LoadMap(string[] lines, GameObject map)
     {
         int width = lines[0].Length;

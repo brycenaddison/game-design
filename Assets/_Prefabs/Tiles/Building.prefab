@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8182581354828758042}
   - component: {fileID: 3220314636739146527}
   m_Layer: 0
-  m_Name: Sky Scraper Medium Grey
+  m_Name: Building
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
