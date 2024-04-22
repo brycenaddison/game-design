@@ -59,7 +59,7 @@ public class UpgradablePowerStation : PowerAsset
         PowerGenerated += upgrade.PowerAdded;
         Upkeep += upgrade.UpkeepAdded;
 
-        CurrentOwner.Purchase(upgrade);
+        Owner.Purchase(upgrade);
     }
 
     public PowerStationUpgrade? GetUpgrade(UpgradeType upgradeType)

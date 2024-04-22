@@ -32,7 +32,7 @@ public class CustomerAsset : Asset
         _payment = InitialPayment;
         offers = new SortedList<float, AssetOwner>
         {
-            { Payment, CurrentOwner }
+            { Payment, Owner }
         };
         Camera.main.GetComponent<GameTime>().RegisterOnMonth(11, () => { AcceptBestOffer(); }, 0);
     }
@@ -59,13 +59,13 @@ public class CustomerAsset : Asset
         if (offers.Count > 0)
         {
             float newPayment = offers.Keys[0];
-            if (newPayment >= MaxPayment) { CurrentOwner?.Unclaim(this); }
+            if (newPayment >= MaxPayment) { Owner?.Unclaim(this); }
             _payment = offers.Keys[0];
 
             AssetOwner bestOffer = offers.Values[0];
             bestOffer.Claim(this);
         }
-        else { CurrentOwner?.Unclaim(this); }
+        else { Owner?.Unclaim(this); }
     }
 
     public bool IsBiddedOnBy(AssetOwner bidder)

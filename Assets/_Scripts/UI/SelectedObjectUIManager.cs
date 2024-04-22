@@ -111,7 +111,7 @@ public class SelectedObjectUIManager : MonoBehaviour
 
     void SetUpgradeButtons(Asset asset)
     {
-        if (asset is UpgradablePowerStation upgradablePowerStation && asset.CurrentOwner == Camera.main.GetComponent<AssetOwner>())
+        if (asset is UpgradablePowerStation upgradablePowerStation && asset.Owner == Camera.main.GetComponent<AssetOwner>())
         {
             UpgradablePowerStation.PowerStationUpgrade? powerUpgrade = upgradablePowerStation.GetUpgrade(UpgradablePowerStation.UpgradeType.Power);
             UpgradablePowerStation.PowerStationUpgrade? upkeepUpgrade = upgradablePowerStation.GetUpgrade(UpgradablePowerStation.UpgradeType.Upkeep);
@@ -149,7 +149,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         nameText.text = asset.assetName;
         typeText.text = "Power Generator";
         typeText.color = powerAssetColor;
-        ownerText.text = "Owner: " + asset.CurrentOwner.Name;
+        ownerText.text = "Owner: " + asset.Owner.Name;
         moneyText.text = "Expense per day: $" + asset.Upkeep;
         powerText.text = "Power generated: " + asset.PowerGenerated + " units";
     }
@@ -159,7 +159,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         nameText.text = asset.assetName;
         typeText.text = "Customer";
         typeText.color = customerAssetColor;
-        if (asset.CurrentOwner == null)
+        if (asset.Owner == null)
         {
             ownerText.text = "No power supplied";
             moneyText.text = "";
@@ -167,7 +167,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         }
         else
         {
-            ownerText.text = "Supplied by: " + asset.CurrentOwner.Name;
+            ownerText.text = "Supplied by: " + asset.Owner.Name;
             moneyText.text = "Currently paying: $" + asset.Payment;
             powerText.text = "Power draw: " + asset.Draw + " units";
         }
