@@ -7,11 +7,14 @@ using UnityEngine;
 public class AssetOwner : MonoBehaviour
 {
     public List<Asset> assets;
+    public float initialBalanace = 1000;
+    public GameObject CityPower;
+
     public string Name { get; set; }
     public int Id { get; set; }
     public Color Color { get; set; }
     public bool IsPlayable { get; set; }
-    public float initialBalanace = 1000;
+    public GameObject HQ { get; set; }
 
     [Header("Read Only")]
     public float balance;
@@ -28,6 +31,11 @@ public class AssetOwner : MonoBehaviour
         if (IsPlayable)
         {
             Name = StaticProperties.Name;
+            Color = StaticProperties.Color;
+            Id = 0;
+        } else
+        {
+
         }
 
         balance = initialBalanace;
@@ -37,7 +45,13 @@ public class AssetOwner : MonoBehaviour
             balance += Profit;
             if (balance < 0)
             {
-                if (IsPlayable) gameTime.TriggerGameOver(); // need to have AI drop assets
+                if (IsPlayable)
+                {
+                    gameTime.TriggerGameOver();
+                } else
+                {
+                    DeclareBankruptcy();
+                }
             }
         }, Id);
     }
@@ -128,13 +142,20 @@ public class AssetOwner : MonoBehaviour
         if (oldOwner == this) return;
         if (oldOwner != null)
         {
-            oldOwner.Unclaim(asset);
+            if (asset == oldOwner.HQ)
+            {
+                BuyOut(oldOwner);
+            } else
+            {
+                oldOwner.Unclaim(asset);
+            }
         }
 
         if (!assets.Contains(asset))
         {
             assets.Add(asset);
         }
+
         asset.Owner = this;
     }
 
@@ -152,5 +173,28 @@ public class AssetOwner : MonoBehaviour
     public bool CanAfford(IPurchasable p)
     {
         return balance >= p.Cost;
+    }
+
+    public void BuyOut(AssetOwner other)
+    {
+        List<Asset> otherAssets = other.assets;
+
+        foreach (Asset asset in otherAssets)
+        {
+            Claim(asset);
+        }
+
+        balance += other.balance;
+        other.balance = 0;
+    }
+
+    public void DeclareBankruptcy()
+    {
+        foreach (Asset asset in assets)
+        {
+            CityPower.GetComponent<AssetOwner>().Claim(asset);
+        }
+
+        balance = 0;
     }
 }
