@@ -11,6 +11,7 @@ public class MapGenerator : MonoBehaviour
     public GameObject CityPower;
 
     public GameObject PowerStation;
+    public GameObject SolarField;
     public GameObject House;
     public GameObject Shop;
     public GameObject Building;
@@ -75,9 +76,12 @@ public class MapGenerator : MonoBehaviour
 
         float perlin = GetPerlin(x, y);
 
-        if (perlin < 0.45f)
+        if (perlin < 0.445f)
         {
             return House;
+        } else if (perlin < 0.45f)
+        {
+            return SolarField;
         } else if (perlin < 0.65f)
         {
             return Shop;

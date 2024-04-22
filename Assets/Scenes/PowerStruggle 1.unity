@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -414,9 +414,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: The Goat
-  id: 3
-  isPlayable: 1
   initialBalanace: 1000
   balance: 0
 --- !u!20 &963194227
@@ -774,9 +771,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: City Power
-  id: 1
-  isPlayable: 0
   initialBalanace: 0
   balance: 0
 --- !u!4 &1545994969
@@ -826,6 +820,7 @@ MonoBehaviour:
   size: 100
   CityPower: {fileID: 1545994967}
   PowerStation: {fileID: 8798829054895997438, guid: b433118fa52a521498dd124a2f0b5fa8, type: 3}
+  SolarField: {fileID: 2611674171277642448, guid: ee91a384e3e333749931a06e9b1a7f36, type: 3}
   House: {fileID: 3592504421235015420, guid: 14f6f2e1af0eea44da8795605dda1284, type: 3}
   Shop: {fileID: 1000012304243196, guid: 06ebcddd166047f4390fddac1b4dfc38, type: 3}
   Building: {fileID: 1000013462587690, guid: 03b1e74f6d25c3749be74b9c50c2f58d, type: 3}
