@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    public int numPowerStations = 4;
+    private int NumPowerStations = StaticProperties.NumAIs + 1;
 
-    public int size = 100;
+    private int Size = StaticProperties.MapSize;
     
     public GameObject CityPower;
-
     public GameObject PowerStation;
     public GameObject SolarField;
     public GameObject House;
@@ -25,7 +24,7 @@ public class MapGenerator : MonoBehaviour
 
     void Start()
     {
-        scale = Mathf.Sqrt(size);
+        scale = Mathf.Sqrt(Size);
         offsetX = Random.Range(0f, 99999f);
         offsetY = Random.Range(0f, 99999f);
 
@@ -40,9 +39,9 @@ public class MapGenerator : MonoBehaviour
         Quaternion rotation;
         Vector3 position;
 
-        for (int x = 0; x < size; x++)
+        for (int x = 0; x < Size; x++)
         {
-            for (int y = 0; y < size; y++)
+            for (int y = 0; y < Size; y++)
             {
                 prefab = GetAsset(x, y);
                 rotation = prefab.Equals(VerticalRoad) ? Quaternion.Euler(0, 90, 0) : Quaternion.identity;
@@ -93,6 +92,6 @@ public class MapGenerator : MonoBehaviour
 
     float GetPerlin(int x, int y)
     {
-        return Mathf.PerlinNoise((float) x / size * scale + offsetX, (float) y / size * scale + offsetY);
+        return Mathf.PerlinNoise((float) x / Size * scale + offsetX, (float) y / Size * scale + offsetY);
     }
 }

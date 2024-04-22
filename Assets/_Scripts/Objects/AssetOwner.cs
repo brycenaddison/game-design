@@ -124,7 +124,7 @@ public class AssetOwner : MonoBehaviour
 
     public void Claim(Asset asset)
     {
-        AssetOwner oldOwner = asset.CurrentOwner;
+        AssetOwner oldOwner = asset.Owner;
         if (oldOwner == this) return;
         if (oldOwner != null)
         {
@@ -135,12 +135,12 @@ public class AssetOwner : MonoBehaviour
         {
             assets.Add(asset);
         }
-        asset.CurrentOwner = this;
+        asset.Owner = this;
     }
 
     public void Unclaim(Asset asset)
     {
-        asset.CurrentOwner = null;
+        asset.Owner = null;
         assets.Remove(asset);
     }
 
