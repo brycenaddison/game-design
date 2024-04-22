@@ -7,9 +7,10 @@ using UnityEngine;
 public class AssetOwner : MonoBehaviour
 {
     public List<Asset> assets;
-    public string Name;
-    public int id;
-    public bool isPlayable;
+    public string Name { get; set; }
+    public int Id { get; set; }
+    public Color Color { get; set; }
+    public bool IsPlayable { get; set; }
     public float initialBalanace = 1000;
 
     [Header("Read Only")]
@@ -24,7 +25,7 @@ public class AssetOwner : MonoBehaviour
 
         GameTime gameTime = Camera.main.GetComponent<GameTime>();
 
-        if (isPlayable)
+        if (IsPlayable)
         {
             Name = StaticProperties.Name;
         }
@@ -36,9 +37,9 @@ public class AssetOwner : MonoBehaviour
             balance += Profit;
             if (balance < 0)
             {
-                if (isPlayable) gameTime.TriggerGameOver(); // need to have AI drop assets
+                if (IsPlayable) gameTime.TriggerGameOver(); // need to have AI drop assets
             }
-        }, id);
+        }, Id);
     }
 
     public float PowerTotal
