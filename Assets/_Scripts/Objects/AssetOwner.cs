@@ -7,9 +7,9 @@ using UnityEngine;
 public class AssetOwner : MonoBehaviour
 {
     public List<Asset> assets;
-    public string ownerName;
+    public string Name;
     public int id;
-    public Boolean isPlayable;
+    public bool isPlayable;
     public float initialBalanace = 1000;
 
     [Header("Read Only")]
@@ -26,7 +26,7 @@ public class AssetOwner : MonoBehaviour
 
         if (isPlayable)
         {
-            ownerName = StaticProperties.Name;
+            Name = StaticProperties.Name;
         }
 
         balance = initialBalanace;

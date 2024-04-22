@@ -20,7 +20,7 @@ public class CustomerAsset : Asset
             offers.Values,
             (float bid, AssetOwner bidder) =>
             {
-                return $"{bidder.ownerName}: {bid.ToString("C", CultureInfo.CurrentCulture)}";
+                return $"{bidder.Name}: {bid.ToString("C", CultureInfo.CurrentCulture)}";
             }
           );
     }
