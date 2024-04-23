@@ -16,6 +16,8 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
+    public Scoreboard scoreboard;
+
     public GameObject Player;
     public GameObject CityPower;
     public GameObject AI;
@@ -157,6 +159,7 @@ public class MapGenerator : MonoBehaviour
             newObj.transform.SetParent(AIs.transform, false);
 
             AssetOwner assetOwner = newObj.GetComponent<AssetOwner>();
+            scoreboard.Register(assetOwner);
             Owners.Add(assetOwner);
         }
     }

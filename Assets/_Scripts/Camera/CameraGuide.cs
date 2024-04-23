@@ -66,10 +66,10 @@ public class CameraGuide : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            GameObject selected = Camera.main.GetComponent<Selector>().Selected;
-            if (selected)
+            GameObject home = Camera.main.GetComponent<AssetOwner>().HQ;
+            if (home)
             {
-                MoveToAsset(selected);
+                MoveToAsset(home);
                 return;
             }
         }

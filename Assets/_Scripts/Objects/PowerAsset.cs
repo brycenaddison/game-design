@@ -22,7 +22,7 @@ public class PowerAsset : Asset, IPurchasable
 
     public bool IsBuyable(AssetOwner player)
     {
-        if (Owner != GameObject.Find("CityPower").GetComponent<AssetOwner>())
+        if (Owner != Camera.main.GetComponent<CityPower>().Get())
         {
             return false;
         }
