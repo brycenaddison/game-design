@@ -26,4 +26,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Story");
         Debug.Log("Loaded story");
     }
+        
+    public static void LoadSettings()
+    {
+        Debug.Log("Loading settings");
+        SceneManager.LoadScene("Settings");
+        Debug.Log("Loaded settings");
+    }
 }
