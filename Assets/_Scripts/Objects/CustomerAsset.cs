@@ -57,6 +57,8 @@ public class CustomerAsset : Asset
 
     public void Offer(AssetOwner owner, float payment)
     {
+        Debug.Log("offer made!");
+        
         if (!owner.CanBidOn(this)) return;
 
         RemoveOffer(owner);
