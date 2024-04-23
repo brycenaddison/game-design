@@ -10,8 +10,11 @@ public class AssetOwner : MonoBehaviour
     public string ownerName;
     public int id;
     public Boolean isPlayable;
-    public float initialBalanace = 1000;
+    public float initialBalance = 1000;
     public Scoreboard scoreboard;
+
+    public static int BidWindowStart = 7;
+    public static int BidWindowEnd = 9;
 
     [Header("Read Only")]
     public float balance;
@@ -23,7 +26,7 @@ public class AssetOwner : MonoBehaviour
             Claim(asset);
         }
 
-        scoreboard.Register(this);
+        scoreboard?.Register(this);
 
         GameTime gameTime = Camera.main.GetComponent<GameTime>();
 
@@ -32,7 +35,7 @@ public class AssetOwner : MonoBehaviour
             ownerName = StaticProperties.Name;
         }
 
-        balance = initialBalanace;
+        balance = initialBalance;
 
         gameTime.RegisterOnMonth(1, () =>
         {
@@ -154,5 +157,13 @@ public class AssetOwner : MonoBehaviour
     public bool CanAfford(IPurchasable p)
     {
         return balance >= p.Cost;
+    }
+
+    public bool CanBidOn(CustomerAsset customerAsset)
+    {
+        int month = Camera.main.GetComponent<GameTime>().GetMonth();
+
+        if (customerAsset.CurrentOwner == this) return month > BidWindowEnd || month < BidWindowStart;
+        return month >= BidWindowStart && month <= BidWindowEnd;
     }
 }
