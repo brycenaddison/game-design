@@ -302,4 +302,14 @@ public class MapGenerator : MonoBehaviour
             if (asset != null) owner.Claim(asset);
         }
     }
+
+    public List<AssetOwner> GetAssetOwners()
+    {
+        return Owners;
+    }
+
+    public List<AssetOwner> GetAIOwners()
+    {
+        return Owners.GetRange(2, Owners.Count - 2);
+    }
 }
