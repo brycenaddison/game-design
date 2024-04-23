@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -305,9 +305,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: Power House
-  id: 0
-  isPlayable: 0
+  CityPower: {fileID: 0}
+  _name: Power House
+  _id: 0
+  _isPlayable: 0
   initialBalance: 1000
   scoreboard: {fileID: 1974600272}
   balance: 0
@@ -448,9 +449,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: AC/DC Current
-  id: 1
-  isPlayable: 0
+  CityPower: {fileID: 0}
+  _name: AC/DC Current
+  _id: 1
+  _isPlayable: 0
   initialBalance: 1000
   scoreboard: {fileID: 1974600272}
   balance: 0
@@ -570,9 +572,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: The Goat
-  id: 3
-  isPlayable: 1
+  CityPower: {fileID: 0}
+  _name: The Goat
+  _id: 3
+  _isPlayable: 1
   initialBalance: 1000
   scoreboard: {fileID: 1974600272}
   balance: 0
@@ -739,9 +742,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: City Power
-  id: 4
-  isPlayable: 0
+  CityPower: {fileID: 0}
+  _name: 
+  _id: 0
+  _isPlayable: 0
   initialBalance: 1000
   scoreboard: {fileID: 0}
   balance: 0
@@ -789,9 +793,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: Quick Voltz
-  id: 2
-  isPlayable: 0
+  CityPower: {fileID: 0}
+  _name: Quick Voltz
+  _id: 2
+  _isPlayable: 0
   initialBalance: 1000
   scoreboard: {fileID: 1974600272}
   balance: 0

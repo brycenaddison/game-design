@@ -10,10 +10,17 @@ public class AssetOwner : MonoBehaviour
 
     public GameObject CityPower;
 
-    public string Name { get; set; }
-    public int Id { get; set; }
+    [SerializeField]
+    private string _name;
+    [SerializeField]
+    private int _id;
+    [SerializeField]
+    private bool _isPlayable;
+
+    public string Name { get => _name; set => _name = value; }
+    public int Id { get => _id; set => _id = value; }
     public Color Color { get; set; }
-    public bool IsPlayable { get; set; }
+    public bool IsPlayable { get => _isPlayable; set => _isPlayable = value; }
     public GameObject HQ { get; set; }
 
     public float initialBalance = 1000;

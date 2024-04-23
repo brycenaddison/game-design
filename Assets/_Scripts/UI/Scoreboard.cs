@@ -18,7 +18,8 @@ public class Scoreboard : MonoBehaviour
             RowUI row = rows[i];
             AssetOwner owner = ownerList[i];
             row.rank.text = $"{i+1}";
-            row.displayName.text = owner.ownerName;
+            row.displayName.text = owner.Name;
+            Debug.Log(owner);
             row.balance.text = owner.balance.ToString("C", CultureInfo.CurrentCulture);
             row.income.text = owner.Profit.ToString("C", CultureInfo.CurrentCulture);
         }
