@@ -25,11 +25,9 @@ public class CustomerAsset : Asset
 
     private Dictionary<AssetOwner, float> offers;
     private GameTime gameTime;
-    private MapGenerator generator;
 
     private void Start()
     {
-        generator = GameObject.Find("MapGenerator").GetComponent<MapGenerator>();
         _payment = InitialPayment;
         offers = new Dictionary<AssetOwner, float>
         {
@@ -50,11 +48,13 @@ public class CustomerAsset : Asset
 
     public void RemoveOffer(AssetOwner owner)
     {
-        offers.Remove(owner);
+        offers?.Remove(owner);
     }
 
     private void FilterInvalidOffers()
     {
+        if (offers == null || offers.Count == 0) return;
+
         List<KeyValuePair<AssetOwner, float>> invalidOffers = new List<KeyValuePair<AssetOwner, float>>(offers.Where(
             pair => !HasAdjacentOwner(pair.Key) || pair.Value > MaxPayment
         ));
@@ -67,7 +67,7 @@ public class CustomerAsset : Asset
 
     private List<KeyValuePair<AssetOwner, float>> GetSortedOffers()
     {
-        if (offers.Count == 0) return new List<KeyValuePair<AssetOwner, float>>();
+        if (offers == null || offers.Count == 0) return new List<KeyValuePair<AssetOwner, float>>();
 
         List<KeyValuePair<AssetOwner, float>> sortedOffers = new List<KeyValuePair<AssetOwner, float>>(offers);
 
@@ -91,13 +91,18 @@ public class CustomerAsset : Asset
             bestOffer.Key.Claim(this);
         }
         else {
-            if (Owner != null && Owner != GameObject.Find("CityPower").GetComponent<AssetOwner>())
+            if (Owner != Camera.main.GetComponent<CityPower>().Get())
             {
                 Owner.Unclaim(this);
+
+                MapGenerator generator = GameObject.Find("MapGenerator").GetComponent<MapGenerator>();
+
+                if (generator == null) return;
 
                 // propogate unclaim to possibly unclaim unconnected tiles
                 foreach (Asset asset in generator.GetAdjacentAssets(this))
                 {
+                    Debug.Log("huh?");
                     if (asset is CustomerAsset customerAsset)
                     {
                         customerAsset.AcceptBestOffer();
@@ -113,7 +118,10 @@ public class CustomerAsset : Asset
     }
 
     public bool HasAdjacentOwner(AssetOwner owner)
-    {        
+    {
+        MapGenerator generator = GameObject.Find("MapGenerator").GetComponent<MapGenerator>();
+        if (generator == null) return false;
+
         // pathfinding to ensure connected to owned power source
         List<Asset> visited = new List<Asset>();
         Queue<Asset> queue = new Queue<Asset>();

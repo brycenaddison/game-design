@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 963194231}
   - component: {fileID: 963194232}
   - component: {fileID: 963194233}
+  - component: {fileID: 963194234}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -414,9 +415,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  initialBalanace: 1000
-  IsPlayable: 1
-  CityPower: {fileID: 1545994967}
+  _name: The Goat
+  _id: 0
+  _isPlayable: 1
+  initialBalance: 1000
+  scoreboard: {fileID: 1741525159}
   balance: 0
 --- !u!20 &963194227
 Camera:
@@ -551,6 +554,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e693dceb005efa047b1a7939954a41a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &963194234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9a8b1c7e7a54c4a884dc07e013587a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cityPower: {fileID: 1545994968}
 --- !u!1001 &1518336898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -748,6 +764,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4589240685810185900, guid: 841f134ed51bbd24798de699cb10192a, type: 3}
   m_PrefabInstance: {fileID: 4589240685203977339}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1545994968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4589240685810185891, guid: 841f134ed51bbd24798de699cb10192a, type: 3}
+  m_PrefabInstance: {fileID: 4589240685203977339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545994967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dccaf68d21fc1134280426cf1bb3c423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1550345889
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,6 +804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fc9f2ec8eebc54888ce4fdd220b4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreboard: {fileID: 1741525159}
   Player: {fileID: 963194225}
   CityPower: {fileID: 1545994967}
   AI: {fileID: 2643459702478426511, guid: 8b66c5af8a58cf8498b3ace13c4a5c81, type: 3}
@@ -802,6 +830,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1741525159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1974600272, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
+  m_PrefabInstance: {fileID: 793920457419126000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28e974ddd66ed84684455c826245266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2146745436
 GameObject:
   m_ObjectHideFlags: 0
