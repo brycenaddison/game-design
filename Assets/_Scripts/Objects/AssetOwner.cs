@@ -75,21 +75,6 @@ public class AssetOwner : MonoBehaviour
         }, Id);
     }
 
-    private void TriggerLose()
-    {
-        Debug.Log($"{ownerName} has lost the game.");
-        foreach (Asset asset in new List<Asset>(assets))
-        {
-            Unclaim(asset);
-
-            if (asset is PowerAsset powerAsset)
-            {
-                Destroy(powerAsset.gameObject);
-            }
-        }
-        Destroy(gameObject);
-    }
-
     private void OnDestroy()
     {
         scoreboard?.Unregister(this);
