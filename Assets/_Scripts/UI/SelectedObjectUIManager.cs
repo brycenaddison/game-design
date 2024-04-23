@@ -98,10 +98,7 @@ public class SelectedObjectUIManager : MonoBehaviour
                     biddingButton.interactable = Camera.main.GetComponent<AssetOwner>().CanBidOn(customerAsset);
                 }
 
-                if (customerAsset.IsBiddedOnBy(Camera.main.GetComponent<AssetOwner>()))
-                {
-                    drop.SetActive(true);
-                }
+                drop.SetActive(customerAsset.IsBiddedOnBy(Camera.main.GetComponent<AssetOwner>()));
             }
         }
         else

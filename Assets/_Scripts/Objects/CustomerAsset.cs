@@ -63,7 +63,10 @@ public class CustomerAsset : Asset
         if (offers.Count > 0)
         {
             float newPayment = offers.Keys[0];
-            if (newPayment >= MaxPayment) { CurrentOwner?.Unclaim(this); }
+            if (newPayment >= MaxPayment) {
+                CurrentOwner?.Unclaim(this);
+                return;
+            }
             _payment = offers.Keys[0];
 
             AssetOwner bestOffer = offers.Values[0];
