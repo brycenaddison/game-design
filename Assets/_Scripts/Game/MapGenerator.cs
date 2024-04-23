@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
@@ -59,12 +60,10 @@ public class MapGenerator : MonoBehaviour
         Quaternion rotation;
         Vector3 position;
 
-        List<List<Asset>> assetGrid = new List<List<Asset>>();
+        Asset[,] assetGrid = new Asset[Size, Size];
 
         for (int x = 0; x < Size; x++)
         {
-            List<Asset> row = new List<Asset>();
-
             for (int z = 0; z < Size; z++)
             {
                 prefab = GetAsset(x, z);
@@ -82,13 +81,36 @@ public class MapGenerator : MonoBehaviour
 
                     List<Asset> adjacentAssets = new List<Asset>();
 
-                    row.Add(asset);
-                    adjList.Add(asset, adjacentAssets);
-                }
+                    assetGrid[x, z] = asset;
 
-                if (row.Count != 0)
-                {
-                    assetGrid.Add(row);
+                    int tempX = x - 1;
+                    int tempZ = z - 1;
+
+                    while (tempX >= 0 && assetGrid[tempX, z] == null)
+                    {
+                        tempX--;
+                    }
+
+                    if (tempX >= 0)
+                    {
+                        Asset west = assetGrid[tempX, z];
+                        adjacentAssets.Add(west);
+                        adjList[west].Add(asset);
+                    }
+
+                    while (tempZ >= 0 && assetGrid[x, tempZ] == null)
+                    {
+                        tempZ--;
+                    }
+
+                    if (tempZ >= 0)
+                    {
+                        Asset south = assetGrid[x, tempZ];
+                        adjacentAssets.Add(south);
+                        adjList[south].Add(asset);
+                    }
+
+                    adjList.Add(asset, adjacentAssets);
                 }
             }
         }

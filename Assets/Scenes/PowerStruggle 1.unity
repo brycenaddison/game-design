@@ -567,6 +567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cityPower: {fileID: 1545994968}
+  mapGenerator: {fileID: 1550345890}
 --- !u!1001 &1518336898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -898,6 +899,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1974600270, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 793920457291670861, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

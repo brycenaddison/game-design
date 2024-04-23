@@ -95,14 +95,11 @@ public class CustomerAsset : Asset
             {
                 Owner.Unclaim(this);
 
-                MapGenerator generator = GameObject.Find("MapGenerator").GetComponent<MapGenerator>();
-
-                if (generator == null) return;
+                MapGenerator generator = Camera.main.GetComponent<CityPower>().Map();
 
                 // propogate unclaim to possibly unclaim unconnected tiles
                 foreach (Asset asset in generator.GetAdjacentAssets(this))
                 {
-                    Debug.Log("huh?");
                     if (asset is CustomerAsset customerAsset)
                     {
                         customerAsset.AcceptBestOffer();
@@ -119,8 +116,9 @@ public class CustomerAsset : Asset
 
     public bool HasAdjacentOwner(AssetOwner owner)
     {
-        MapGenerator generator = GameObject.Find("MapGenerator").GetComponent<MapGenerator>();
-        if (generator == null) return false;
+        return true;
+
+        MapGenerator generator = Camera.main.GetComponent<CityPower>().Map();
 
         // pathfinding to ensure connected to owned power source
         List<Asset> visited = new List<Asset>();

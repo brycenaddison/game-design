@@ -5,8 +5,15 @@ using UnityEngine;
 public class CityPower : MonoBehaviour
 {
     public AssetOwner cityPower;
+    public MapGenerator mapGenerator;
+
     public AssetOwner Get()
     {
         return cityPower;
+    }
+
+    public MapGenerator Map()
+    {
+        return mapGenerator;
     }
 }
