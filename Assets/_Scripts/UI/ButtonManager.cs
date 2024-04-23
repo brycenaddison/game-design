@@ -28,7 +28,7 @@ public class ButtonManager : MonoBehaviour
     // doesn't seem very efficient
     void Update()
     {
-        if (gameTime.GetPaused())
+        if (gameTime.GetState() != GameTime.GameState.PLAYING)
         {
             slowButton.interactable = false;
             medButton.interactable = false;

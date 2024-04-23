@@ -54,7 +54,7 @@ public class CameraGuide : MonoBehaviour
 
     void Update()
     {
-        if (Camera.main.GetComponent<GameTime>().GetPaused()) return;
+        if (Camera.main.GetComponent<GameTime>().GetState() != GameTime.GameState.PLAYING) return;
 
         if (Input.GetButtonDown("Jump"))
         {

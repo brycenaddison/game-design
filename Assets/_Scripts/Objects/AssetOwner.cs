@@ -65,7 +65,7 @@ public class AssetOwner : MonoBehaviour
             {
                 if (IsPlayable)
                 {
-                    gameTime.TriggerGameOver();
+                    gameTime.TriggerLose();
                 }
                 else
                 {
@@ -78,7 +78,7 @@ public class AssetOwner : MonoBehaviour
     private void OnDestroy()
     {
         scoreboard?.Unregister(this);
-        cleanup();
+        if (cleanup != null) cleanup();
     }
 
     public float PowerTotal

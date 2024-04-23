@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using UnityEngine;
 
 public class Scoreboard : MonoBehaviour
@@ -12,6 +13,8 @@ public class Scoreboard : MonoBehaviour
 
     void Update()
     {
+        CheckWon();
+
         ownerList.Sort((a, b) => b.balance.CompareTo(a.balance));
         for (int i = 0; i < ownerList.Count; i++)
         {
@@ -21,6 +24,16 @@ public class Scoreboard : MonoBehaviour
             row.displayName.text = owner.Name;
             row.balance.text = owner.balance.ToString("C", CultureInfo.CurrentCulture);
             row.income.text = owner.Profit.ToString("C", CultureInfo.CurrentCulture);
+        }
+    }
+
+    private void CheckWon()
+    {
+        List<AssetOwner> competitors = new List<AssetOwner>(ownerList.Where((owner) => owner.balance > 0));
+
+        if (competitors.Count == 1 && competitors[0] == Camera.main.GetComponent<AssetOwner>())
+        {
+            Camera.main.GetComponent<GameTime>().TriggerWin();
         }
     }
 

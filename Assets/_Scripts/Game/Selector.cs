@@ -64,7 +64,7 @@ public class Selector : MonoBehaviour
 
     void Update()
     {
-        if (gameTime.GetPaused()) return;
+        if (gameTime.GetState() != GameTime.GameState.PLAYING) return;
 
         if (Highlighted != null)
         {
