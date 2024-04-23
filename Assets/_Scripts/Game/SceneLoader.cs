@@ -17,7 +17,7 @@ public class SceneLoader : MonoBehaviour
     public static void LoadGame()
     {
         Debug.Log("Loading game");
-        SceneManager.LoadScene("PowerStruggle 1");
+        SceneManager.LoadScene("PowerStruggle");
         Debug.Log("Loaded game");
     }
 

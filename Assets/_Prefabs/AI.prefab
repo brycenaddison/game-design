@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  initialBalanace: 1000
-  IsPlayable: 0
-  CityPower: {fileID: 4589240685810185900, guid: 841f134ed51bbd24798de699cb10192a, type: 3}
+  _name: 
+  _id: 0
+  _isPlayable: 0
+  initialBalance: 1000
+  scoreboard: {fileID: 0}
   balance: 0

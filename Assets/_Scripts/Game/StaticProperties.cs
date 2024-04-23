@@ -15,8 +15,8 @@ public class StaticProperties
 {
     private static string _name = "Unnamed Player";
     private static Color _color = new Color(0, 0, 0);
-    private static int _mapSize = 100;
-    private static int _numAIs = 10;
+    private static int _mapSize = 40;
+    private static int _numAIs = 3;
     private static float _strengthOfAI = 0.8f;
 
     public static string Name

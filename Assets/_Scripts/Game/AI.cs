@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    private List<AssetOwner> owners = new List<AssetOwner>();
+    private readonly List<AssetOwner> owners = new List<AssetOwner>();
     private int month;
     private float strength;
-    private MapGenerator mg = new MapGenerator();
 
     void Start()
     {
@@ -16,18 +15,17 @@ public class AI : MonoBehaviour
 
     void Update()
     {  
-        GameTime gt = new GameTime();
+        GameTime gt = gameObject.AddComponent<GameTime>();
         month = gt.GetMonth();
-        owners = mg.GetAIOwners();
 
         foreach (AssetOwner owner in owners)
         {
             if (month == 1)
             {
                 owner.MaxRates();
-            } else if (month < 7)
+            } else if (month < 11)
             {
-                owner.Undercut(mg);
+                owner.Undercut();
             } else
             {
                 owner.Defend();

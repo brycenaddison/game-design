@@ -301,24 +301,32 @@ public class AssetOwner : MonoBehaviour
 
     public void MaxRates()
     {
-        foreach (CustomerAsset asset in assets)
+        foreach (CustomerAsset asset in assets.Cast<CustomerAsset>())
         {
             asset.Offer(this, asset.MaxPayment);
         }
     }
 
-    public void Undercut(MapGenerator mg)
+    public void Undercut()
     {    
-        foreach (CustomerAsset asset in assets.Cast<CustomerAsset>())
+        for (int x = 0; x < StaticProperties.MapSize; x++)
         {
-            List<CustomerAsset> customerAssets = (List<CustomerAsset>)mg.GetAdjacentAssets(asset).Cast<CustomerAsset>();
-
-            foreach (CustomerAsset customerAsset in customerAssets)
+            for (int z = 0; z < StaticProperties.MapSize; z++)
             {
-                if (customerAsset.Owner != this) {
-                    asset.Offer(this, FairValue(customerAsset, customerAsset));
+                Vector3 position = new Vector3(7 * x, 0, -7 * z);
+                Collider[] hits = Physics.OverlapSphere(position, 1f);
+                CustomerAsset asset;
+
+                foreach (Collider hit in hits)
+                {
+                    asset = (CustomerAsset)hit.GetComponent<Asset>();
+
+                    if (asset.Owner != this)
+                    {
+                        asset.Offer(this, FairValue(asset, asset));
+                    }
                 }
-            }      
+            }
         }
     }
 
