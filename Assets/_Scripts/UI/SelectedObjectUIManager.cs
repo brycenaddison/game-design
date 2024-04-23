@@ -5,6 +5,7 @@ using System.Globalization;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class SelectedObjectUIManager : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class SelectedObjectUIManager : MonoBehaviour
     public GameObject bidInput;
     public GameObject bidPlaceholder;
     public GameObject bidText;
+    public Button biddingButton;
 
 
     private Text nameText;
@@ -91,6 +93,10 @@ public class SelectedObjectUIManager : MonoBehaviour
                 SetCustomerText(customerAsset);
                 SetBidding(true);
                 bidding.GetComponent<CustomerBidding>().SetAsset(customerAsset);
+                if (Camera.main.GetComponent<AssetOwner>().CanBidOn(customerAsset) != biddingButton.interactable)
+                {
+                    biddingButton.interactable = Camera.main.GetComponent<AssetOwner>().CanBidOn(customerAsset);
+                }
 
                 if (customerAsset.IsBiddedOnBy(Camera.main.GetComponent<AssetOwner>()))
                 {

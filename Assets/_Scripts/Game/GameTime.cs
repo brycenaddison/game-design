@@ -165,4 +165,9 @@ public class GameTime : MonoBehaviour
     {
         speed = Speed.SKIP;
     }
+
+    public int GetMonth()
+    {
+        return Mathf.FloorToInt(month) % 12 + 1;
+    }   
 }

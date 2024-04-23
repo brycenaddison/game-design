@@ -560,8 +560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57090e03b315740408dc597fad866bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputTextBox: {fileID: 6992225597956377185}
-  outputTextBox: {fileID: 1616808848}
+  inputText: {fileID: 2752507993784485598}
+  outputText: {fileID: 1616808850}
 --- !u!1 &1974600269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,6 +1694,7 @@ MonoBehaviour:
   bidInput: {fileID: 5161647053873615978}
   bidPlaceholder: {fileID: 1161007206364282967}
   bidText: {fileID: 6992225597956377185}
+  biddingButton: {fileID: 1741211861}
 --- !u!1 &793920458167705375
 GameObject:
   m_ObjectHideFlags: 0

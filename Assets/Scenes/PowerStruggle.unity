@@ -308,7 +308,7 @@ MonoBehaviour:
   ownerName: Power House
   id: 0
   isPlayable: 0
-  initialBalanace: 1000
+  initialBalance: 1000
   scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!4 &362342774
@@ -451,7 +451,7 @@ MonoBehaviour:
   ownerName: AC/DC Current
   id: 1
   isPlayable: 0
-  initialBalanace: 1000
+  initialBalance: 1000
   scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!4 &710104973
@@ -573,7 +573,7 @@ MonoBehaviour:
   ownerName: The Goat
   id: 3
   isPlayable: 1
-  initialBalanace: 1000
+  initialBalance: 1000
   scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!20 &963194227
@@ -742,7 +742,7 @@ MonoBehaviour:
   ownerName: City Power
   id: 4
   isPlayable: 0
-  initialBalanace: 1000
+  initialBalance: 1000
   scoreboard: {fileID: 0}
   balance: 0
 --- !u!4 &1180354802
@@ -792,7 +792,7 @@ MonoBehaviour:
   ownerName: Quick Voltz
   id: 2
   isPlayable: 0
-  initialBalanace: 1000
+  initialBalance: 1000
   scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!4 &1228577827
