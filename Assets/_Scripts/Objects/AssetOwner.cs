@@ -68,7 +68,7 @@ public class AssetOwner : MonoBehaviour
 
         if (IsPlayable)
         {
-            Name = StaticProperties.Name;
+            Name = SaveText.GetUserInput();
             Color = StaticProperties.Color;
             Id = 0;
         } else if (GetCityPower().Get() == this)
@@ -309,6 +309,8 @@ public class AssetOwner : MonoBehaviour
 
     public void Undercut()
     {    
+        Debug.Log("attempting to undercut!");
+        
         for (int x = 0; x < StaticProperties.MapSize; x++)
         {
             for (int z = 0; z < StaticProperties.MapSize; z++)
@@ -321,10 +323,14 @@ public class AssetOwner : MonoBehaviour
                 {
                     asset = (CustomerAsset)hit.GetComponent<Asset>();
 
+                    asset.Offer(this, 5f);
+
+                    /*
                     if (asset.Owner != this)
                     {
                         asset.Offer(this, FairValue(asset, asset));
                     }
+                    */
                 }
             }
         }
