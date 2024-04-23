@@ -32,4 +32,15 @@ public class Scoreboard : MonoBehaviour
         newRow.gameObject.SetActive(true);
         rows.Add(newRow);
     }
+
+    public void Unregister(AssetOwner assetOwner)
+    {
+        int index = ownerList.IndexOf(assetOwner);
+        ownerList.RemoveAt(index);
+        if (rows[index].gameObject != null)
+        {
+            Destroy(rows[index].gameObject);
+        }
+        rows.RemoveAt(index);
+    }
 }

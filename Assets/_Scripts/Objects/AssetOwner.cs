@@ -32,6 +32,8 @@ public class AssetOwner : MonoBehaviour
     [Header("Read Only")]
     public float balance;
 
+    private Action cleanup;
+
     void Start()
     {
         foreach (Asset asset in assets)
@@ -56,7 +58,7 @@ public class AssetOwner : MonoBehaviour
 
         balance = initialBalance;
 
-        gameTime.RegisterOnMonth(1, () =>
+        cleanup = gameTime.RegisterOnMonth(1, () =>
         {
             balance += Profit;
             if (balance < 0)
@@ -71,6 +73,27 @@ public class AssetOwner : MonoBehaviour
                 }
             }
         }, Id);
+    }
+
+    private void TriggerLose()
+    {
+        Debug.Log($"{ownerName} has lost the game.");
+        foreach (Asset asset in new List<Asset>(assets))
+        {
+            Unclaim(asset);
+
+            if (asset is PowerAsset powerAsset)
+            {
+                Destroy(powerAsset.gameObject);
+            }
+        }
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        scoreboard?.Unregister(this);
+        cleanup();
     }
 
     public float PowerTotal
@@ -181,6 +204,12 @@ public class AssetOwner : MonoBehaviour
     {
         asset.Owner = null;
         assets.Remove(asset);
+
+        if (asset is CustomerAsset customerAsset)
+        {
+            customerAsset.RemoveOffer(this);
+            customerAsset.AcceptBestOffer();
+        }
     }
 
     public void Purchase(IPurchasable p)
