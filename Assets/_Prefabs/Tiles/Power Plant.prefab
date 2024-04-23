@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assetName: Power Station
-  Upkeep: 200
-  PowerGenerated: 44
+  Upkeep: 750
+  PowerGenerated: 100
   _PowerUpgrades:
   - Name: Medium Station
     PowerAdded: 40

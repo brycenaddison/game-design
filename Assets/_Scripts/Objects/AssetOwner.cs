@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -50,10 +51,22 @@ public class AssetOwner : MonoBehaviour
             Name = StaticProperties.Name;
             Color = StaticProperties.Color;
             Id = 0;
-        }
-        else
+        } else if (CityPower.GetComponent<AssetOwner>() == this)
         {
+            Name = "City Power";
+            Color = Color.grey;
+            Id = 1;
+        } else
+        {
+            List<string> Names = new List<string>(File.ReadAllLines("Assets/Names.txt"));
+            Name = Names[UnityEngine.Random.Range(0, Names.Count)];
 
+            int red = UnityEngine.Random.Range(0, 255);
+            int green = UnityEngine.Random.Range(0, 255);
+            int blue = UnityEngine.Random.Range(0, 255);
+            Color = new Color(red / 255f, green / 255f, blue / 255f);
+
+            Id = UnityEngine.Random.Range(2, 100000000); // crashes if this happens to be the same as another asset owner lmao 🙏
         }
 
         balance = initialBalance;
@@ -222,7 +235,7 @@ public class AssetOwner : MonoBehaviour
             Claim(asset);
         }
 
-        balance += other.balance;
+        balance += other.balance - 5000;
         other.balance = 0;
     }
 

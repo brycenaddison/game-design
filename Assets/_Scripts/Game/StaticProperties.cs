@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class StaticProperties
 {
     private static string _name = "Unnamed Player";
     private static Color _color = new Color(0, 0, 0);
-    private static int _mapSize = 12;
-    private static int _numAIs = 3;
+    private static int _mapSize = 100;
+    private static int _numAIs = 10;
     private static float _strengthOfAI = 0.8f;
 
     public static string Name
