@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,6 @@ public class Profit : MonoBehaviour
 
     void Update()
     {
-        text.text = $"Balance: ${player.balance} ({player.Profit}/year)";
+        text.text = $"Balance: {player.balance.ToString("C", CultureInfo.CurrentCulture)}    Profit: {player.Profit.ToString("C", CultureInfo.CurrentCulture)}";
     }
 }

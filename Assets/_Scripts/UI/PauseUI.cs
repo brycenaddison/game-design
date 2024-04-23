@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PauseUI : MonoBehaviour
 {
-    public bool isGameOver;
+    public GameTime.GameState triggerState;
     private bool previousState;
     private GameTime gameTime;
 
@@ -17,7 +17,7 @@ public class PauseUI : MonoBehaviour
 
     private bool Visible()
     {
-        return isGameOver ? gameTime.IsGameOver() : gameTime.GetPaused();
+        return triggerState == gameTime.GetState();
 
     }
 

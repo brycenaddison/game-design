@@ -20,6 +20,6 @@ public class FreePower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Free Power: " + player.FreePower;
+        text.text = "Excess Power: " + player.FreePower + " MWh";
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -305,10 +305,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: Power House
-  id: 0
-  isPlayable: 0
-  initialBalanace: 1000
+  CityPower: {fileID: 1180354800}
+  _name: Power House
+  _id: 0
+  _isPlayable: 0
+  initialBalance: 1000
+  scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!4 &362342774
 Transform:
@@ -447,10 +449,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: AC/DC Current
-  id: 1
-  isPlayable: 0
-  initialBalanace: 1000
+  CityPower: {fileID: 1180354800}
+  _name: AC/DC Current
+  _id: 1
+  _isPlayable: 0
+  initialBalance: 1000
+  scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!4 &710104973
 Transform:
@@ -568,10 +572,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: The Goat
-  id: 3
-  isPlayable: 1
-  initialBalanace: 1000
+  CityPower: {fileID: 1180354800}
+  _name: The Goat
+  _id: 3
+  _isPlayable: 1
+  initialBalance: 1000
+  scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!20 &963194227
 Camera:
@@ -736,10 +742,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: City Power
-  id: 4
-  isPlayable: 0
-  initialBalanace: 1000
+  CityPower: {fileID: 0}
+  _name: City Power
+  _id: 5
+  _isPlayable: 0
+  initialBalance: 1e+11
+  scoreboard: {fileID: 0}
   balance: 0
 --- !u!4 &1180354802
 Transform:
@@ -785,10 +793,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: Quick Voltz
-  id: 2
-  isPlayable: 0
-  initialBalanace: 1000
+  CityPower: {fileID: 1180354800}
+  _name: Quick Voltz
+  _id: 2
+  _isPlayable: 0
+  initialBalance: 1000
+  scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!4 &1228577827
 Transform:
@@ -996,6 +1006,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1974600272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1974600272, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
+  m_PrefabInstance: {fileID: 793920457419126000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28e974ddd66ed84684455c826245266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2146745436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,5 +1182,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 963194231}
+    - target: {fileID: 1113347624277998082, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 963194233}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}

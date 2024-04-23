@@ -8,17 +8,32 @@ using UnityEngine;
 public class AssetOwner : MonoBehaviour
 {
     public List<Asset> assets;
-    public float initialBalanace = 1000;
-    public bool IsPlayable;
+
     public GameObject CityPower;
 
-    public string Name { get; set; }
-    public int Id { get; set; }
+    [SerializeField]
+    private string _name;
+    [SerializeField]
+    private int _id;
+    [SerializeField]
+    private bool _isPlayable;
+
+    public string Name { get => _name; set => _name = value; }
+    public int Id { get => _id; set => _id = value; }
     public Color Color { get; set; }
+    public bool IsPlayable { get => _isPlayable; set => _isPlayable = value; }
     public GameObject HQ { get; set; }
+
+    public float initialBalance = 1000;
+    public Scoreboard scoreboard;
+
+    public static int BidWindowStart = 7;
+    public static int BidWindowEnd = 9;
 
     [Header("Read Only")]
     public float balance;
+
+    private Action cleanup;
 
     void Start()
     {
@@ -26,6 +41,8 @@ public class AssetOwner : MonoBehaviour
         {
             Claim(asset);
         }
+
+        scoreboard?.Register(this);
 
         GameTime gameTime = Camera.main.GetComponent<GameTime>();
 
@@ -52,22 +69,29 @@ public class AssetOwner : MonoBehaviour
             Id = UnityEngine.Random.Range(2, 100000000); // crashes if this happens to be the same as another asset owner lmao 🙏
         }
 
-        balance = initialBalanace;
+        balance = initialBalance;
 
-        gameTime.RegisterOnMonth(1, () =>
+        cleanup = gameTime.RegisterOnMonth(1, () =>
         {
             balance += Profit;
             if (balance < 0)
             {
                 if (IsPlayable)
                 {
-                    gameTime.TriggerGameOver();
-                } else
+                    gameTime.TriggerLose();
+                }
+                else
                 {
                     DeclareBankruptcy();
                 }
             }
         }, Id);
+    }
+
+    private void OnDestroy()
+    {
+        scoreboard?.Unregister(this);
+        if (cleanup != null) cleanup();
     }
 
     public float PowerTotal
@@ -159,7 +183,8 @@ public class AssetOwner : MonoBehaviour
             if (asset == oldOwner.HQ)
             {
                 BuyOut(oldOwner);
-            } else
+            }
+            else
             {
                 oldOwner.Unclaim(asset);
             }
@@ -175,8 +200,20 @@ public class AssetOwner : MonoBehaviour
 
     public void Unclaim(Asset asset)
     {
-        asset.Owner = null;
+        if (CityPower != null)
+        {
+            asset.Owner = CityPower.GetComponent<AssetOwner>();
+        } else
+        {
+            asset.Owner = null;
+        }
         assets.Remove(asset);
+
+        if (asset is CustomerAsset customerAsset)
+        {
+            customerAsset.RemoveOffer(this);
+            customerAsset.AcceptBestOffer();
+        }
     }
 
     public void Purchase(IPurchasable p)
@@ -204,11 +241,21 @@ public class AssetOwner : MonoBehaviour
 
     public void DeclareBankruptcy()
     {
-        foreach (Asset asset in assets)
+        foreach (Asset asset in new List<Asset>(assets))
         {
             CityPower.GetComponent<AssetOwner>().Claim(asset);
         }
 
         balance = 0;
+    }
+
+    public bool CanBidOn(CustomerAsset customerAsset)
+    {
+        if (!customerAsset.HasAdjacentOwner(this)) return false;
+
+        int month = Camera.main.GetComponent<GameTime>().GetMonth();
+
+        if (customerAsset.Owner == this) return month > BidWindowEnd || month < BidWindowStart;
+        return month >= BidWindowStart && month <= BidWindowEnd;
     }
 }

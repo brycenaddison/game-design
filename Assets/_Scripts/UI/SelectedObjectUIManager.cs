@@ -5,6 +5,7 @@ using System.Globalization;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class SelectedObjectUIManager : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class SelectedObjectUIManager : MonoBehaviour
     public GameObject bidInput;
     public GameObject bidPlaceholder;
     public GameObject bidText;
+    public Button biddingButton;
 
 
     private Text nameText;
@@ -91,11 +93,12 @@ public class SelectedObjectUIManager : MonoBehaviour
                 SetCustomerText(customerAsset);
                 SetBidding(true);
                 bidding.GetComponent<CustomerBidding>().SetAsset(customerAsset);
-
-                if (customerAsset.IsBiddedOnBy(Camera.main.GetComponent<AssetOwner>()))
+                if (Camera.main.GetComponent<AssetOwner>().CanBidOn(customerAsset) != biddingButton.interactable)
                 {
-                    drop.SetActive(true);
+                    biddingButton.interactable = Camera.main.GetComponent<AssetOwner>().CanBidOn(customerAsset);
                 }
+
+                drop.SetActive(customerAsset.IsBiddedOnBy(Camera.main.GetComponent<AssetOwner>()));
             }
         }
         else
@@ -150,8 +153,8 @@ public class SelectedObjectUIManager : MonoBehaviour
         typeText.text = "Power Generator";
         typeText.color = powerAssetColor;
         ownerText.text = "Owner: " + asset.Owner.Name;
-        moneyText.text = "Expense per day: $" + asset.Upkeep;
-        powerText.text = "Power generated: " + asset.PowerGenerated + " units";
+        moneyText.text = "Expense per day: " + asset.Upkeep.ToString("C", CultureInfo.CurrentCulture);
+        powerText.text = "Power generated: " + asset.PowerGenerated + " MWh";
     }
 
     void SetCustomerText(CustomerAsset asset)
@@ -168,8 +171,8 @@ public class SelectedObjectUIManager : MonoBehaviour
         else
         {
             ownerText.text = "Supplied by: " + asset.Owner.Name;
-            moneyText.text = "Currently paying: $" + asset.Payment;
-            powerText.text = "Power draw: " + asset.Draw + " units";
+            moneyText.text = "Currently paying: " + asset.Payment.ToString("C", CultureInfo.CurrentCulture);
+            powerText.text = "Power draw: " + asset.Draw + " MWh";
         }
     }
 
