@@ -1,3 +1,11 @@
+/**
+ * Changes the scene when certain buttons are pressed. In general scenes will follow
+ * this order: Title Screen -> Story -> Settings -> Game
+ *
+ * Author: Brycen, Michael, Jack
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,5 +33,12 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Loading story");
         SceneManager.LoadScene("Story");
         Debug.Log("Loaded story");
+    }
+        
+    public static void LoadSettings()
+    {
+        Debug.Log("Loading settings");
+        SceneManager.LoadScene("Settings");
+        Debug.Log("Loaded settings");
     }
 }

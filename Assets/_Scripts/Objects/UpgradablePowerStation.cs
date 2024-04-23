@@ -1,3 +1,11 @@
+/**
+ * Several upgrades are available for Power Stations, such as reducing
+ * per-unit cost of power production and increasing overall power production.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -59,7 +67,7 @@ public class UpgradablePowerStation : PowerAsset
         PowerGenerated += upgrade.PowerAdded;
         Upkeep += upgrade.UpkeepAdded;
 
-        CurrentOwner.Purchase(upgrade);
+        Owner.Purchase(upgrade);
     }
 
     public PowerStationUpgrade? GetUpgrade(UpgradeType upgradeType)

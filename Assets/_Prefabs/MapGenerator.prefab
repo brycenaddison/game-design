@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8328537669629991110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8328537669629991108}
+  - component: {fileID: 8328537669629991109}
+  m_Layer: 0
+  m_Name: MapGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8328537669629991108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328537669629991110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 15, z: 30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8328537669629991109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328537669629991110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fc9f2ec8eebc54888ce4fdd220b4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreboard: {fileID: 0}
+  Player: {fileID: 0}
+  CityPower: {fileID: 0}
+  AI: {fileID: 2643459702478426511, guid: 8b66c5af8a58cf8498b3ace13c4a5c81, type: 3}
+  PowerStation: {fileID: 8798829054895997438, guid: b433118fa52a521498dd124a2f0b5fa8, type: 3}
+  SolarField: {fileID: 2611674171277642448, guid: ee91a384e3e333749931a06e9b1a7f36, type: 3}
+  House: {fileID: 3592504421235015420, guid: 14f6f2e1af0eea44da8795605dda1284, type: 3}
+  Shop: {fileID: 1000012304243196, guid: 06ebcddd166047f4390fddac1b4dfc38, type: 3}
+  Building: {fileID: 1000013462587690, guid: 03b1e74f6d25c3749be74b9c50c2f58d, type: 3}
+  VerticalRoad: {fileID: 1000014089819680, guid: 068714d3a2d4683488a7b812c65bd98f, type: 3}
+  HorizontalRoad: {fileID: 1000014089819680, guid: 7260339ca3e0cb144a854acd71f91de4, type: 3}
+  IntersectionRoad: {fileID: 1000012465406614, guid: f96807861d9da70428993ecd9e1ad1b2, type: 3}

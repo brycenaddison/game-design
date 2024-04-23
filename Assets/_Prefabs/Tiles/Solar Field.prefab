@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2611674171277642448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 6953573483336917202}
   - {fileID: 3477134900121773951}
@@ -67,8 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assetName: Solar Field
-  Upkeep: 5
-  PowerGenerated: 10
+  Upkeep: 25
+  PowerGenerated: 25
 --- !u!1001 &2611674170335553258
 PrefabInstance:
   m_ObjectHideFlags: 0

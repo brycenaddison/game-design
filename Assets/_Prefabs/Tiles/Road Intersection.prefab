@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000013273022382}
   - component: {fileID: 23000012692699298}
   m_Layer: 0
-  m_Name: Road Crossing
+  m_Name: Road Intersection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

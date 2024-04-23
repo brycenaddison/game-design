@@ -1,3 +1,10 @@
+/**
+ * GUI text prompt to get the name of player's company. Currently disabled but kept for testing.
+ *
+ * Author: Michael
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +19,6 @@ public class NamePrompt : MonoBehaviour
     public void OnEnter()
     {
         StaticProperties.Name = text.GetComponent<Text>().text;
-        SceneLoader.LoadStory();
+        SceneLoader.LoadGame();
     }
 }

@@ -1,3 +1,12 @@
+/**
+ * Controls the pacing of the game, such as when bidding opens and closes. Also
+ * can change the speed to Slow, Medium, Fast, or to auto-skip a year. Allows for
+ * pausing, and indicates when the game is won or lost.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +24,14 @@ public class GameTime : MonoBehaviour
         SKIP,
     }
 
+    public enum GameState
+    {
+        PLAYING,
+        PAUSED,
+        LOST,
+        WON,
+    }
+
     public float slowMonthsPerSecond = 0.1f;
     public float medMonthsPerSecond = 0.5f;
     public float fastMonthsPerSecond = 2f;
@@ -25,8 +42,7 @@ public class GameTime : MonoBehaviour
 
     [Header("Read Only")]
     public float month;
-    private Boolean paused;
-    private Boolean gameOver;
+    private GameState state;
     private DailyEvents[] events;
 
     private class DailyEvents
@@ -43,6 +59,11 @@ public class GameTime : MonoBehaviour
             events.Add((-1 * priority, callback));
         }
 
+        public void RemoveEvent(Action callback)
+        {
+            events.RemoveAll((tuple) => tuple.Item2 == callback);
+        }
+
         public void ExecuteEvents()
         {
             events.Sort((a, b) => a.Item1.CompareTo(b.Item1));
@@ -56,9 +77,8 @@ public class GameTime : MonoBehaviour
 
     void Start()
     {
+        state = GameState.PLAYING;
         month = 0;
-        paused = false;
-        gameOver = false;
         events = new DailyEvents[12];
         for (int i = 0; i < 12; i++)
         {
@@ -79,15 +99,15 @@ public class GameTime : MonoBehaviour
 
     void Update()
     {
-        if (gameOver) return;
+        if (state == GameState.WON || state == GameState.LOST) return;
 
         if (Input.GetButtonDown("Cancel"))
         {
-            paused = !paused;
-            Time.timeScale = paused ? 0f : 1f;
+            state = state == GameState.PAUSED ? GameState.PLAYING : GameState.PAUSED;
+            Time.timeScale = state == GameState.PAUSED ? 0f : 1f;
         }
 
-        if (paused)
+        if (state == GameState.PAUSED)
         {
             return;
         }
@@ -118,25 +138,26 @@ public class GameTime : MonoBehaviour
         }
     }
 
-    public bool GetPaused()
+    public GameState GetState()
     {
-        return paused;
+        return state;
     }
 
-    public void TriggerGameOver()
+    public void TriggerLose()
     {
-        gameOver = true;
-        paused = true;
+        state = GameState.LOST;
     }
 
-    public bool IsGameOver()
+    public void TriggerWin()
     {
-        return gameOver;
+        state = GameState.WON;
     }
 
-    public void RegisterOnMonth(int month, Action callback, int priority)
+    public Action RegisterOnMonth(int month, Action callback, int priority)
     {
         events[(month - 1) % 12].AddEvent(callback, priority);
+
+        return () => events[(month - 1) % 12].RemoveEvent(callback);
     }
 
     private DateTime CurrentDate => startDate.AddMonths(Mathf.FloorToInt(month));
@@ -169,5 +190,5 @@ public class GameTime : MonoBehaviour
     public int GetMonth()
     {
         return Mathf.FloorToInt(month) % 12 + 1;
-    }   
+    }
 }

@@ -1,3 +1,12 @@
+/**
+ * GUI component indicating the player's free power. Free power is
+ * the total amount of power a company produces less the total amount
+ * of power its consumers use.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +29,6 @@ public class FreePower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Free Power: " + player.FreePower;
+        text.text = "Excess Power: " + player.FreePower + " MWh";
     }
 }

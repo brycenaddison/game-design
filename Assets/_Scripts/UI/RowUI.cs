@@ -1,3 +1,10 @@
+/**
+ * GUI component for organizing and displaying other GUI components.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

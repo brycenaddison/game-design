@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4890763854397221361}
   - component: {fileID: 255992763681169880}
   m_Layer: 0
-  m_Name: Customer
+  m_Name: House
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

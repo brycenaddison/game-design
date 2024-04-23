@@ -1,3 +1,11 @@
+/**
+ * "Guides" the camera by making movement smooth. Allows for camera control with
+ * WASD keys, scrolling, and clicks.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using UnityEngine;
 
 public class CameraGuide : MonoBehaviour
@@ -54,14 +62,14 @@ public class CameraGuide : MonoBehaviour
 
     void Update()
     {
-        if (Camera.main.GetComponent<GameTime>().GetPaused()) return;
+        if (Camera.main.GetComponent<GameTime>().GetState() != GameTime.GameState.PLAYING) return;
 
         if (Input.GetButtonDown("Jump"))
         {
-            GameObject selected = Camera.main.GetComponent<Selector>().Selected;
-            if (selected)
+            GameObject home = Camera.main.GetComponent<AssetOwner>().HQ;
+            if (home)
             {
-                MoveToAsset(selected);
+                MoveToAsset(home);
                 return;
             }
         }

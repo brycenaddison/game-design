@@ -1,3 +1,11 @@
+/**
+ * Main logic for determining which GUI element is displayed at any given time. GUI elements may change
+ * at startup, when an asset is clicked, when the game is paused, or when the player wins or loses.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -27,6 +35,8 @@ public class SelectedObjectUIManager : MonoBehaviour
     public GameObject bidPlaceholder;
     public GameObject bidText;
     public Button biddingButton;
+    public Button purchasePlant;
+    public Text purchasePrice;
 
 
     private Text nameText;
@@ -83,10 +93,19 @@ public class SelectedObjectUIManager : MonoBehaviour
 
             SetUpgradeButtons(asset);
             SetBidding(false);
+            purchasePlant.gameObject.SetActive(false);
+            drop.SetActive(false);
 
             if (asset is PowerAsset powerAsset)
             {
                 SetPowerText(powerAsset);
+
+                if (powerAsset.IsBuyable(Camera.main.GetComponent<AssetOwner>()))
+                {
+                    purchasePlant.gameObject.SetActive(true);
+                    purchasePlant.interactable = Camera.main.GetComponent<AssetOwner>().CanAfford(powerAsset);
+                    purchasePrice.text = powerAsset.Cost.ToString("C", CultureInfo.CurrentCulture);
+                }   
             }
             else if (asset is CustomerAsset customerAsset)
             {
@@ -114,7 +133,7 @@ public class SelectedObjectUIManager : MonoBehaviour
 
     void SetUpgradeButtons(Asset asset)
     {
-        if (asset is UpgradablePowerStation upgradablePowerStation && asset.CurrentOwner == Camera.main.GetComponent<AssetOwner>())
+        if (asset is UpgradablePowerStation upgradablePowerStation && asset.Owner == Camera.main.GetComponent<AssetOwner>())
         {
             UpgradablePowerStation.PowerStationUpgrade? powerUpgrade = upgradablePowerStation.GetUpgrade(UpgradablePowerStation.UpgradeType.Power);
             UpgradablePowerStation.PowerStationUpgrade? upkeepUpgrade = upgradablePowerStation.GetUpgrade(UpgradablePowerStation.UpgradeType.Upkeep);
@@ -152,9 +171,9 @@ public class SelectedObjectUIManager : MonoBehaviour
         nameText.text = asset.assetName;
         typeText.text = "Power Generator";
         typeText.color = powerAssetColor;
-        ownerText.text = "Owner: " + asset.CurrentOwner.ownerName;
+        ownerText.text = "Owner: " + asset.Owner.Name;
         moneyText.text = "Expense per day: " + asset.Upkeep.ToString("C", CultureInfo.CurrentCulture);
-        powerText.text = "Power generated: " + asset.PowerGenerated + " units";
+        powerText.text = "Power generated: " + asset.PowerGenerated + " MWh";
     }
 
     void SetCustomerText(CustomerAsset asset)
@@ -162,7 +181,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         nameText.text = asset.assetName;
         typeText.text = "Customer";
         typeText.color = customerAssetColor;
-        if (asset.CurrentOwner == null)
+        if (asset.Owner == null)
         {
             ownerText.text = "No power supplied";
             moneyText.text = "";
@@ -170,9 +189,9 @@ public class SelectedObjectUIManager : MonoBehaviour
         }
         else
         {
-            ownerText.text = "Supplied by: " + asset.CurrentOwner.ownerName;
+            ownerText.text = "Supplied by: " + asset.Owner.Name;
             moneyText.text = "Currently paying: " + asset.Payment.ToString("C", CultureInfo.CurrentCulture);
-            powerText.text = "Power draw: " + asset.Draw + " units";
+            powerText.text = "Power draw: " + asset.Draw + " MWh";
         }
     }
 
@@ -194,5 +213,10 @@ public class SelectedObjectUIManager : MonoBehaviour
     public void Bid()
     {
         bidding.GetComponent<CustomerBidding>().Bid(selected.GetComponent<CustomerAsset>());
+    }
+
+    public void BuyPowerPlant()
+    {
+        selected.GetComponent<PowerAsset>().Buy(Camera.main.GetComponent<AssetOwner>());
     }
 }
