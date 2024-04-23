@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.SymbolStore;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MapLoader : MonoBehaviour, IAssetMap
 {
@@ -23,7 +24,7 @@ public class MapLoader : MonoBehaviour, IAssetMap
     public GameObject prefab7;
     public GameObject prefab8;
     public GameObject prefab9;
-    
+
     public AssetOwner[] owners;
 
     [SerializeField]
@@ -31,7 +32,8 @@ public class MapLoader : MonoBehaviour, IAssetMap
 
     private Dictionary<char, GameObject> mapDict;
 
-    void Awake() {
+    void Awake()
+    {
         mapDict = new Dictionary<char, GameObject>(){
             {'0', prefab0},
             {'1', prefab1},
@@ -44,7 +46,7 @@ public class MapLoader : MonoBehaviour, IAssetMap
             {'8', prefab8},
             {'9', prefab9}
         };
-        
+
         adjList = new Dictionary<Asset, List<Asset>>();
     }
 
@@ -64,10 +66,12 @@ public class MapLoader : MonoBehaviour, IAssetMap
         // this adjacency system will need to be updated for non-grid rows
         List<List<Asset>> currentMap = new List<List<Asset>>();
 
-        for (int y = 0; y < height; y++) {
+        for (int y = 0; y < height; y++)
+        {
             List<Asset> row = new List<Asset>();
 
-            for (int x = 0; x < width; x++) {
+            for (int x = 0; x < width; x++)
+            {
                 char c = lines[y][x];
                 GameObject prefab = mapDict[c];
                 Quaternion rotation = (c == '7') ? Quaternion.Euler(0, 90, 0) : Quaternion.identity;
@@ -77,11 +81,18 @@ public class MapLoader : MonoBehaviour, IAssetMap
 
                 Asset asset = newObj.GetComponent<Asset>();
 
-                if (asset != null) {
+                if (asset != null)
+                {
                     int ownerIndex = getOwnerIndex(x < halfWidth, y < halfHeight);
                     owners[ownerIndex].Claim(asset);
+                    if (asset is PowerAsset)
+                    {
+                        if (owners[ownerIndex].HQ == null)
+                        {
+                            owners[ownerIndex].HQ = asset.gameObject;
+                        }
+                    }
 
-                    
                     List<Asset> adjacentAssets = new List<Asset>();
 
                     if (row.Count != 0)
@@ -93,10 +104,10 @@ public class MapLoader : MonoBehaviour, IAssetMap
                     if (currentMap.Count != 0)
                     {
                         Asset south = currentMap[currentMap.Count - 1][row.Count];
-            
+
                         adjacentAssets.Add(south);
                         adjList[south].Add(asset);
-                       
+
                     }
                     row.Add(asset);
                     adjList.Add(asset, adjacentAssets);
@@ -110,7 +121,8 @@ public class MapLoader : MonoBehaviour, IAssetMap
         }
     }
 
-    int getOwnerIndex(bool isLeft, bool isTop) {
+    int getOwnerIndex(bool isLeft, bool isTop)
+    {
         if (isLeft && isTop) return 0;
         if (!isLeft && isTop) return 1;
         if (!isLeft && !isTop) return 2;
