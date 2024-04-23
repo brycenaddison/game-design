@@ -153,7 +153,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         typeText.text = "Power Generator";
         typeText.color = powerAssetColor;
         ownerText.text = "Owner: " + asset.CurrentOwner.ownerName;
-        moneyText.text = "Expense per day: $" + asset.Upkeep;
+        moneyText.text = "Expense per day: " + asset.Upkeep.ToString("C", CultureInfo.CurrentCulture);
         powerText.text = "Power generated: " + asset.PowerGenerated + " units";
     }
 
@@ -171,7 +171,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         else
         {
             ownerText.text = "Supplied by: " + asset.CurrentOwner.ownerName;
-            moneyText.text = "Currently paying: $" + asset.Payment;
+            moneyText.text = "Currently paying: " + asset.Payment.ToString("C", CultureInfo.CurrentCulture);
             powerText.text = "Power draw: " + asset.Draw + " units";
         }
     }
