@@ -36,7 +36,10 @@ public class Scoreboard : MonoBehaviour
     {
         int index = ownerList.IndexOf(assetOwner);
         ownerList.RemoveAt(index);
-        Destroy(rows[index].gameObject);
+        if (rows[index].gameObject != null)
+        {
+            Destroy(rows[index].gameObject);
+        }
         rows.RemoveAt(index);
     }
 }
