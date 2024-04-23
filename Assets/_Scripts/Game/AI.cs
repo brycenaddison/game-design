@@ -11,25 +11,14 @@ public class AI : MonoBehaviour
     void Start()
     {
         strength = StaticProperties.StrengthOfAI;
-    }
 
-    void Update()
-    {  
         GameTime gt = gameObject.AddComponent<GameTime>();
-        month = gt.GetMonth();
 
         foreach (AssetOwner owner in owners)
         {
-            if (month == 1)
-            {
-                owner.MaxRates();
-            } else if (month < 11)
-            {
-                owner.Undercut();
-            } else
-            {
-                owner.Defend();
-            }
+            gt.RegisterOnMonth(1, () => owner.MaxRates(), -500);
+            gt.RegisterOnMonth(8, () => owner.Undercut(), -500);
+            gt.RegisterOnMonth(11, () => owner.Defend(), -500);
         }
     }
 }
