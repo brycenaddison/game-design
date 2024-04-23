@@ -1,3 +1,10 @@
+/**
+ * Loads the main menu scene on start-up.
+ *
+ * Author: Michael, Jack
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

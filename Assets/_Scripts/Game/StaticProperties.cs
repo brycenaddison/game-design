@@ -1,3 +1,11 @@
+/**
+ * Global variables needed for several game functions, such as creating the map,
+ * initializing AIs, and displaying colors. Gets these values from the Settings scene.
+ *
+ * Author: Jack, Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

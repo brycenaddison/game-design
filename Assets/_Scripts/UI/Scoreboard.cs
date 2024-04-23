@@ -1,3 +1,11 @@
+/**
+ * Scoreboard displaying current competing companies, their balance, and their profit.
+ * If a company is bought out or goes bankrupt, then they are removed from the leaderboard.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;

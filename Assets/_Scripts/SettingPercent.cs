@@ -1,3 +1,10 @@
+/**
+ * GUI element to receive input from the Settings.
+ *
+ * Author: Michael
+ * Date: 4 / 23 / 24
+*/
+
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;

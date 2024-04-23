@@ -1,3 +1,10 @@
+/**
+ * GUI component that indicates the player's current balance and profit for the upcoming year.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;

@@ -1,3 +1,10 @@
+/**
+ * Text input for a custom bid on a neighboring asset.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

@@ -1,3 +1,13 @@
+/**
+ * Implements functionality for buying out a competitor. This occurs when
+ * your territory directly neighbors a competitor's Power Station, and you
+ * pay to buy it. This means the competitor is out and you acquire all of their
+ * assets (customers and dollars).
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

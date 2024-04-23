@@ -1,3 +1,11 @@
+/**
+ * Generates a random map using Perlin Noise. Populates the map with companies, and
+ * immediately gives those companies some starting assets.
+ *
+ * Author: Jack, Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

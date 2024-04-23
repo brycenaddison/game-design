@@ -1,3 +1,11 @@
+/**
+ * GUI component for the upgrade button on Power Stations. Indicates changes
+ * in power and costs.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;

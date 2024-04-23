@@ -1,3 +1,10 @@
+/**
+ * Menu screen that pops up when the game is paused.
+ *
+ * Author: Michael
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
