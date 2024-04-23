@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
     public static void LoadGame()
     {
         Debug.Log("Loading game");
-        SceneManager.LoadScene("PowerStruggle");
+        SceneManager.LoadScene("PowerStruggle 1");
         Debug.Log("Loaded game");
     }
 
