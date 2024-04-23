@@ -68,7 +68,7 @@ public class AssetOwner : MonoBehaviour
 
         if (IsPlayable)
         {
-            Name = SaveText.GetUserInput();
+            Name = StaticProperties.Name;
             Color = StaticProperties.Color;
             Id = 0;
         }
