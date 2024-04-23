@@ -89,7 +89,7 @@ public class CustomerAsset : Asset
             bestOffer.Key.Claim(this);
         }
         else {
-            if (Owner != null)
+            if (Owner != null && Owner != GameObject.Find("CityPower").GetComponent<AssetOwner>())
             {
                 Owner.Unclaim(this);
 

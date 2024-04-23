@@ -187,7 +187,13 @@ public class AssetOwner : MonoBehaviour
 
     public void Unclaim(Asset asset)
     {
-        asset.Owner = null;
+        if (CityPower != null)
+        {
+            asset.Owner = CityPower.GetComponent<AssetOwner>();
+        } else
+        {
+            asset.Owner = null;
+        }
         assets.Remove(asset);
 
         if (asset is CustomerAsset customerAsset)
@@ -222,7 +228,7 @@ public class AssetOwner : MonoBehaviour
 
     public void DeclareBankruptcy()
     {
-        foreach (Asset asset in assets)
+        foreach (Asset asset in new List<Asset>(assets))
         {
             CityPower.GetComponent<AssetOwner>().Claim(asset);
         }

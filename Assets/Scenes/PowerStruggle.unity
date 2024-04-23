@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  CityPower: {fileID: 0}
+  CityPower: {fileID: 1180354800}
   _name: Power House
   _id: 0
   _isPlayable: 0
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  CityPower: {fileID: 0}
+  CityPower: {fileID: 1180354800}
   _name: AC/DC Current
   _id: 1
   _isPlayable: 0
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  CityPower: {fileID: 0}
+  CityPower: {fileID: 1180354800}
   _name: The Goat
   _id: 3
   _isPlayable: 1
@@ -743,10 +743,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assets: []
   CityPower: {fileID: 0}
-  _name: 
-  _id: 0
+  _name: City Power
+  _id: 5
   _isPlayable: 0
-  initialBalance: 1000
+  initialBalance: 1e+11
   scoreboard: {fileID: 0}
   balance: 0
 --- !u!4 &1180354802
@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  CityPower: {fileID: 0}
+  CityPower: {fileID: 1180354800}
   _name: Quick Voltz
   _id: 2
   _isPlayable: 0
