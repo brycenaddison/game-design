@@ -1,3 +1,11 @@
+/**
+ * Main logic for determining which GUI element is displayed at any given time. GUI elements may change
+ * at startup, when an asset is clicked, when the game is paused, or when the player wins or loses.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

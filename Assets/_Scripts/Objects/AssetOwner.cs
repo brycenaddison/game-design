@@ -1,3 +1,12 @@
+/**
+ * AssetOwners are any GameObject that can own assets: The player, AIs, and City Power.
+ * Large gameplay functionality implemented here, such as winning and losing, bidding
+ * and claiming, and profit.
+ *
+ * Author: Brycen, Jack
+ * Date: 4 / 23 / 24
+*/
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

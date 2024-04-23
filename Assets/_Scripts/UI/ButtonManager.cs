@@ -1,3 +1,11 @@
+/**
+ * GUI Buttons that allow for changing the speed of the game. Related closely
+ * to the GameTime script.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

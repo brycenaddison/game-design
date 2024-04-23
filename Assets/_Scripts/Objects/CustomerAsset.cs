@@ -1,3 +1,11 @@
+/**
+ * Handles the bidding logic. Customers always accept the lowest offer once bidding is closed.
+ * If the lowest offer is from a different company, they will switch to that new company.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;

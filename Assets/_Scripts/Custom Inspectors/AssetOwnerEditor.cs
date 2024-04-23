@@ -1,3 +1,10 @@
+/**
+ * Displays relevant info about companies to the GUI
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using UnityEngine;
 using System.Collections;
 using UnityEditor;

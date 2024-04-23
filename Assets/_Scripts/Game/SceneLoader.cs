@@ -1,3 +1,11 @@
+/**
+ * Changes the scene when certain buttons are pressed. In general scenes will follow
+ * this order: Title Screen -> Story -> Settings -> Game
+ *
+ * Author: Brycen, Michael, Jack
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

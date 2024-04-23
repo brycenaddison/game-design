@@ -1,3 +1,10 @@
+/**
+ * GUI menu to display information about a building - owner, revenue, power draw, etc.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
