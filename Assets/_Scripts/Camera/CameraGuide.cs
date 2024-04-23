@@ -1,3 +1,11 @@
+/**
+ * "Guides" the camera by making movement smooth. Allows for camera control with
+ * WASD keys, scrolling, and clicks.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using UnityEngine;
 
 public class CameraGuide : MonoBehaviour

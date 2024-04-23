@@ -1,3 +1,11 @@
+/**
+ * Allows for predefined maps to be generated from a .txt file. Automatically
+ * creates adjacency lists for each asset. Mostly for testing purposes at this point.
+ *
+ * Author: Jack, Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.SymbolStore;

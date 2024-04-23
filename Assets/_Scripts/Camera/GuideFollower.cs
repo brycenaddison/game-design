@@ -1,3 +1,10 @@
+/**
+ * Ensures the camera stays within the bounds of the map
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using UnityEngine;
 
 public class GuideFollower : MonoBehaviour

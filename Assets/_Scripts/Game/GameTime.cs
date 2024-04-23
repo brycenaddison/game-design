@@ -1,3 +1,12 @@
+/**
+ * Controls the pacing of the game, such as when bidding opens and closes. Also
+ * can change the speed to Slow, Medium, Fast, or to auto-skip a year. Allows for
+ * pausing, and indicates when the game is won or lost.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

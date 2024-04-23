@@ -1,3 +1,11 @@
+/**
+ * Highlights assets on the map when the cursor hovers over them or clicks them.
+ * Leaving the hover or clicking off removes the highlight.
+ *
+ * Author: Brycen
+ * Date: 4 / 23 / 24
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
