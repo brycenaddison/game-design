@@ -190,5 +190,5 @@ public class GameTime : MonoBehaviour
     public int GetMonth()
     {
         return Mathf.FloorToInt(month) % 12 + 1;
-    }   
+    }
 }

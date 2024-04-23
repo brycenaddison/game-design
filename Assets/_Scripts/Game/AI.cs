@@ -6,7 +6,7 @@ public class AI : MonoBehaviour
 {
     void Start()
     {
-        GameTime gt = gameObject.AddComponent<GameTime>();
+        GameTime gt = Camera.main.GetComponent<GameTime>();
 
         AssetOwner owner = GetComponent<AssetOwner>();
 

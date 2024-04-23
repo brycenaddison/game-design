@@ -58,7 +58,7 @@ public class CustomerAsset : Asset
     public void Offer(AssetOwner owner, float payment)
     {
         Debug.Log("offer made!");
-        
+
         if (!owner.CanBidOn(this)) return;
 
         RemoveOffer(owner);
@@ -96,15 +96,15 @@ public class CustomerAsset : Asset
         return sortedOffers;
     }
 
-    public float BestOffer()
+    public KeyValuePair<AssetOwner, float> BestOffer()
     {
         FilterInvalidOffers();
 
         List<KeyValuePair<AssetOwner, float>> validOffers = GetSortedOffers();
-        
+
         KeyValuePair<AssetOwner, float> bestOffer = validOffers[0];
 
-        return bestOffer.Value;
+        return bestOffer;
     }
 
     public void AcceptBestOffer()
@@ -117,11 +117,12 @@ public class CustomerAsset : Asset
         {
             KeyValuePair<AssetOwner, float> bestOffer = validOffers[0];
 
-            _payment = BestOffer();
+            _payment = BestOffer().Value;
 
             bestOffer.Key.Claim(this);
         }
-        else {
+        else
+        {
             if (Owner != GetCityPower().Get())
             {
                 Owner.Unclaim(this);
@@ -144,7 +145,8 @@ public class CustomerAsset : Asset
 
         queue.Enqueue(this);
 
-        while (queue.Count > 0) {
+        while (queue.Count > 0)
+        {
             Asset visitingAsset = queue.Dequeue();
             visited.Add(visitingAsset);
 

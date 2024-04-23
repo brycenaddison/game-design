@@ -46,7 +46,7 @@ public class AssetOwner : MonoBehaviour
 
     private CityPower _cityPower;
     private CityPower GetCityPower()
-    {  
+    {
         if (_cityPower == null)
         {
             _cityPower = Camera.main.GetComponent<CityPower>();
@@ -71,12 +71,14 @@ public class AssetOwner : MonoBehaviour
             Name = SaveText.GetUserInput();
             Color = StaticProperties.Color;
             Id = 0;
-        } else if (GetCityPower().Get() == this)
+        }
+        else if (GetCityPower().Get() == this)
         {
             Name = "City Power";
             Color = Color.grey;
             Id = 1;
-        } else
+        }
+        else
         {
             List<string> Names = new List<string>(File.ReadAllLines("Assets/Names.txt"));
             Name = Names[UnityEngine.Random.Range(0, Names.Count)];
@@ -94,6 +96,7 @@ public class AssetOwner : MonoBehaviour
         cleanup = gameTime.RegisterOnMonth(1, () =>
         {
             balance += Profit;
+            if (FreePower < 0) balance -= StaticProperties.OverdrawPenalty;
             if (balance < 0)
             {
                 if (IsPlayable)
@@ -301,36 +304,36 @@ public class AssetOwner : MonoBehaviour
 
     public void MaxRates()
     {
-        foreach (CustomerAsset asset in assets.Cast<CustomerAsset>())
+        foreach (Asset asset in assets)
         {
-            asset.Offer(this, asset.MaxPayment);
+            if (asset is CustomerAsset customer)
+            {
+                {
+                    customer.Offer(this, customer.MaxPayment);
+                }
+            }
         }
     }
 
     public void Undercut()
-    {    
+    {
         Debug.Log("attempting to undercut!");
-        
+
         for (int x = 0; x < StaticProperties.MapSize; x++)
         {
             for (int z = 0; z < StaticProperties.MapSize; z++)
             {
                 Vector3 position = new Vector3(7 * x, 0, -7 * z);
                 Collider[] hits = Physics.OverlapSphere(position, 1f);
-                CustomerAsset asset;
 
                 foreach (Collider hit in hits)
                 {
-                    asset = (CustomerAsset)hit.GetComponent<Asset>();
+                    Asset asset = hit.GetComponent<Asset>();
 
-                    asset.Offer(this, 5f);
-
-                    /*
-                    if (asset.Owner != this)
+                    if (asset is CustomerAsset customer)
                     {
-                        asset.Offer(this, FairValue(asset, asset));
+                        customer.Offer(this, 5f);
                     }
-                    */
                 }
             }
         }
@@ -338,17 +341,20 @@ public class AssetOwner : MonoBehaviour
 
     private float FairValue(CustomerAsset asset0, CustomerAsset asset1)
     {
-        return COGS + (1/4) * asset1.Draw * (asset1.Owner.COGS + COGS)
-                    + (1/2) * (asset0.Draw * (asset0.Owner.COGS - COGS) - asset1.MaxPayment);
+        return COGS + (1 / 4) * asset1.Draw * (asset1.Owner.COGS + COGS)
+                    + (1 / 2) * (asset0.Draw * (asset0.Owner.COGS - COGS) - asset1.MaxPayment);
     }
 
     public void Defend()
     {
-        foreach (CustomerAsset asset in assets.Cast<CustomerAsset>())
+        foreach (Asset asset in assets)
         {
-            //if (asset.BestOffer >= COGS)
+            if (asset is CustomerAsset customer)
             {
-                asset.Offer(this, asset.Payment);
+                if (customer.BestOffer().Value >= COGS && customer.BestOffer().Key != this)
+                {
+                    customer.Offer(this, customer.Payment);
+                }
             }
         }
     }
