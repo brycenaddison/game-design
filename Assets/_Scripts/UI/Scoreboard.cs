@@ -28,7 +28,7 @@ public class Scoreboard : MonoBehaviour
         {
             RowUI row = rows[i];
             AssetOwner owner = ownerList[i];
-            row.rank.text = $"{i+1}";
+            row.rank.text = $"{i + 1}";
             row.displayName.text = owner.Name;
             row.balance.text = owner.balance.ToString("C", CultureInfo.CurrentCulture);
             row.income.text = owner.Profit.ToString("C", CultureInfo.CurrentCulture);
@@ -56,6 +56,9 @@ public class Scoreboard : MonoBehaviour
     public void Unregister(AssetOwner assetOwner)
     {
         int index = ownerList.IndexOf(assetOwner);
+
+        if (index == -1) return;
+
         ownerList.RemoveAt(index);
         if (rows[index] != null)
         {

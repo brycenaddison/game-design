@@ -6,15 +6,10 @@
  * Date: 4 / 23 / 24
 */
 
-using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Unity.PlasticSCM.Editor.WebApi;
-using UnityEditor;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 public class CustomerAsset : Asset
 {
