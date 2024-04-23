@@ -7,7 +7,7 @@ using UnityEngine;
 public class AssetOwner : MonoBehaviour
 {
     public List<Asset> assets;
-    public float initialBalanace = 1000;
+
     public GameObject CityPower;
 
     public string Name { get; set; }
@@ -15,6 +15,12 @@ public class AssetOwner : MonoBehaviour
     public Color Color { get; set; }
     public bool IsPlayable { get; set; }
     public GameObject HQ { get; set; }
+
+    public float initialBalance = 1000;
+    public Scoreboard scoreboard;
+
+    public static int BidWindowStart = 7;
+    public static int BidWindowEnd = 9;
 
     [Header("Read Only")]
     public float balance;
@@ -26,6 +32,8 @@ public class AssetOwner : MonoBehaviour
             Claim(asset);
         }
 
+        scoreboard?.Register(this);
+
         GameTime gameTime = Camera.main.GetComponent<GameTime>();
 
         if (IsPlayable)
@@ -33,12 +41,13 @@ public class AssetOwner : MonoBehaviour
             Name = StaticProperties.Name;
             Color = StaticProperties.Color;
             Id = 0;
-        } else
+        }
+        else
         {
 
         }
 
-        balance = initialBalanace;
+        balance = initialBalance;
 
         gameTime.RegisterOnMonth(1, () =>
         {
@@ -48,7 +57,8 @@ public class AssetOwner : MonoBehaviour
                 if (IsPlayable)
                 {
                     gameTime.TriggerGameOver();
-                } else
+                }
+                else
                 {
                     DeclareBankruptcy();
                 }
@@ -145,7 +155,8 @@ public class AssetOwner : MonoBehaviour
             if (asset == oldOwner.HQ)
             {
                 BuyOut(oldOwner);
-            } else
+            }
+            else
             {
                 oldOwner.Unclaim(asset);
             }
@@ -196,5 +207,13 @@ public class AssetOwner : MonoBehaviour
         }
 
         balance = 0;
+    }
+
+    public bool CanBidOn(CustomerAsset customerAsset)
+    {
+        int month = Camera.main.GetComponent<GameTime>().GetMonth();
+
+        if (customerAsset.Owner == this) return month > BidWindowEnd || month < BidWindowStart;
+        return month >= BidWindowStart && month <= BidWindowEnd;
     }
 }

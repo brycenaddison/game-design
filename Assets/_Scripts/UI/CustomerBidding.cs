@@ -7,20 +7,9 @@ using UnityEngine.UI;
 
 public class CustomerBidding : MonoBehaviour
 {
-    public GameObject inputTextBox;
-    public GameObject outputTextBox;
+    public Text inputText;
+    public Text outputText;
 
-    private Text inputText;
-    private Text outputText;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        inputText = inputTextBox.GetComponent<Text>();
-        outputText = outputTextBox.GetComponent<Text>();
-    }
-
-    // Update is called once per frame
     public void SetAsset(CustomerAsset asset)
     {
         outputText.text = String.Join("\n", asset.Offers);
@@ -35,7 +24,6 @@ public class CustomerBidding : MonoBehaviour
         }
         catch (FormatException)
         {
-            // TODO: idk better handling
             Debug.Log($"bid invalid: \"{inputText.text}\"");
         }
     }
