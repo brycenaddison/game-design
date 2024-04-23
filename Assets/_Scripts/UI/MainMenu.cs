@@ -19,4 +19,11 @@ public class MainMenu : MonoBehaviour
         namePrompt.SetActive(true);
         startGameButton.GetComponent<Button>().interactable = false;
     }
+
+    public static void LoadStory()
+    {
+        Debug.Log("Loading story");
+        SceneManager.LoadScene("Story");
+        Debug.Log("Loaded story");
+    }
 }
