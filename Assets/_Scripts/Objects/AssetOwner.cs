@@ -11,6 +11,7 @@ public class AssetOwner : MonoBehaviour
     public int id;
     public Boolean isPlayable;
     public float initialBalanace = 1000;
+    public Scoreboard scoreboard;
 
     [Header("Read Only")]
     public float balance;
@@ -21,6 +22,8 @@ public class AssetOwner : MonoBehaviour
         {
             Claim(asset);
         }
+
+        scoreboard.Register(this);
 
         GameTime gameTime = Camera.main.GetComponent<GameTime>();
 

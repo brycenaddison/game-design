@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -309,6 +309,7 @@ MonoBehaviour:
   id: 0
   isPlayable: 0
   initialBalanace: 1000
+  scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!4 &362342774
 Transform:
@@ -451,6 +452,7 @@ MonoBehaviour:
   id: 1
   isPlayable: 0
   initialBalanace: 1000
+  scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!4 &710104973
 Transform:
@@ -572,6 +574,7 @@ MonoBehaviour:
   id: 3
   isPlayable: 1
   initialBalanace: 1000
+  scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!20 &963194227
 Camera:
@@ -740,6 +743,7 @@ MonoBehaviour:
   id: 4
   isPlayable: 0
   initialBalanace: 1000
+  scoreboard: {fileID: 0}
   balance: 0
 --- !u!4 &1180354802
 Transform:
@@ -789,6 +793,7 @@ MonoBehaviour:
   id: 2
   isPlayable: 0
   initialBalanace: 1000
+  scoreboard: {fileID: 1974600272}
   balance: 0
 --- !u!4 &1228577827
 Transform:
@@ -996,6 +1001,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1974600272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1974600272, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
+  m_PrefabInstance: {fileID: 793920457419126000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28e974ddd66ed84684455c826245266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2146745436
 GameObject:
   m_ObjectHideFlags: 0
