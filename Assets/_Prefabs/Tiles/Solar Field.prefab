@@ -67,8 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assetName: Solar Field
-  Upkeep: 5
-  PowerGenerated: 10
+  Upkeep: 25
+  PowerGenerated: 25
 --- !u!1001 &2611674170335553258
 PrefabInstance:
   m_ObjectHideFlags: 0
