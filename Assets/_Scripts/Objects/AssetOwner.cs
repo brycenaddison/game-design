@@ -196,7 +196,7 @@ public class AssetOwner : MonoBehaviour
             }
             else
             {
-                oldOwner.assets.Remove(asset);
+                oldOwner.Unclaim(asset);
             }
         }
 
@@ -211,6 +211,8 @@ public class AssetOwner : MonoBehaviour
     public void Unclaim(Asset asset)
     {
         if (asset == null) return;
+
+        if (asset.Owner == cityPower.Get()) return;
 
         asset.Owner = cityPower.Get();
         assets.Remove(asset);
