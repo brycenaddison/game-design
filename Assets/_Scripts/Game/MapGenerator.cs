@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
-{    
+{
     public GameObject Player;
     public GameObject CityPower;
     public GameObject AI;
@@ -23,12 +24,15 @@ public class MapGenerator : MonoBehaviour
     private float offsetX = 0f;
     private float offsetY = 0f;
     private List<AssetOwner> Owners = new List<AssetOwner>();
+    private Dictionary<Asset, List<Asset>> adjList;
 
     private readonly int NumPowerStations = StaticProperties.NumAIs + 1;
     private readonly int Size = StaticProperties.MapSize;
-    
+
     void Start()
     {
+        adjList = new Dictionary<Asset, List<Asset>>();
+
         scale = Mathf.Sqrt(Size);
         offsetX = UnityEngine.Random.Range(0f, 99999f);
         offsetY = UnityEngine.Random.Range(0f, 99999f);
@@ -47,20 +51,24 @@ public class MapGenerator : MonoBehaviour
     }
 
     void GenerateMap(GameObject map)
-    {   
+    {
         GameObject newObj;
         GameObject prefab;
         Quaternion rotation;
         Vector3 position;
 
+        List<List<Asset>> assetGrid = new List<List<Asset>>();
+
         for (int x = 0; x < Size; x++)
         {
+            List<Asset> row = new List<Asset>();
+
             for (int z = 0; z < Size; z++)
             {
                 prefab = GetAsset(x, z);
                 rotation = prefab.Equals(VerticalRoad) ? Quaternion.Euler(0, 90, 0) : Quaternion.identity;
                 position = prefab.Equals(IntersectionRoad) ? new Vector3(7 * x, 0.01f, -7 * z) : new Vector3(7 * x, 0, -7 * z);
-                
+
                 newObj = Instantiate(prefab, position, rotation);
                 newObj.transform.SetParent(map.transform, false);
 
@@ -69,9 +77,24 @@ public class MapGenerator : MonoBehaviour
                 if (asset != null)
                 {
                     CityPower.GetComponent<AssetOwner>().Claim(asset);
+
+                    List<Asset> adjacentAssets = new List<Asset>();
+
+                    row.Add(asset);
+                    adjList.Add(asset, adjacentAssets);
+                }
+
+                if (row.Count != 0)
+                {
+                    assetGrid.Add(row);
                 }
             }
         }
+    }
+
+    public List<Asset> GetAdjacentAssets(Asset asset)
+    {
+        return adjList[asset];
     }
 
     GameObject GetAsset(int x, int y)
@@ -79,10 +102,12 @@ public class MapGenerator : MonoBehaviour
         if (x % 3 == 0 && y % 3 == 0)
         {
             return IntersectionRoad;
-        } else if (x % 3 == 0)
+        }
+        else if (x % 3 == 0)
         {
             return VerticalRoad;
-        } else if (y % 3 == 0)
+        }
+        else if (y % 3 == 0)
         {
             return HorizontalRoad;
         }
@@ -92,13 +117,16 @@ public class MapGenerator : MonoBehaviour
         if (perlin < 0.445f)
         {
             return House;
-        } else if (perlin < 0.45f)
+        }
+        else if (perlin < 0.45f)
         {
             return SolarField;
-        } else if (perlin < 0.65f)
+        }
+        else if (perlin < 0.65f)
         {
             return Shop;
-        } else
+        }
+        else
         {
             return Building;
         }
@@ -106,7 +134,7 @@ public class MapGenerator : MonoBehaviour
 
     float GetPerlin(int x, int y)
     {
-        return Mathf.PerlinNoise((float) x / Size * scale + offsetX, (float) y / Size * scale + offsetY);
+        return Mathf.PerlinNoise((float)x / Size * scale + offsetX, (float)y / Size * scale + offsetY);
     }
 
     void GenerateAIs(GameObject AIs)
@@ -115,7 +143,7 @@ public class MapGenerator : MonoBehaviour
         Vector3 position = new Vector3(0, 0, 0);
         GameObject newObj;
 
-        for (int i = 0;  i < NumPowerStations - 1; i++)
+        for (int i = 0; i < NumPowerStations - 1; i++)
         {
             newObj = Instantiate(AI, position, rotation);
             newObj.transform.SetParent(AIs.transform, false);
@@ -138,11 +166,11 @@ public class MapGenerator : MonoBehaviour
         int randY;
 
         for (int i = 0; i < NumPowerStations; i++)
-        {   
+        {
             randX = random.Next(1, Size);
             randY = random.Next(1, Size);
             position = new Vector3(7 * randX, 0, -7 * randY);
-            
+
             while (GetAsset(randX, randY) != House || !ValidPosition(position, i))
             {
                 randX = random.Next(1, Size);
@@ -154,7 +182,7 @@ public class MapGenerator : MonoBehaviour
 
             newObj = Instantiate(prefab, position, rotation);
             newObj.transform.SetParent(map.transform, false);
-            
+
             Asset asset = newObj.GetComponent<Asset>();
 
             Owners[i].HQ = newObj;
@@ -167,7 +195,7 @@ public class MapGenerator : MonoBehaviour
         int borderDistance = 30;
         int betweenDistance = 65;
 
-        if (position.x < borderDistance || position.x > Size * 7 -borderDistance) return false;
+        if (position.x < borderDistance || position.x > Size * 7 - borderDistance) return false;
         if (position.z > -borderDistance || position.z < Size * -7 + borderDistance) return false;
         if (OwnerIndex == 0) return true;
 

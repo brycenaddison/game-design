@@ -25,9 +25,11 @@ public class CustomerAsset : Asset
 
     private Dictionary<AssetOwner, float> offers;
     private GameTime gameTime;
+    private MapGenerator generator;
 
     private void Start()
     {
+        generator = GameObject.Find("MapGenerator").GetComponent<MapGenerator>();
         _payment = InitialPayment;
         offers = new Dictionary<AssetOwner, float>
         {
@@ -94,9 +96,7 @@ public class CustomerAsset : Asset
                 Owner.Unclaim(this);
 
                 // propogate unclaim to possibly unclaim unconnected tiles
-                MapLoader loader = GameObject.Find("MapLoader").GetComponent<MapLoader>();
-
-                foreach (Asset asset in loader.GetAdjacentAssets(this))
+                foreach (Asset asset in generator.GetAdjacentAssets(this))
                 {
                     if (asset is CustomerAsset customerAsset)
                     {
@@ -113,9 +113,7 @@ public class CustomerAsset : Asset
     }
 
     public bool HasAdjacentOwner(AssetOwner owner)
-    {
-        MapLoader loader = GameObject.Find("MapLoader").GetComponent<MapLoader>();
-        
+    {        
         // pathfinding to ensure connected to owned power source
         List<Asset> visited = new List<Asset>();
         Queue<Asset> queue = new Queue<Asset>();
@@ -126,7 +124,7 @@ public class CustomerAsset : Asset
             Asset visitingAsset = queue.Dequeue();
             visited.Add(visitingAsset);
 
-            foreach (Asset asset in loader.GetAdjacentAssets(visitingAsset))
+            foreach (Asset asset in generator.GetAdjacentAssets(visitingAsset))
             {
                 if (visited.Contains(asset) || asset.Owner != owner) continue;
 
