@@ -154,7 +154,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         typeText.color = powerAssetColor;
         ownerText.text = "Owner: " + asset.Owner.Name;
         moneyText.text = "Expense per day: " + asset.Upkeep.ToString("C", CultureInfo.CurrentCulture);
-        powerText.text = "Power generated: " + asset.PowerGenerated + " units";
+        powerText.text = "Power generated: " + asset.PowerGenerated + " MWh";
     }
 
     void SetCustomerText(CustomerAsset asset)
@@ -172,7 +172,7 @@ public class SelectedObjectUIManager : MonoBehaviour
         {
             ownerText.text = "Supplied by: " + asset.Owner.Name;
             moneyText.text = "Currently paying: " + asset.Payment.ToString("C", CultureInfo.CurrentCulture);
-            powerText.text = "Power draw: " + asset.Draw + " units";
+            powerText.text = "Power draw: " + asset.Draw + " MWh";
         }
     }
 
