@@ -303,13 +303,13 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public List<AssetOwner> GetAssetOwners()
+    public List<AssetOwner> GetOwners()
     {
-        return Owners;
+        return new List<AssetOwner>(Owners);
     }
 
     public List<AssetOwner> GetAIOwners()
     {
-        return Owners.GetRange(2, Owners.Count - 2);
+        return new List<AssetOwner>(Owners).GetRange(2, Owners.Count - 2);
     }
 }

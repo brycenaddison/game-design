@@ -11,6 +11,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -183,6 +184,14 @@ public class AssetOwner : MonoBehaviour
         }
     }
 
+    public float COGS
+    {
+        get
+        {
+            return Expenses / PowerTotal;
+        }
+    }
+
     public void Claim(Asset asset)
     {
         AssetOwner oldOwner = asset.Owner;
@@ -262,5 +271,42 @@ public class AssetOwner : MonoBehaviour
 
         if (customerAsset.Owner == this) return month > BidWindowEnd || month < BidWindowStart;
         return month >= BidWindowStart && month <= BidWindowEnd;
+    }
+
+    public void MaxRates()
+    {
+        foreach (CustomerAsset asset in assets)
+        {
+            asset.Offer(this, asset.MaxPayment);
+        }
+    }
+
+    public void Undercut(MapGenerator mg)
+    {    
+        foreach (CustomerAsset asset in assets.Cast<CustomerAsset>())
+        {
+            foreach (CustomerAsset customerAsset in mg.GetAdjacentAssets(asset).Cast<CustomerAsset>())
+            {
+                if (customerAsset.Owner != this) {
+                    asset.Offer(this, FairValue(customerAsset));
+                }
+            }      
+        }
+    }
+
+    private float FairValue(CustomerAsset asset)
+    {
+        return 0f;
+    }
+
+    public void Defend()
+    {
+        foreach (CustomerAsset asset in assets.Cast<CustomerAsset>())
+        {
+            //if (asset.BestOffer >= COGS)
+            {
+                asset.Offer(this, asset.Payment);
+            }
+        }
     }
 }

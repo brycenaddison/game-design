@@ -84,6 +84,17 @@ public class CustomerAsset : Asset
         return sortedOffers;
     }
 
+    public float BestOffer()
+    {
+        FilterInvalidOffers();
+
+        List<KeyValuePair<AssetOwner, float>> validOffers = GetSortedOffers();
+        
+        KeyValuePair<AssetOwner, float> bestOffer = validOffers[0];
+
+        return bestOffer.Value;
+    }
+
     public void AcceptBestOffer()
     {
         FilterInvalidOffers();
@@ -94,7 +105,7 @@ public class CustomerAsset : Asset
         {
             KeyValuePair<AssetOwner, float> bestOffer = validOffers[0];
 
-            _payment = bestOffer.Value;
+            _payment = BestOffer();
 
             bestOffer.Key.Claim(this);
         }
