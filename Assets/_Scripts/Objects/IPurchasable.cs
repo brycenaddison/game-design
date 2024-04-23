@@ -1,4 +1,4 @@
 public interface IPurchasable
 {
-    float Cost { get; set; }
+    float Cost { get; }
 }

@@ -27,6 +27,8 @@ public class SelectedObjectUIManager : MonoBehaviour
     public GameObject bidPlaceholder;
     public GameObject bidText;
     public Button biddingButton;
+    public Button purchasePlant;
+    public Text purchasePrice;
 
 
     private Text nameText;
@@ -83,10 +85,19 @@ public class SelectedObjectUIManager : MonoBehaviour
 
             SetUpgradeButtons(asset);
             SetBidding(false);
+            purchasePlant.gameObject.SetActive(false);
+            drop.SetActive(false);
 
             if (asset is PowerAsset powerAsset)
             {
                 SetPowerText(powerAsset);
+
+                if (powerAsset.IsBuyable(Camera.main.GetComponent<AssetOwner>()))
+                {
+                    purchasePlant.gameObject.SetActive(true);
+                    purchasePlant.interactable = Camera.main.GetComponent<AssetOwner>().CanAfford(powerAsset);
+                    purchasePrice.text = powerAsset.Cost.ToString("C", CultureInfo.CurrentCulture);
+                }   
             }
             else if (asset is CustomerAsset customerAsset)
             {
@@ -194,5 +205,10 @@ public class SelectedObjectUIManager : MonoBehaviour
     public void Bid()
     {
         bidding.GetComponent<CustomerBidding>().Bid(selected.GetComponent<CustomerAsset>());
+    }
+
+    public void BuyPowerPlant()
+    {
+        selected.GetComponent<PowerAsset>().Buy(Camera.main.GetComponent<AssetOwner>());
     }
 }
