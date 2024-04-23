@@ -232,6 +232,8 @@ public class AssetOwner : MonoBehaviour
 
     public bool CanBidOn(CustomerAsset customerAsset)
     {
+        if (!customerAsset.HasAdjacentOwner(this)) return false;
+
         int month = Camera.main.GetComponent<GameTime>().GetMonth();
 
         if (customerAsset.Owner == this) return month > BidWindowEnd || month < BidWindowStart;

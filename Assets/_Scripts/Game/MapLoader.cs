@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using UnityEngine;
 
 public class MapLoader : MonoBehaviour
@@ -17,6 +18,9 @@ public class MapLoader : MonoBehaviour
     
     public AssetOwner[] owners;
 
+    [SerializeField]
+    private Dictionary<Asset, List<Asset>> adjList;
+
     private Dictionary<char, GameObject> mapDict;
 
     void Awake() {
@@ -32,6 +36,8 @@ public class MapLoader : MonoBehaviour
             {'8', prefab8},
             {'9', prefab9}
         };
+        
+        adjList = new Dictionary<Asset, List<Asset>>();
     }
 
     void Start()
@@ -47,7 +53,12 @@ public class MapLoader : MonoBehaviour
         int halfWidth = width / 2;
         int halfHeight = height / 2;
 
+        // this adjacency system will need to be updated for non-grid rows
+        List<List<Asset>> currentMap = new List<List<Asset>>();
+
         for (int y = 0; y < height; y++) {
+            List<Asset> row = new List<Asset>();
+
             for (int x = 0; x < width; x++) {
                 char c = lines[y][x];
                 GameObject prefab = mapDict[c];
@@ -61,7 +72,32 @@ public class MapLoader : MonoBehaviour
                 if (asset != null) {
                     int ownerIndex = getOwnerIndex(x < halfWidth, y < halfHeight);
                     owners[ownerIndex].Claim(asset);
+
+                    
+                    List<Asset> adjacentAssets = new List<Asset>();
+
+                    if (row.Count != 0)
+                    {
+                        Asset west = row[row.Count - 1];
+                        adjacentAssets.Add(west);
+                        adjList[west].Add(asset);
+                    }
+                    if (currentMap.Count != 0)
+                    {
+                        Asset south = currentMap[currentMap.Count - 1][row.Count];
+            
+                        adjacentAssets.Add(south);
+                        adjList[south].Add(asset);
+                       
+                    }
+                    row.Add(asset);
+                    adjList.Add(asset, adjacentAssets);
                 }
+            }
+
+            if (row.Count != 0)
+            {
+                currentMap.Add(row);
             }
         }
     }
@@ -72,5 +108,10 @@ public class MapLoader : MonoBehaviour
         if (!isLeft && !isTop) return 2;
         if (isLeft && !isTop) return 3;     // player (camera)
         return -1;
+    }
+
+    public List<Asset> GetAdjacentAssets(Asset asset)
+    {
+        return adjList[asset];
     }
 }
