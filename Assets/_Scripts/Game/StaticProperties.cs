@@ -9,6 +9,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 
 public class StaticProperties
@@ -19,6 +20,7 @@ public class StaticProperties
     private static int _numAIs = 3;
     private static float _strengthOfAI = 0.8f;
 
+    public static float OverdrawPenalty = 2000;
     public static string Name
     {
         get => _name;

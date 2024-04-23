@@ -1622,7 +1622,7 @@ RectTransform:
   - {fileID: 5289628266982173355}
   - {fileID: 1368725908626885958}
   m_Father: {fileID: 793920458693581790}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2154,7 +2154,7 @@ Transform:
   - {fileID: 793920459050549925}
   - {fileID: 793920458542601284}
   m_Father: {fileID: 793920458693581790}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &793920458238465613
 MonoBehaviour:
@@ -2500,12 +2500,12 @@ RectTransform:
   - {fileID: 793920458441174964}
   - {fileID: 1974600270}
   - {fileID: 3411320924509865442}
+  - {fileID: 4311722153386956202}
   - {fileID: 793920458151378149}
   - {fileID: 5369284698177639259}
   - {fileID: 793920458238465612}
   - {fileID: 793920459072742494}
   - {fileID: 7264323427890597989}
-  - {fileID: 4311722153386956202}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3298,7 +3298,7 @@ Transform:
   - {fileID: 793920457021578962}
   - {fileID: 793920458190894812}
   m_Father: {fileID: 793920458693581790}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &793920459072742495
 MonoBehaviour:
@@ -3506,7 +3506,7 @@ RectTransform:
   m_Children:
   - {fileID: 3769058865487897009}
   m_Father: {fileID: 793920458693581790}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -5211,7 +5211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5369284698177639259
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5225,15 +5225,14 @@ RectTransform:
   m_Children:
   - {fileID: 5537286934195563691}
   - {fileID: 585274157869017645}
-  - {fileID: 1337764098024794787}
   m_Father: {fileID: 793920458693581790}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00024414062, y: 0.000091552734}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &6989816000380658612
 GameObject:
   m_ObjectHideFlags: 0
@@ -5575,11 +5574,11 @@ RectTransform:
   m_Father: {fileID: 1337764098024794787}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_SizeDelta: {x: 256, y: 60}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &8007147587065772968
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5793,7 +5792,11 @@ MonoBehaviour:
     Stores have a power draw of 2 MWh and pay up to $60
 
     Towers have
-    a power draw of 4 MWh and pay up to $180'
+    a power draw of 4 MWh and pay up to $180
+
+
+    Avoid running out of excess power
+    or you will pay a hefty fee!'
 --- !u!1 &7578653738320307337
 GameObject:
   m_ObjectHideFlags: 0
@@ -5825,14 +5828,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5006619077867200271}
-  m_Father: {fileID: 5369284698177639259}
-  m_RootOrder: 2
+  m_Father: {fileID: 585274157869017645}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 156, y: -209}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -10, y: 10}
   m_SizeDelta: {x: 256, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &1144226945790673345
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5957,14 +5960,15 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2085170814883148761}
+  - {fileID: 1337764098024794787}
   m_Father: {fileID: 5369284698177639259}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 599, y: 500}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 900, y: 500}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &8639318934959127040
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6035,7 +6039,7 @@ Transform:
   - {fileID: 2035678573683129554}
   - {fileID: 1641437339482749256}
   m_Father: {fileID: 793920458693581790}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6069268209357943734
 MonoBehaviour:
