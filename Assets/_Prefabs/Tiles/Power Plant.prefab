@@ -110,19 +110,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assetName: Power Station
   Upkeep: 200
-  PowerGenerated: 100
+  PowerGenerated: 40
   _Cost: 10000
   _PowerUpgrades:
   - Name: Medium Station
-    PowerAdded: 40
+    PowerAdded: 20
     UpkeepAdded: 400
     _cost: 5000
   - Name: Large Station
-    PowerAdded: 100
+    PowerAdded: 20
     UpkeepAdded: 1000
     _cost: 10000
   - Name: Mega Station
-    PowerAdded: 200
+    PowerAdded: 40
     UpkeepAdded: 2000
     _cost: 20000
   _UpkeepUpgrades:
