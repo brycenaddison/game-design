@@ -18,10 +18,10 @@ public class CityPower : MonoBehaviour
     {
         if (assetMap == null)
         {
-            MapGenerator generator = this.mapGenerator.GetComponent<MapGenerator>();
+            MapGenerator generator = mapGenerator.GetComponent<MapGenerator>();
             if (generator == null)
             {
-                MapLoader loader = this.mapGenerator.GetComponent<MapLoader>();
+                MapLoader loader = mapGenerator.GetComponent<MapLoader>();
                 assetMap = loader;
             }
             else
