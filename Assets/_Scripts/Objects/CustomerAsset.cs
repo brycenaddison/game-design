@@ -28,7 +28,6 @@ public class CustomerAsset : Asset
     {
         get => GetSortedOffers().Select(
             offer => $"{offer.Key.Name}: {offer.Value.ToString("C", CultureInfo.CurrentCulture)}");
-
     }
 
     private Dictionary<AssetOwner, float> offers;

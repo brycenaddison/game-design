@@ -42,7 +42,17 @@ public class AssetOwner : MonoBehaviour
     public float balance;
 
     private Action cleanup;
-    private CityPower cityPower;
+
+    private CityPower _cityPower;
+    private CityPower GetCityPower()
+    {  
+        if (_cityPower == null)
+        {
+            _cityPower = Camera.main.GetComponent<CityPower>();
+        }
+
+        return _cityPower;
+    }
 
     void Start()
     {
@@ -54,14 +64,13 @@ public class AssetOwner : MonoBehaviour
         scoreboard?.Register(this);
 
         GameTime gameTime = Camera.main.GetComponent<GameTime>();
-        cityPower = Camera.main.GetComponent<CityPower>();
 
         if (IsPlayable)
         {
             Name = StaticProperties.Name;
             Color = StaticProperties.Color;
             Id = 0;
-        } else if (cityPower.Get() == this)
+        } else if (GetCityPower().Get() == this)
         {
             Name = "City Power";
             Color = Color.grey;
@@ -212,9 +221,11 @@ public class AssetOwner : MonoBehaviour
     {
         if (asset == null) return;
 
-        if (asset.Owner == cityPower.Get()) return;
+        AssetOwner cityPower = GetCityPower().Get();
 
-        asset.Owner = cityPower.Get();
+        if (asset.Owner == cityPower) return;
+
+        asset.Owner = cityPower;
         assets.Remove(asset);
 
         if (asset is CustomerAsset customerAsset)
@@ -263,7 +274,7 @@ public class AssetOwner : MonoBehaviour
     {
         foreach (Asset asset in new List<Asset>(assets))
         {
-            cityPower.Get().Claim(asset);
+            GetCityPower().Get().Claim(asset);
         }
 
         balance = 0;

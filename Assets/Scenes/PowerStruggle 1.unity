@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cityPower: {fileID: 1545994968}
-  mapGenerator: {fileID: 1550345890}
+  mapGenerator: {fileID: 1550345889}
 --- !u!1001 &1518336898
 PrefabInstance:
   m_ObjectHideFlags: 0
