@@ -28,11 +28,11 @@ public class CustomerAsset : Asset
     {
         get => GetSortedOffers().Select(
             offer => $"{offer.Key.Name}: {offer.Value.ToString("C", CultureInfo.CurrentCulture)}");
-
     }
 
     private Dictionary<AssetOwner, float> offers;
     private GameTime gameTime;
+    private CityPower _cityPower;
 
     private void Start()
     {
@@ -43,6 +43,16 @@ public class CustomerAsset : Asset
         };
         gameTime = Camera.main.GetComponent<GameTime>();
         gameTime.RegisterOnMonth(1, () => { AcceptBestOffer(); }, 5000);
+    }
+
+
+    private CityPower GetCityPower()
+    {
+        if (_cityPower == null)
+        {
+            _cityPower = Camera.main.GetComponent<CityPower>();
+        }
+        return _cityPower;
     }
 
     public void Offer(AssetOwner owner, float payment)
@@ -110,20 +120,9 @@ public class CustomerAsset : Asset
             bestOffer.Key.Claim(this);
         }
         else {
-            if (Owner != Camera.main.GetComponent<CityPower>().Get())
+            if (Owner != GetCityPower().Get())
             {
                 Owner.Unclaim(this);
-
-                MapGenerator generator = Camera.main.GetComponent<CityPower>().Map();
-
-                // propogate unclaim to possibly unclaim unconnected tiles
-                foreach (Asset asset in generator.GetAdjacentAssets(this))
-                {
-                    if (asset is CustomerAsset customerAsset)
-                    {
-                        customerAsset.AcceptBestOffer();
-                    }
-                }
             }
         }
     }
@@ -135,9 +134,7 @@ public class CustomerAsset : Asset
 
     public bool HasAdjacentOwner(AssetOwner owner)
     {
-        return true;
-
-        MapGenerator generator = Camera.main.GetComponent<CityPower>().Map();
+        IAssetMap map = GetCityPower().Map();
 
         // pathfinding to ensure connected to owned power source
         List<Asset> visited = new List<Asset>();
@@ -149,7 +146,7 @@ public class CustomerAsset : Asset
             Asset visitingAsset = queue.Dequeue();
             visited.Add(visitingAsset);
 
-            foreach (Asset asset in generator.GetAdjacentAssets(visitingAsset))
+            foreach (Asset asset in map.GetAdjacentAssets(visitingAsset))
             {
                 if (visited.Contains(asset) || asset.Owner != owner) continue;
 

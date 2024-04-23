@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Diagnostics.SymbolStore;
 using UnityEngine;
 
-public class MapLoader : MonoBehaviour
+public class MapLoader : MonoBehaviour, IAssetMap
 {
     public GameObject prefab0;
     public GameObject prefab1;

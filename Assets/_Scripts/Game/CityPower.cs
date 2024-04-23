@@ -5,15 +5,31 @@ using UnityEngine;
 public class CityPower : MonoBehaviour
 {
     public AssetOwner cityPower;
-    public MapGenerator mapGenerator;
+    public GameObject mapGenerator;
+
+    private IAssetMap assetMap;
 
     public AssetOwner Get()
     {
         return cityPower;
     }
 
-    public MapGenerator Map()
+    public IAssetMap Map()
     {
-        return mapGenerator;
+        if (assetMap == null)
+        {
+            MapGenerator generator = this.mapGenerator.GetComponent<MapGenerator>();
+            if (generator == null)
+            {
+                MapLoader loader = this.mapGenerator.GetComponent<MapLoader>();
+                assetMap = loader;
+            }
+            else
+            {
+                assetMap = generator;
+            }
+        }
+
+        return assetMap;
     }
 }
