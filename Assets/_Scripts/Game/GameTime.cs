@@ -43,6 +43,11 @@ public class GameTime : MonoBehaviour
             events.Add((-1 * priority, callback));
         }
 
+        public void RemoveEvent(Action callback)
+        {
+            events.RemoveAll((tuple) => tuple.Item2 == callback);
+        }
+
         public void ExecuteEvents()
         {
             events.Sort((a, b) => a.Item1.CompareTo(b.Item1));
@@ -134,9 +139,11 @@ public class GameTime : MonoBehaviour
         return gameOver;
     }
 
-    public void RegisterOnMonth(int month, Action callback, int priority)
+    public Action RegisterOnMonth(int month, Action callback, int priority)
     {
         events[(month - 1) % 12].AddEvent(callback, priority);
+
+        return () => events[(month - 1) % 12].RemoveEvent(callback);
     }
 
     private DateTime CurrentDate => startDate.AddMonths(Mathf.FloorToInt(month));
