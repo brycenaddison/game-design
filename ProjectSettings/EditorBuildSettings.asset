@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PowerStruggle.unity
     guid: ca0f31a25cef0064bb010e94088a04d6
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: bf43863f3e3c95a409ee975975d77c8f
   m_configObjects: {}
