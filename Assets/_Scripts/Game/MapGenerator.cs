@@ -15,7 +15,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-public class MapGenerator : MonoBehaviour
+public class MapGenerator : MonoBehaviour, IAssetMap
 {
     public Scoreboard scoreboard;
 

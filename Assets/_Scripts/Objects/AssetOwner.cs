@@ -12,6 +12,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class AssetOwner : MonoBehaviour
@@ -195,7 +196,7 @@ public class AssetOwner : MonoBehaviour
             }
             else
             {
-                oldOwner.Unclaim(asset);
+                oldOwner.assets.Remove(asset);
             }
         }
 
@@ -217,6 +218,18 @@ public class AssetOwner : MonoBehaviour
         if (asset is CustomerAsset customerAsset)
         {
             customerAsset.RemoveOffer(this);
+
+            foreach (Asset adjacentAsset in Camera.main.GetComponent<CityPower>().Map().GetAdjacentAssets(customerAsset))
+            {
+                if (adjacentAsset is CustomerAsset adjacentCustomerAsset)
+                {
+                    if (adjacentAsset.Owner == this && !adjacentCustomerAsset.HasAdjacentOwner(this))
+                    {
+                        Unclaim(adjacentAsset);
+                    }
+                }
+            }
+
             customerAsset.AcceptBestOffer();
         }
     }

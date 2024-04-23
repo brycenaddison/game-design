@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 225009332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b5c6c5562093f04d881e0c481a8905e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c0c2835a9a4d1845b9fad3f50372c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab0: {fileID: 8798829054895997438, guid: b433118fa52a521498dd124a2f0b5fa8, type: 3}
@@ -164,7 +164,7 @@ MonoBehaviour:
   - {fileID: 710104972}
   - {fileID: 1228577826}
   - {fileID: 963194226}
-  - {fileID: 1180354801}
+  - {fileID: 0}
 --- !u!4 &225009334
 Transform:
   m_ObjectHideFlags: 0
@@ -305,10 +305,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: Power House
-  id: 0
-  isPlayable: 0
-  initialBalanace: 1000
+  _name: Power House
+  _id: 1
+  _isPlayable: 0
+  initialBalance: 1000
+  scoreboard: {fileID: 793920457419126001}
   balance: 0
 --- !u!4 &362342774
 Transform:
@@ -447,10 +448,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: AC/DC Current
-  id: 1
-  isPlayable: 0
-  initialBalanace: 1000
+  _name: AC/DC Voltage
+  _id: 2
+  _isPlayable: 0
+  initialBalance: 1000
+  scoreboard: {fileID: 793920457419126001}
   balance: 0
 --- !u!4 &710104973
 Transform:
@@ -482,6 +484,7 @@ GameObject:
   - component: {fileID: 963194231}
   - component: {fileID: 963194232}
   - component: {fileID: 963194233}
+  - component: {fileID: 963194234}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -502,10 +505,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: The Goat
-  id: 3
-  isPlayable: 1
-  initialBalanace: 1000
+  _name: The Goat
+  _id: 0
+  _isPlayable: 1
+  initialBalance: 1000
+  scoreboard: {fileID: 793920457419126001}
   balance: 0
 --- !u!20 &963194227
 Camera:
@@ -640,6 +644,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e693dceb005efa047b1a7939954a41a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &963194234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9a8b1c7e7a54c4a884dc07e013587a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cityPower: {fileID: 1180354801}
+  mapGenerator: {fileID: 225009332}
 --- !u!1 &1180354800
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,10 +688,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: City Power
-  id: 4
-  isPlayable: 0
-  initialBalanace: 1000
+  _name: 
+  _id: 0
+  _isPlayable: 0
+  initialBalance: 1000
+  scoreboard: {fileID: 0}
   balance: 0
 --- !u!4 &1180354802
 Transform:
@@ -719,10 +738,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: []
-  ownerName: Quick Voltz
-  id: 2
-  isPlayable: 0
-  initialBalanace: 1000
+  _name: Quick Voltz
+  _id: 3
+  _isPlayable: 0
+  initialBalance: 1000
+  scoreboard: {fileID: 793920457419126001}
   balance: 0
 --- !u!4 &1228577827
 Transform:
@@ -1163,3 +1183,14 @@ PrefabInstance:
       objectReference: {fileID: 963194231}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
+--- !u!114 &793920457419126001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1974600272, guid: 39dd90fd54c6d8c4e9b242afde27068a, type: 3}
+  m_PrefabInstance: {fileID: 793920457419126000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28e974ddd66ed84684455c826245266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

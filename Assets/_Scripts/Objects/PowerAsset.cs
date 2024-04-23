@@ -27,7 +27,7 @@ public class PowerAsset : Asset, IPurchasable
             return false;
         }
 
-        MapGenerator loader = Camera.main.GetComponent<CityPower>().Map();
+        IAssetMap loader = Camera.main.GetComponent<CityPower>().Map();
 
         foreach (Asset asset in loader.GetAdjacentAssets(this))
         {
