@@ -5,7 +5,6 @@ using UnityEngine;
 public class AI : MonoBehaviour
 {
     private List<AssetOwner> owners = new List<AssetOwner>();
-    private Dictionary<Asset, List<Asset>> adjList;
     private int month;
     private float strength;
     private MapGenerator mg = new MapGenerator();

@@ -311,18 +311,21 @@ public class AssetOwner : MonoBehaviour
     {    
         foreach (CustomerAsset asset in assets.Cast<CustomerAsset>())
         {
-            foreach (CustomerAsset customerAsset in mg.GetAdjacentAssets(asset).Cast<CustomerAsset>())
+            List<CustomerAsset> customerAssets = (List<CustomerAsset>)mg.GetAdjacentAssets(asset).Cast<CustomerAsset>();
+
+            foreach (CustomerAsset customerAsset in customerAssets)
             {
                 if (customerAsset.Owner != this) {
-                    asset.Offer(this, FairValue(customerAsset));
+                    asset.Offer(this, FairValue(customerAsset, customerAsset));
                 }
             }      
         }
     }
 
-    private float FairValue(CustomerAsset asset)
+    private float FairValue(CustomerAsset asset0, CustomerAsset asset1)
     {
-        return 0f;
+        return COGS + (1/4) * asset1.Draw * (asset1.Owner.COGS + COGS)
+                    + (1/2) * (asset0.Draw * (asset0.Owner.COGS - COGS) - asset1.MaxPayment);
     }
 
     public void Defend()
